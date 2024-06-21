@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Hero from "../sections/hero";
 import Cards from "../sections/cards";
 import ErrorBoundary from "../functions/ErrorBoundary";
@@ -15,3 +14,4 @@ export default function Home() {
     </main>
   );
 }
+

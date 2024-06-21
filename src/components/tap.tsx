@@ -2,21 +2,49 @@
 "use client"
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import FormPopup from './popup-form';
+import axios from '@/lib/axios';
 
 const Tap = () => {
 
   const [isScaled, setIsScaled] = useState(false);
   const [count, setCount] = useState(0);
+  const [userCount, setUserCount] = useState(0);
   const [showform, setShowform] = useState<boolean>(false);
 
-  const handleClick = () => {
+
+  const getClicks = async () => {
+    try {
+      const response = await axios.get(`clicks`);
+      setCount(response.data.data.totalClicks)
+    } catch (error) {
+      console.error("Error fetching Word:", error);
+    }
+  };
+
+  useEffect(() => {
+    getClicks();
+  }, []);
+
+  const handleClick = async () => {
     setIsScaled(true);
-    setCount(prevCount => prevCount + 1);
     setTimeout(() => {
       setIsScaled(false);
     }, 100); // 2000ms = 2 seconds
+
+    setCount(prevCount => prevCount + 1);
+
+    if (userCount < 1){
+      setUserCount(prevCount => prevCount + 1);-
+      // For Total Clicks
+      await axios.post(`clicks/clicked-users`, {"users": 1}); 
+    }
+
+    // For Total Clicks
+   await axios.post(`clicks`, {"clicks": 1}); 
+    
+
   };
 
   const showForm = ()=>{

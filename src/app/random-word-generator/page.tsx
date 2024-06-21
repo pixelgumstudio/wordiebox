@@ -8,9 +8,9 @@ import BackButton from '@/components/back-button';
 import axios from '@/lib/axios';
 import useMetadata from '@/functions/metadata';
 
-interface ApiResponse {
-  word: string;
-}
+// interface ApiResponse {
+//   word: string[];
+// }
 
 const RandomWord: FC = () => {
   const [number, setNumber] = useState<number>(1);
@@ -37,12 +37,8 @@ const RandomWord: FC = () => {
   const generate = async () => {
     try {
       setLoading(true);
-      const responses = await Promise.all(
-        Array.from({ length: number }).map(() =>
-          axios.get<ApiResponse>(`words/random-word`)
-        )
-      );
-      setWords(responses.map((response) => response.data.word));
+      const response = await axios.post(`/words/random-word`, { "numWords": number });
+      setWords(response.data.words);
       setLoading(false);
     } catch (error) {
       setLoading(false);
@@ -100,12 +96,12 @@ const RandomWord: FC = () => {
             random words
           </p>
 
-          <p className='p-2 w-full max-w-[360px] text-center font-medium mx-auto mt-10 h-fit bg-[#FFCC00] border-[#1C1C1C] border shadow-darkbox' onClick={generate}>
+          <p className='p-2 w-full max-w-[360px] cursor-pointer text-center font-medium mx-auto mt-10 h-fit bg-[#FFCC00] border-[#1C1C1C] border shadow-darkbox' onClick={generate}>
             Generate words{loading && "..."}
           </p>
 
           <div className="flex flex-wrap justify-center w-fit mx-auto gap-5 mt-12">
-            {words.map((word, index) => (
+          {words.length > 0 && words.map((word, index) => (
               <p key={index} className="inline-block text-black border-[#1C1C1C] bg-[#DFC3FF] border shadow-darkbox p-3 tablet:p-4 text-20 tablet:text-24 capitalize font-semibold hover:bg-[#e2c9ff]">
                 {word}
               </p>
