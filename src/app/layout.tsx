@@ -25,7 +25,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    url: "https://wordiebox.com",
     site: "https://wordiebox.com",
     images: "https://wordiebox.com/icon.png",
     title: "Wordiebox - Word counter & Improve Grammar",
