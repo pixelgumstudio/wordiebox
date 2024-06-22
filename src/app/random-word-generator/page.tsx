@@ -68,7 +68,7 @@ const RandomWord: FC = () => {
 
   return (
     // <ErrorBoundary>
-      <div className='w-full bg-[#FBF4EE]' id='hero'>
+      <div className='w-full ' id='hero'>
         <div className='w-full laptop:max-w-[947px] px-4 tablet:px-6 laptop:px-0 desktop:px-0 mx-auto py-[40px] tablet:py-[80px] laptop:py-[100px]'>
           <div className="relative mb-6 tablet:flex tablet:justify-center tablet:items-center tablet:h-11">
             <BackButton />

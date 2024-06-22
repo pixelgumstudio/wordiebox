@@ -41,6 +41,7 @@ export default function RootLayout({
     <html lang="en">
        <Head>
         <title>Wordiebox - Word counter & Improve Grammar</title>
+        <link rel="icon" href="/icon.ico" />
         <meta name="description" content="A number of free word tools to help improve give insight to your writing" />
         <meta name="author" content="Wordiebox" />
         <meta property="og:title" content="Wordiebox - Word counter & Improve Grammar" />
@@ -49,7 +50,7 @@ export default function RootLayout({
         <meta property="og:url" content="https://wordiebox.com" />
         <meta property="og:image" content="https://yourwebsite.com/default-image.jpg" />
       </Head>
-      <body className={`w-full mx-auto mt-[60px] bg-[#F8F7F1] ${inter.className}`}>
+      <body className={`w-full flex flex-col justify-between min-h-[100vh] h-full mx-auto mt-[60px] bg-[#FBF4EE] ${inter.className}`}>
         <Navbar />
         {children}
         <Footer />

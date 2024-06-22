@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const Footer = () => {
   return (
-    <div className='w-full' id='footer'>
+    <div className='w-full bg-white' id='footer'>
       <div className='w-full laptop:max-w-[1152px] px-4 tablet:px-6 laptop:px-8 xl:px-0  mx-auto py-[40px] tablet:py-[80px] laptop:py-[100px]'>
         <div className='flex flex-col gap-[153px;] laptop:flex-row laptop:items-start laptop:w-fit'>
           <Link href="/" className="flex items-center relative w-[149px] h-[37px]">
@@ -15,9 +15,10 @@ const Footer = () => {
 
           <div className='flex flex-col gap-3 desktop:gap-4'>
             <h2 className='text-[16px] font-semibold leading-[22px] text-[#484848] mb-2'>PRODUCTS</h2>
-            <Link  href='/#works' className='text-sm font-normal text-[#484848] laptop:text-[16px] leading-[22px] '>How it works</Link>
-            <Link  href='/#faq' className='text-sm font-normal text-[#484848] laptop:text-[16px] leading-[22px] '>Points system</Link>
-            <Link  href='/#pricing' className='text-sm font-normal text-[#484848] laptop:text-[16px] leading-[22px] '>Leaderboard</Link>
+            <Link  href='/word-of-the-day' className='text-sm font-normal text-[#484848] laptop:text-[16px] leading-[22px] '>Word Of The Day</Link>
+            <Link  href='/random-word-generator' className='text-sm font-normal text-[#484848] laptop:text-[16px] leading-[22px] '>Random Word Generator</Link>
+            <Link  href='/character-counter' className='text-sm font-normal text-[#484848] laptop:text-[16px] leading-[22px] '>Character Counter</Link>
+            <Link  href='/word-counter' className='text-sm font-normal text-[#484848] laptop:text-[16px] leading-[22px] '>Word Counter</Link>
           </div>
           <div className='flex flex-col gap-3 desktop:gap-4'>
             <h2 className='text-[16px] font-semibold leading-[22px] text-[#484848] mb-2'>CONTACT INFORMATION</h2>
