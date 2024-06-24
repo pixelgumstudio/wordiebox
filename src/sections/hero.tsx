@@ -2,7 +2,7 @@ const Hero = () => {
 
     return (
       <div className='w-full bg-[#FBF4EE]' id='hero'>
-        <div className='w-full laptop:max-w-[1152px] px-4 tablet:px-6 laptop:px-8 desktop:px-0 mx-auto py-[50px] tablet:py-[80px] laptop:py-[100px]'>
+        <div className='w-full laptop:max-w-[1152px] px-4 tablet:px-6 laptop:px-8 desktop:px-0 mx-auto py-[50px] tablet:pt-[80px] laptop:pt-[100px]'>
           <div className="flex flex-col gap-[50px] tablet:gap-20 laptop:flex-row laptop:items-center laptop:gap-6 desktop:gap-11">
   
               <div className="flex flex-col gap-4 tablet:gap-6 w-[90%] mx-auto max-w-[860px] text-center">
