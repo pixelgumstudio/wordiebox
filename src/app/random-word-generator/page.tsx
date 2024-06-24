@@ -37,7 +37,12 @@ const RandomWord: FC = () => {
   const generate = async () => {
     try {
       setLoading(true);
-      const response = await axios.post(`/words/random-word`, { "numWords": number });
+      const response = await axios.post(`/words/random-word`, { "numWords": number }, {
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+        },
+      });
       setWords(response.data.words);
       setLoading(false);
     } catch (error) {

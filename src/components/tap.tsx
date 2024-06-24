@@ -16,7 +16,12 @@ const Tap = () => {
 
   const getClicks = async () => {
     try {
-      const response = await axios.get(`clicks`);
+      const response = await axios.get(`clicks`, {
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+        },
+      });
       setCount(response.data.data.totalClicks)
     } catch (error) {
       console.error("Error fetching Word:", error);
@@ -38,11 +43,21 @@ const Tap = () => {
     if (userCount < 1){
       setUserCount(prevCount => prevCount + 1);-
       // For Total Clicks
-      await axios.post(`clicks/clicked-users`, {"users": 1}); 
+      await axios.post(`clicks/clicked-users`, {"users": 1}, {
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+        },
+      }); 
     }
 
     // For Total Clicks
-   await axios.post(`clicks`, {"clicks": 1}); 
+   await axios.post(`clicks`, {"clicks": 1}, {
+    headers: {
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Credentials": true,
+    },
+  }); 
     
 
   };

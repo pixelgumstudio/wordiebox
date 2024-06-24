@@ -15,7 +15,12 @@ function Emails() {
     const send = () => {
       if (email.match(emailRegex)){
      ( email !== "" && !error) &&
-        axios.post('newsletter', { email })
+        axios.post('newsletter', { email }, {
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Credentials": true,
+          },
+        })
           .then(response => {
             // Handle the successful response
             setStatus("success"),

@@ -27,7 +27,12 @@ const DailyWord = () => {
   const getWord = async () => {
     setLoading(true);
     try {
-      const response = await axios.post(`words/word-of-the-day`);
+      const response = await axios.post(`words/word-of-the-day`, {
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Credentials": true,
+        },
+      });
       setWord(response.data); 
       setLoading(false);
       console.log(response.data); 
