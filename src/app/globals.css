@@ -41,3 +41,6 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
 }
+.capitalize-first-letter::first-letter {
+  text-transform: uppercase;
+}

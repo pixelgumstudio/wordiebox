@@ -80,12 +80,12 @@ const DailyWord = () => {
           {currentDate.format("Do MMMM YYYY")}
         </p>
         <div className="text-black border border-[#1C1C1C] bg-[#FFF5C4] shadow-darkbox p-8 w-full my-6">
-          <h2 className="text-48 tablet:text-[90px] tablet:leading-[inherit] font-bold text-center">{word.word}</h2>
+          <h2 className="text-48 tablet:text-[90px] tablet:leading-[inherit] font-bold text-center capitalize-first-letter">{word.word}</h2>
         </div>
         <p className="text-center font-semibold text-24 text-[#1C1C1C] mt-10">
           Meaning
         </p>
-        <p className="px-4 w-[90%] max-w-[758px] mx-auto text-center mt-6 text-[24px] text-[#1C1C1C]">{word.meaning}</p>
+        <p className="px-4 w-[90%] max-w-[758px] mx-auto text-center mt-6 text-[24px] text-[#1C1C1C] capitalize-first-letter">{word.meaning}</p>
       <Emails />
       </>
 }

@@ -6,7 +6,7 @@ const Card = ({image, color, title, description, link}:{image: StaticImageData, 
     const imageUrl = typeof image === 'string' ? image : image?.src || ''
 
     return (
-      <div className='w-full max-w-[320px] h-full laptop:w-[30%] border-[#1C1C1C] border bg-white shadow-darkbox py-[7px] px-[5px] text-16 font-medium focus:outline-none mb-6'>
+      <div className='w-full max-w-[320px] h-[auto] laptop:w-[30%] border-[#1C1C1C] border bg-white shadow-darkbox py-[7px] px-[5px] text-16 font-medium focus:outline-none mb-6'>
         <Link href={link} className='flex flex-col text-left  tablet:max-w-[528px]'>
         <div className={`w-full h-[160px] p-5 mb-[10px] relative bg-no-repeat bg-bottom-right`}
          style={{
