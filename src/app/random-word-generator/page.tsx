@@ -1,12 +1,13 @@
 "use client"
 import Image from 'next/image';
-import React, { ChangeEvent, FC, useState } from 'react';
+import React, { ChangeEvent, FC, useEffect, useState } from 'react';
 import UpArrow from '/public/arrow-up.png';
 import DownArrow from '/public/down.png';
 import ErrorBoundary from '@/functions/ErrorBoundary';
 import BackButton from '@/components/back-button';
 import axios from '@/lib/axios';
 import useMetadata from '@/functions/metadata';
+import Popup from '@/components/popup';
 
 // interface ApiResponse {
 //   word: string[];
@@ -16,11 +17,27 @@ const RandomWord: FC = () => {
   const [number, setNumber] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
   const [words, setWords] = useState<string[]>([]);
+  const [copySuccess, setCopySuccess] = useState<boolean>(false);
+  const [showButton, setShowButton] = useState<boolean>(false);
+  const [copyText, setCopyText] = useState<string>('');
 
   const incrementNumber = () => {
     if (number < 10) {
     setNumber((prevNumber) => prevNumber + 1);
     }
+  };
+
+  const copyToClipboard = () => {
+    const word = words.join(', ');
+    navigator.clipboard.writeText(word).then(
+      () => {
+        setCopyText(word)
+        setCopySuccess(true);
+      },
+      (err) => {
+        setCopySuccess(false);
+      }
+    );
   };
 
   const decrementNumber = () => {
@@ -29,6 +46,17 @@ const RandomWord: FC = () => {
     }
   };
 
+  useEffect(() => {
+    if (copySuccess) {
+      const timer = setTimeout(() => {
+        setCopySuccess(false);
+        setCopyText('')
+      }, 3000); // Clear the message after 3 seconds
+
+      // Clean up the timer when the component unmounts or when copySuccess changes
+      return () => clearTimeout(timer);
+    }
+  }, [copySuccess]);
   // const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
   //   const value = parseInt(e.target.value, 10);
   //   if (!isNaN(value)) {
@@ -49,6 +77,7 @@ const RandomWord: FC = () => {
           "Access-Control-Allow-Credentials": true,
         },
       });
+      setShowButton(true)
       setWords(response.data.words);
       setLoading(false);
     } catch (error) {
@@ -119,11 +148,19 @@ const RandomWord: FC = () => {
 
           <div className="flex flex-wrap justify-center w-fit mx-auto gap-5 mt-12">
           {words.length > 0 && words.map((word, index) => (
-            <p key={index} className="text-center w-full max-w-[33.333333%] tablet:max-w-[20%] laptop:max-w-[16.666667%] inline-block text-black border-[#1C1C1C] bg-[#DFC3FF] border shadow-darkbox p-3 tablet:p-4 text-20 tablet:text-24 capitalize font-semibold hover:bg-[#e2c9ff]">
+            <p key={index} className="text-center w-fit inline-block text-black border-[#1C1C1C] bg-[#DFC3FF] border shadow-transparent p-3 tablet:p-4 text-20 tablet:text-24 capitalize font-semibold hover:bg-[#e2c9ff]">
+            {/* <p key={index} className="text-center w-full max-w-[33.333333%] tablet:max-w-[20%] laptop:max-w-[16.666667%] inline-block text-black border-[#1C1C1C] bg-[#DFC3FF] border shadow-darkbox p-3 tablet:p-4 text-20 tablet:text-24 capitalize font-semibold hover:bg-[#e2c9ff]"> */}
                 {word}
               </p>
             ))}
+
           </div>
+          {showButton &&
+          <div className='w-full text-center mt-6 tablet:mt-8'>
+          <button className='text-white border-[#fffff] bg-[#00A33F] border shadow-darkbox p-3' onClick={copyToClipboard}>Copy Words</button>
+          </div>
+}
+          <Popup visible={copySuccess} status="message" email={copyText} updateView={undefined} />
 
           <div className="mt-[100px] flex flex-col gap-[10px] text-black border border-[#1C1C1C] bg-[#FFFFFF] shadow-darkbox p-4 tablet:p-6 w-full mx-auto my-6">
             <p className="text-16 tablet:text-20 text-left font-semibold">What is a random word generator?</p>

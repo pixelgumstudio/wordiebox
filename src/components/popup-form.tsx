@@ -28,9 +28,13 @@ export default function FormPopup({visible, close}: {visible:boolean, close: any
       close(false);
       setShow(true);
     }, 1000)
+    const payload = {
+      email, 
+      idea: message
+    }
     if (email?.match(emailRegex)){
    ( email !== "" && !error) &&
-      axios.post('https://word-game-dic.cyclic.app/api/waitlist/join', { email })
+      axios.post('suggestion', { payload })
         .then(response => {
           // Handle the successful response
           setStatus("thanks"),
@@ -38,8 +42,6 @@ export default function FormPopup({visible, close}: {visible:boolean, close: any
           close(false)
         })
         .catch(error => {
-          // Handle errors
-          // console.log('Error:', error.response.data.message);
           if (error.response.data.message.includes("exists")){
           setStatus("used"),
           setShow(true)

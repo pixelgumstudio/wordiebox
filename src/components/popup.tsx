@@ -30,12 +30,17 @@ const response: Feedback[] =[ {
     status: 'fail',
     title: "Ooops",
     body: `Email not Accepted`
+},
+{
+  status: 'message',
+  title: "Message",
+  body: email
 }
 ]
 
 
 useEffect(()=>{
-    response.map(res => res.status === status &&  setContent(res))
+    response.map(res => res.status === status && setContent(res))
 },[response, status, visible])
 
 
@@ -44,14 +49,16 @@ useEffect(()=>{
     visible && (
       <div className="w-[100vw] h-[100vh] flex items-center justify-center bg-overlay fixed top-0 left-0 z-20">
         <div className="p-6 bg-[#F8F7F1] border text-center border-[#1C1C1C] w-full max-w-[398px]">
-          <h2 className={`text-48 font-bold font-comic mb-8 ${(status === "success" || status === "thanks") ? 'text-[#00A33F]' :  'text-[#F64300]'}`}>{content?.title}</h2>
-          <p className="text-20">{content?.body}</p>
+          <h2 className={`text-48 font-bold font-comic mb-8 ${(status === "success" || status === "thanks" || status === "message") ? 'text-[#00A33F]' :  'text-[#F64300]'}`}>{content?.title}</h2>
+          <p className="text-20 capitalize">{content?.body}</p>
+         {status !== "message" &&
           <button
             onClick={()=>updateView(false)}
             className="mt-10 cursor-pointer bg-[#FC0] hover:bg-[#EDBA00]  border-[#1C1C1C] border shadow-darkbox py-2 px-2 text-sm font-medium focus:outline-none "
           >
             Close
           </button>
+}
         </div>
       </div>
     )
