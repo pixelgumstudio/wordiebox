@@ -41,7 +41,8 @@ const response: Feedback[] =[ {
 
 useEffect(()=>{
     response.map(res => res.status === status && setContent(res))
-},[response, status, visible])
+// eslint-disable-next-line react-hooks/exhaustive-deps
+},[visible])
 
 
 

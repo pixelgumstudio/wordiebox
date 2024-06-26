@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react';
 import FormPopup from './popup-form';
 import axios from '@/lib/axios';
+import Popup from './popup';
 
 const Tap = () => {
 
@@ -12,7 +13,9 @@ const Tap = () => {
   const [count, setCount] = useState(0);
   const [userCount, setUserCount] = useState(0);
   const [showform, setShowform] = useState<boolean>(false);
-
+  const [show, setShow] = useState(false)
+  const [status, setStatus] = useState('')
+  const [email, setEmail] = useState<string>('');
 
   const getClicks = async () => {
     try {
@@ -65,8 +68,17 @@ const Tap = () => {
   const showForm = ()=>{
     setShowform(true)
   }
-  const closeForm = (response:boolean)=>{
-    setShowform(response)
+
+  const closeForm = (response:any)=>{
+    setStatus(response.message);
+    setShow(response.showPopup);
+    setEmail(response.email);
+    console.log(response)
+    setShowform(response.status)
+  }
+
+  const closeResponse =()=>{
+    setShow(false)
   }
 
     return (
@@ -83,6 +95,9 @@ const Tap = () => {
           </div>
 
           <FormPopup visible={showform} close={closeForm}/>
+
+        <Popup visible={show} updateView={closeResponse} status={status} email={email} />
+
                </div>
     )
   }
