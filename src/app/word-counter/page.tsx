@@ -76,7 +76,7 @@ function WordCount() {
       <h1 className='font-bold text-[#1C1C1C] mx-auto text-center text-24 tablet:text-32 mt-5 tablet:mt-0'>Word Counter</h1>
      </div>
     <div className='flex flex-col tablet:flex-row gap-3  justify-between items-center'>
-    <textarea name="message" rows={10} cols={50} placeholder='Start writing or paste text' value={text} onChange={count} className={`px-5 py-5  mt-2 outline-none h-fit w-full bg-transparent text-[#1C1C1C1] border-[#1C1C1C] border shadow-darkbox`}  />
+    <textarea name="message" rows={10} cols={50} placeholder='Start writing or paste text' value={text} onChange={count} className={`px-5 py-5  mt-2 outline-none h-fit w-full bg-transparent !text-[#1C1C1C1] border-[#1C1C1C] border shadow-darkbox`}  />
    <div className='flex tablet:flex-col gap-2 text-center'>
    <p className="w-[125px] tablet:w-[145px] text-black border-[#1C1C1C] bg-[#FFC4DF] border shadow-darkbox p-3 text-20 tablet:text-32 capitalize font-bold">{wordCount} <span className="block font-normal text-20 text-center">Words</span></p>
    <p className="w-[125px] tablet:w-[145px] text-black border-[#1C1C1C] bg-[#FFC4DF] border shadow-darkbox p-3 text-20 tablet:text-32 capitalize font-bold">{paragraphCount} <span className="block font-normal text-20 text-center">Lines</span></p>
