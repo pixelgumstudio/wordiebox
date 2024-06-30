@@ -93,7 +93,7 @@ function WordCount() {
       <p className="text-14 tablet:text-16 text-left">Disclaimer: We strive to make our tools as accurate as possible, but we cannot guarantee their accuracy in all cases.</p>
     </div>
   </div>
-  <GoogleTagManager gtmId="G-P8TXFVSRPZ" />
+  <GoogleTagManager gtmId="GTM-K8ST54XF" />
 
 </div>
   )

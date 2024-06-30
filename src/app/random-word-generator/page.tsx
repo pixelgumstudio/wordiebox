@@ -204,7 +204,7 @@ const RandomWord: FC = () => {
           </p>
         </div>
       </div>
-      <GoogleTagManager gtmId="G-P8TXFVSRPZ" />
+      <GoogleTagManager gtmId="GTM-K8ST54XF" />
 
     </div>
   );

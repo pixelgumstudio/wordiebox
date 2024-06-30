@@ -54,7 +54,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
-        <GoogleTagManager gtmId="G-P8TXFVSRPZ" />
+        <GoogleTagManager gtmId="GTM-K8ST54XF" />
       </body>
     </html>
   );

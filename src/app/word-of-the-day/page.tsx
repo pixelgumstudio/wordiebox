@@ -91,7 +91,7 @@ const DailyWord = () => {
       </>
 }
       </div>
-      <GoogleTagManager gtmId="G-P8TXFVSRPZ" />
+      <GoogleTagManager gtmId="GTM-K8ST54XF" />
 
     </div>
     // </ErrorBoundary>
