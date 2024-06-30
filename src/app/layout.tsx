@@ -49,12 +49,12 @@ export default function RootLayout({
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://wordiebox.com" />
         <meta property="og:image" content="https://yourwebsite.com/default-image.jpg" />
-        <GoogleTagManager gtmId="G-P8TXFVSRPZ" />
       </Head>
       <body className={`w-full flex flex-col justify-between min-h-[100vh] h-full mx-auto mt-[60px] bg-[#FBF4EE] ${inter.className}`}>
         <Navbar />
         {children}
         <Footer />
+        <GoogleTagManager gtmId="G-P8TXFVSRPZ" />
       </body>
     </html>
   );

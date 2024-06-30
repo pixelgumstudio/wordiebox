@@ -2,6 +2,7 @@
 "use client"
 import BackButton from '@/components/back-button'
 import useMetadata from '@/functions/metadata';
+import { GoogleTagManager } from '@next/third-parties/google';
 import React, { useState } from 'react'
 // import { Metadata } from 'next'
 
@@ -92,6 +93,8 @@ function WordCount() {
       <p className="text-14 tablet:text-16 text-left">Disclaimer: We strive to make our tools as accurate as possible, but we cannot guarantee their accuracy in all cases.</p>
     </div>
   </div>
+  <GoogleTagManager gtmId="G-P8TXFVSRPZ" />
+
 </div>
   )
 }

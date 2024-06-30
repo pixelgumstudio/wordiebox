@@ -7,6 +7,7 @@ import Emails from "../../components/emails";
 import axios from "@/lib/axios";
 import { LoadingOverlay } from "@/components/loader";
 import useMetadata from "@/functions/metadata";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 
 interface ApiResponse {
@@ -90,6 +91,7 @@ const DailyWord = () => {
       </>
 }
       </div>
+      <GoogleTagManager gtmId="G-P8TXFVSRPZ" />
 
     </div>
     // </ErrorBoundary>

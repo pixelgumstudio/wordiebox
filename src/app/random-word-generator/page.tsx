@@ -8,6 +8,7 @@ import BackButton from "@/components/back-button";
 import axios from "@/lib/axios";
 import useMetadata from "@/functions/metadata";
 import Popup from "@/components/popup";
+import { GoogleTagManager } from "@next/third-parties/google";
 
 const RandomWord: FC = () => {
   const [number, setNumber] = useState<number>(1);
@@ -203,6 +204,8 @@ const RandomWord: FC = () => {
           </p>
         </div>
       </div>
+      <GoogleTagManager gtmId="G-P8TXFVSRPZ" />
+
     </div>
   );
 };

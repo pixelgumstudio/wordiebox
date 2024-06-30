@@ -2,6 +2,7 @@
 "use client"
 import BackButton from '@/components/back-button'
 import useMetadata from '@/functions/metadata';
+import { GoogleTagManager } from '@next/third-parties/google';
 import React, { useState } from 'react'
 
 
@@ -61,6 +62,8 @@ function CharacterCount() {
           <p className="text-14 tablet:text-16 text-left">Additionally, Character Counter supports non-English languages like Japanese, Korean, and Chinese, where character count plays an important role. Whether you're crafting a tweet, composing a resume, or submitting an essay in any language, Character Counter ensures that you can monitor and adjust your text to meet specific character requirements accurately and efficiently.</p>
         </div>
       </div>
+      <GoogleTagManager gtmId="G-P8TXFVSRPZ" />
+
     </div>
       )
 }
