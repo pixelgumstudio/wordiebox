@@ -41,14 +41,14 @@ const LanguagesList: React.FC<LanguagesListProps> = ({ pageType }) => {
   return (
     <div className="my-10 tablet:my-[50px] py-10 tablet:py-[50px] bg-white ">
       <div className='w-full laptop:max-w-[947px] mx-auto'>
-      <h2 className="text-24 tablet:text-32 font-bold text-left mb-8 capitalize">{pageType} counter in other languages</h2>
+      <h2 className="text-24 tablet:text-32 text-[#1c1c1c] font-bold text-left mb-8 capitalize">{pageType} counter in other languages</h2>
       <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 desktop:grid-cols-6 gap-4 gap-y-10">
         {Object.keys(languagesData).map((letter) => (
           <div key={letter} className="relative">
-            <h3 className="text-xl font-bold mb-4">{letter}</h3>
+            <h3 className="text-24 font-semibold mb-4 text-[#1c1c1c]">{letter}</h3>
             <ul className="list-none pl-0">
               {languagesData[letter].map((language, index) => (
-                <li key={index} className="py-1">
+                <li key={index} className="py-1 text-[#484848] text-16">
                   <Link href={`/${pageType}-counter/${language}`}>
                     {language}
                   </Link>
