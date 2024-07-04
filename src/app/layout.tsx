@@ -5,6 +5,7 @@ import Navbar from "../sections/navbar";
 import Footer from "../sections/footer";
 import Head from "next/head";
 import {GoogleAnalytics, GoogleTagManager} from "@next/third-parties/google"
+// import useScrollToTop from "@/components/ScrollToTop";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -37,6 +38,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // useScrollToTop();
   return (
     <html lang="en">
        <Head>
@@ -51,6 +53,7 @@ export default function RootLayout({
         <meta property="og:image" content="https://yourwebsite.com/default-image.jpg" />
       </Head>
       <body className={`w-full flex flex-col justify-between min-h-[100vh] h-full mx-auto mt-[60px] bg-[#FBF4EE] ${inter.className}`}>
+        {/* <ScrollToTop /> */}
         <Navbar />
         {children}
         <Footer />
