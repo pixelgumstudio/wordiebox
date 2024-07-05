@@ -9,7 +9,7 @@ import Card from '../components/card'
 import Tap from '../components/tap'
 
 const Cards = () => {
-const [pageName, setPageName] =  useState<string | null>('english')
+const [pageName, setPageName] =  useState<string | null>('')
   useEffect(() => {
     const pageName:string | null = localStorage.getItem('language');
     pageName !== null && setPageName(pageName)

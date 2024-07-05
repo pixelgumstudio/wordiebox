@@ -10,19 +10,27 @@ import React, { useEffect, useState } from 'react'
 
 
 function PageFile() {
-  const pathname = usePathname();
-
-  useEffect(() => {
-    const pageName = pathname.split('/')[2];
-    setPageName(pageName)
-    localStorage.setItem('language', pageName);
-  }, [pathname]);
   
-  const [pageName, setPageName] =  useState<string | null>('english')
+  const [pageName, setPageName] =  useState<string>('english')
   const [text, setText] = useState<string>('');
   const [charCount, setCharCount] = useState(0);
   const [paragraphCount, setParagraphCount] = useState(0);
 
+  const pathname = usePathname();
+
+  useEffect(() => {
+    if(pathname.split('/')[2] === undefined){
+      const pageName = "english";
+      setPageName(pageName)
+      localStorage.setItem('language', pageName);
+    }else{
+        const pageName = pathname.split('/')[2];
+    setPageName(pageName)
+    localStorage.setItem('language', pageName);
+    }
+  
+  }, [pathname]);
+  
   const count = (event: { target: { value: any; }; }) => {
     const newText = event.target.value;
     setText(newText);
