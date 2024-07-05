@@ -6,20 +6,22 @@ import PageFile from './pageFile';
 export async function generateMetadata({ params }: { params: { language: string } }): Promise<Metadata> {
   const { language } = params;
 
+  const lang = language.replace(/-/g, " ");
+  
   return {
-  title: `Free online ${language} Character counter - Wordiebox.com`,
-  description: `${language} Character Counter tool is a free online tool that calculates the number of characters in your writing.`,
+  title: `Free online ${lang} Character counter - Wordiebox.com`,
+  description: `${lang} Character Counter tool is a free online tool that calculates the number of characters in your writing.`,
   openGraph: {
-    title: `Free online ${language} Character counter tool |  Wordiebox`,
-    description: `${language} Character Counter tool is a free online tool that calculates the number of characters in your writing.`,
-    url: `https://wordiebox.com/character-counter/${language}`,
+    title: `Free online ${lang} Character counter tool |  Wordiebox`,
+    description: `${lang} Character Counter tool is a free online tool that calculates the number of characters in your writing.`,
+    url: `https://wordiebox.com/character-counter/${lang}`,
     images: [{
       url: 'https://wordiebox.com/icon.png',
     }],
   },
   twitter: {
-    title: `Free online ${language} Character counter tool |  Wordiebox`,
-    description: `${language} Character Counter tool is a free online tool that calculates the number of characters in your writing.`,
+    title: `Free online ${lang} Character counter tool |  Wordiebox`,
+    description: `${lang} Character Counter tool is a free online tool that calculates the number of characters in your writing.`,
     images: [{
       url: 'https://wordiebox.com/icon.png',
     }],

@@ -11,7 +11,7 @@ import React, { useEffect, useState } from 'react'
 
 function PageFile() {
   
-  const [pageName, setPageName] =  useState<string>('english')
+  const [pageName, setPageName] =  useState<string>('')
   const [text, setText] = useState<string>('');
   const [charCount, setCharCount] = useState(0);
   const [paragraphCount, setParagraphCount] = useState(0);
@@ -24,7 +24,8 @@ function PageFile() {
       setPageName(pageName)
       localStorage.setItem('language', pageName);
     }else{
-        const pageName = pathname.split('/')[2];
+        const language = pathname.split('/')[2];
+        const pageName = language.replace(/-/g, " ");
     setPageName(pageName)
     localStorage.setItem('language', pageName);
     }

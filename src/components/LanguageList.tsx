@@ -1,6 +1,7 @@
 // components/LanguagesList.tsx
 import Link from 'next/link';
 import React from 'react';
+import { createSlug } from './slug';
 
 interface LanguagesData {
   [key: string]: string[];
@@ -49,7 +50,7 @@ const LanguagesList: React.FC<LanguagesListProps> = ({ pageType }) => {
             <ul className="list-none pl-0">
               {languagesData[letter].map((language, index) => (
                 <li key={index} className="py-1 text-[#484848] text-16">
-                  <Link href={`/${pageType}-counter/${language}`}>
+                  <Link href={`/${pageType}-counter/${createSlug(language)}`}>
                     {language}
                   </Link>
                 </li>
