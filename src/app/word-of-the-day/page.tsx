@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   title: 'Wordiebox - Word of the Day: Wordiebox | Merriam-Webster',
   description: 'Build your vocabulary: get a new word every day from Merriam-Webster dictionary. Learn the meaning, history, and fun facts.',
   icons: {
-    icon: '/public/icon.png',  // This sets the favicon for this specific page
+    icon: 'https://wordiebox.com/icon.png',  // This sets the favicon for this specific page
   },
   openGraph: {
     type: "website",

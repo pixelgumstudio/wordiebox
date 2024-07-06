@@ -7,7 +7,7 @@ export const metadata: Metadata = {
     description:
       "The free online random word generator tool allows you to create any number of random words you need for your project. Choose the number of random words you want to generate and generate the words",
       icons: {
-        icon: '/public/icon.png',  // This sets the favicon for this specific page
+        icon: 'https://wordiebox.com/icon.png',  // This sets the favicon for this specific page
       },
        openGraph: {
         type: "website",

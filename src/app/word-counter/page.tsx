@@ -10,7 +10,7 @@ export async function generateMetadata({ params }: { params: { language: string 
     title: `Free online ${lang} word counter - Wordiebox.com`,
     description: `${lang} Word Counter tool is a free online tool that calculates the number of words in your writing.`,
     icons: {
-      icon: '/public/icon.png',  // This sets the favicon for this specific page
+      icon: 'https://wordiebox.com/icon.png',  // This sets the favicon for this specific page
     },
     openGraph: {
       type: "website",
