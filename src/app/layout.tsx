@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Wordiebox - Word counter & Improve Grammar",
     description: "A number of free word tools to help improve give insight to your writing."
   }
-}
+};
 
 export default function RootLayout({
   children,
