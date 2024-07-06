@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: 'Wordiebox - Word counter & Improve Grammar',
   description: 'A number of free word tools to help improve give insight to your writing.',
   icons: {
-    icon: 'https://wordiebox.com/icon.png',  // This sets the favicon for this specific page
+    icon: 'https://wordiebox.com/seo-card.png',  // This sets the favicon for this specific page
   },
   openGraph: {
     type: "website",
