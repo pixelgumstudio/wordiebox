@@ -12,7 +12,7 @@ export const metadata: Metadata = {
         "The free online random word generator tool allows you to create any number of random words you need for your project. Choose the number of random words you want to generate and generate the words",
       url: "https://wordiebox.com/random-word-generator",
       images: [{
-        url: 'https://wordiebox.com/icon.png',
+        url: 'https://wordiebox.com/seo-card.png',
       }],
     },
     twitter: {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
       description:
         "The free online random word generator tool allows you to create any number of random words you need for your project. Choose the number of random words you want to generate and generate the words",
         images: [{
-          url: 'https://wordiebox.com/icon.png',
+          url: 'https://wordiebox.com/seo-card.png',
         }],
     },
   };

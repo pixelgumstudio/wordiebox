@@ -21,13 +21,13 @@ export const metadata: Metadata = {
     description: "A number of free word tools to help improve give insight to your writing.",
     siteName: "Wordiebox",
     images: [{
-      url: "https://wordiebox.com/icon.png",
+      url: "https://wordiebox.com/seo-card.png",
     }],
   },
   twitter: {
     card: "summary_large_image",
     site: "https://wordiebox.com",
-    images: "https://wordiebox.com/icon.png",
+    images: "https://wordiebox.com/seo-card.png",
     title: "Wordiebox - Word counter & Improve Grammar",
     description: "A number of free word tools to help improve give insight to your writing."
   }

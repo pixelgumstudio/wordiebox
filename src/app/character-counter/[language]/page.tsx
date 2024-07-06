@@ -16,14 +16,14 @@ export async function generateMetadata({ params }: { params: { language: string 
     description: `${lang} Character Counter tool is a free online tool that calculates the number of characters in your writing.`,
     url: `https://wordiebox.com/character-counter/${lang}`,
     images: [{
-      url: 'https://wordiebox.com/icon.png',
+      url: 'https://wordiebox.com/seo-card.png',
     }],
   },
   twitter: {
     title: `Free online ${lang} Character counter tool |  Wordiebox`,
     description: `${lang} Character Counter tool is a free online tool that calculates the number of characters in your writing.`,
     images: [{
-      url: 'https://wordiebox.com/icon.png',
+      url: 'https://wordiebox.com/seo-card.png',
     }],
   },
 }

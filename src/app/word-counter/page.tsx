@@ -14,14 +14,14 @@ export async function generateMetadata({ params }: { params: { language: string 
       description: `${lang} Word Counter tool is a free online tool that calculates the number of words in your writing.`,
       url: `https://wordiebox.com/word-counter/${lang}`,
       images: [{
-        url: 'https://wordiebox.com/icon.png',
+        url: 'https://wordiebox.com/seo-card.png',
       }],
     },
     twitter: {
       title: `Free online ${lang} word counter tool | Wordiebox`,
       description: `${lang} Word Counter tool is a free online tool that calculates the number of words in your writing.`,
       images: [{
-        url: 'https://wordiebox.com/icon.png',
+        url: 'https://wordiebox.com/seo-card.png',
       }],
     },
   };
