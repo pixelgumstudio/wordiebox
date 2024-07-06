@@ -9,15 +9,22 @@ export async function generateMetadata({ params }: { params: { language: string 
   return {
     title: `Free online ${lang} word counter - Wordiebox.com`,
     description: `${lang} Word Counter tool is a free online tool that calculates the number of words in your writing.`,
+    icons: {
+      icon: '/public/icon.png',  // This sets the favicon for this specific page
+    },
     openGraph: {
+      type: "website",
+      siteName: "Wordiebox",
       title: `Free online ${lang} word counter tool | Wordiebox`,
       description: `${lang} Word Counter tool is a free online tool that calculates the number of words in your writing.`,
-      url: `https://wordiebox.com/word-counter/${lang}`,
+      url: `https://wordiebox.com/word-counter`,
       images: [{
         url: 'https://wordiebox.com/seo-card.png',
       }],
     },
     twitter: {
+      card: "summary_large_image",
+      site: `https://wordiebox.com/word-counter`,
       title: `Free online ${lang} word counter tool | Wordiebox`,
       description: `${lang} Word Counter tool is a free online tool that calculates the number of words in your writing.`,
       images: [{

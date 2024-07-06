@@ -27,7 +27,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     site: "https://wordiebox.com",
-    images: "https://wordiebox.com/seo-card.png",
+    images: [{
+      url: 'https://wordiebox.com/seo-card.png',
+    }],
     title: "Wordiebox - Word counter & Improve Grammar",
     description: "A number of free word tools to help improve give insight to your writing."
   }

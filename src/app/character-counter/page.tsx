@@ -10,15 +10,22 @@ export async function generateMetadata({ params }: { params: { language: string 
   return {
   title: `Free online ${lang} Character counter - Wordiebox.com`,
   description: `${lang} Character Counter tool is a free online tool that calculates the number of characters in your writing.`,
+  icons: {
+    icon: '/public/icon.png',  // This sets the favicon for this specific page
+  },
   openGraph: {
+    type: "website",
+    siteName: "Wordiebox",
     title: `Free online ${lang} Character counter tool |  Wordiebox`,
     description: `${lang} Character Counter tool is a free online tool that calculates the number of characters in your writing.`,
-    url: `https://wordiebox.com/character-counter/${lang}`,
+    url: `https://wordiebox.com/character-counter`,
     images: [{
       url: 'https://wordiebox.com/seo-card.png',
     }],
   },
   twitter: {
+    card: "summary_large_image",
+    site: `https://wordiebox.com/character-counter`,
     title: `Free online ${lang} Character counter tool |  Wordiebox`,
     description: `${lang} Character Counter tool is a free online tool that calculates the number of characters in your writing.`,
     images: [{
