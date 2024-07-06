@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: 'Wordiebox - Word counter & Improve Grammar',
   description: 'A number of free word tools to help improve give insight to your writing.',
   icons: {
-    icon: 'https://wordiebox.com/seo-card.png',  // This sets the favicon for this specific page
+    icon: 'https://wordiebox.com/icon.png',  // This sets the favicon for this specific page
   },
   openGraph: {
     type: "website",
@@ -43,17 +43,6 @@ export default function RootLayout({
   // useScrollToTop();
   return (
     <html lang="en">
-       <Head>
-        <title>Wordiebox - Word counter & Improve Grammar</title>
-        <link rel="icon" href="/icon.ico" />
-        <meta name="description" content="A number of free word tools to help improve give insight to your writing" />
-        <meta name="author" content="Wordiebox" />
-        <meta property="og:title" content="Wordiebox - Word counter & Improve Grammar" />
-        <meta property="og:description" content="A number of free word tools to help improve give insight to your writing" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://wordiebox.com" />
-        <meta property="og:image" content="https://yourwebsite.com/default-image.jpg" />
-      </Head>
       <body className={`w-full flex flex-col justify-between min-h-[100vh] h-full mx-auto mt-[60px] bg-[#FBF4EE] ${inter.className}`}>
         {/* <ScrollToTop /> */}
         <Navbar />
