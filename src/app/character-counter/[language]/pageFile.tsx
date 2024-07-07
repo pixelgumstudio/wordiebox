@@ -6,6 +6,7 @@ import useMetadata from '@/functions/metadata';
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
+import Character_Counter from '/public/character-counter.png';
 
 
 
@@ -65,7 +66,7 @@ function PageFile() {
       <div className='w-full laptop:max-w-[947px] mx-auto'>
         <div className="relative mb-6 tablet:flex tablet:justify-center tablet:items-center tablet:h-11">
           <BackButton />
-          <h1 className='font-bold text-[#1C1C1C] mx-auto text-center text-24 tablet:text-32 mt-5 tablet:mt-0 capitalize'>Free online {(pageName)} word Counter</h1>
+          <h1 className='font-bold text-[#1C1C1C] mx-auto text-center text-24 tablet:text-32 mt-5 tablet:mt-0 capitalize'>Free online {(pageName)} Character Counter</h1>
          </div>
         <div className='flex flex-col tablet:flex-row gap-3 justify-between items-center'>
         <textarea name="message" rows={10} cols={50} placeholder={`Start typing your ${pageName} or paste text`} value={text} onChange={count} className={`px-5 py-5  mt-2 outline-none h-fit w-full bg-white !text-[#1C1C1C] border-[#1C1C1C] border shadow-darkbox`}  />
