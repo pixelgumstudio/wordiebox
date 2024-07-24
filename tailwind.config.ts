@@ -19,6 +19,7 @@ const config: Config = {
       },
       spacing: {
         '25': '100px',
+        '15': '60px',
       },
       boxShadow: {
         'darkbox': '2px 2px 0px 0px #000',

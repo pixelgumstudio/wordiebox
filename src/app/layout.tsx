@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Bricolage_Grotesque, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "../sections/navbar";
 import Footer from "../sections/footer";
 import Head from "next/head";
 import {GoogleAnalytics, GoogleTagManager} from "@next/third-parties/google"
 // import useScrollToTop from "@/components/ScrollToTop";
-const inter = Inter({ subsets: ["latin"] });
+const Bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: 'Wordiebox - Word counter & Improve Grammar',
@@ -43,7 +43,7 @@ export default function RootLayout({
   // useScrollToTop();
   return (
     <html lang="en">
-      <body className={`w-full flex flex-col justify-between min-h-[100vh] h-full mx-auto mt-[60px] bg-[#FBF4EE] ${inter.className}`}>
+      <body className={`w-full flex flex-col justify-between min-h-[100vh] h-full mx-auto mt-[60px] bg-[#FBF4EE] ${Bricolage.className}`}>
         {/* <ScrollToTop /> */}
         <Navbar />
         {children}

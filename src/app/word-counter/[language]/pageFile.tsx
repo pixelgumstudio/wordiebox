@@ -2,6 +2,7 @@
 "use client"
 import BackButton from '@/components/back-button'
 import LanguagesList from '@/components/LanguageList';
+import Layout from '@/components/layout';
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
@@ -50,13 +51,8 @@ function PageFile() {
   
 
   return (
-    <div className='w-full bg-[#FBF4EE]' id='hero'>
-    <div className='w-full px-4 tablet:px-6 laptop:px-0 mx-auto py-[50px] tablet:py-[80px] laptop:py-[100px]'>
+    <Layout title={`Free online ${(pageName)} Word Counter`}>
     <div className='w-full laptop:max-w-[947px] mx-auto'>
-    <div className="relative mb-6 tablet:flex tablet:justify-center tablet:items-center tablet:h-11">
-      <BackButton />
-      <h1 className='font-bold text-[#1C1C1C] mx-auto text-center text-24 tablet:text-32 mt-5 tablet:mt-0 capitalize'>Free online {(pageName)} word Counter</h1>
-     </div>
     <div className='flex flex-col tablet:flex-row gap-3  justify-between items-center'>
     <textarea name="message" rows={10} cols={50} placeholder={`Start typing your ${pageName} or paste text`} value={text} onChange={count} className={`px-5 py-5  mt-2 outline-none h-fit w-full bg-white !text-[#1C1C1C] border-[#1C1C1C] border shadow-darkbox`}  />
    <div className='flex tablet:flex-col gap-2 text-center'>
@@ -76,10 +72,7 @@ function PageFile() {
       <p className="text-14 tablet:text-16 text-left">Disclaimer: We strive to make our tools as accurate as possible, but we cannot guarantee their accuracy in all cases.</p>
     </div>
     </div>
-  </div>
-  <GoogleTagManager gtmId="GTM-K8ST54XF" />
-  <GoogleAnalytics gaId="G-P8TXFVSRPZ" />
-</div>
+  </Layout>
   )
 }
 

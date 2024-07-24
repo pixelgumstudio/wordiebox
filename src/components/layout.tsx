@@ -1,59 +1,29 @@
-import Head from 'next/head';
-import { ReactNode } from 'react';
-
-export interface Metadata {
-    title: string;
-    description: string;
-    keywords: string;
-    icons: {
-      icon: string;
-    };
-    openGraph?: {
-      type: string;
-      url: string;
-      title: string;
-      description: string;
-      siteName: string;
-      images?: {
-        url: string;
-      }[];
-    };
-    twitter?: {
-      card: string;
-      site: string;
-      images: string;
-      title: string;
-      description: string;
-    };
-  }
-
+/* eslint-disable react/no-unescaped-entities */
+"use client"
+import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
+import React, { ReactNode } from 'react';
 
 interface LayoutProps {
-    children: ReactNode;
-  }
-const metadata: Metadata = {
-  title: 'My Next.js App',
-  description: 'This is a description of my Next.js app.',
-  keywords: 'Next.js, React, SEO',
-  icons: {
-    icon: '/favicon.ico', // Replace with the path to your favicon
-  },
-};
+  children: ReactNode;
+  title: string;
+}
 
-  
-const Layout: React.FC<LayoutProps> = ({ children }) => {
-  return (
-    <>
-      <Head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
-        <meta name="keywords" content={metadata.keywords} />
-        <link rel="icon" href={metadata.icons.icon} />
-        {/* Add Open Graph and Twitter Card metadata here */}
-      </Head>
-      {children}
-    </>
-  );
-};
+const Layout: React.FC<LayoutProps> = ({ children, title }) => {
 
-export default Layout;
+    return (
+      <div className='w-full bg-[#FBF4EE]' id='hero'>
+      <div className='w-full px-4 tablet:px-6 laptop:px-0 mx-auto py-[50px] tablet:py-[80px] laptop:py-[100px]'>
+      <div className="relative text-center mb-8 flex flex-col gap-6 tablet:justify-center tablet:items-center">
+        <p className='text-[#757575] font-medium'>Tools/<span className='text-[#1C1C1C]'>{title}</span></p>
+          <h1 className='font-bold text-[#1C1C1C] mx-auto text-center text-24 tablet:text-32 mt-5 tablet:mt-0 capitalize'>{title}</h1>
+         </div>
+       {children}
+     
+    </div>
+      <GoogleTagManager gtmId="GTM-K8ST54XF" />
+      <GoogleAnalytics gaId="G-P8TXFVSRPZ" />
+    </div>
+      )
+}
+
+export default Layout

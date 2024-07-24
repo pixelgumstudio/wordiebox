@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: { params: { language: string 
 
   const lang = language !== undefined ? language : "english";
   return {
-  title: `Free online ${lang} Character counter - Wordiebox.com`,
+  title: `free online ${lang} character counter - Wordiebox.com`,
   description: `${lang} Character Counter tool is a free online tool that calculates the number of characters in your writing.`,
   icons: {
     icon: 'https://wordiebox.com/icon.png',  // This sets the favicon for this specific page

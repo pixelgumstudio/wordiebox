@@ -4,10 +4,9 @@ import React, { ChangeEvent, FC, useEffect, useState } from "react";
 import UpArrow from "/public/arrow-up.png";
 import DownArrow from "/public/down.png";
 import ErrorBoundary from "@/functions/ErrorBoundary";
-import BackButton from "@/components/back-button";
 import axios from "@/lib/axios";
 import Popup from "@/components/popup";
-import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import Layout from "@/components/layout";
 
 const PageFile: FC = () => {
   const [number, setNumber] = useState<number>(1);
@@ -84,14 +83,9 @@ const PageFile: FC = () => {
 
   return (
     // <ErrorBoundary>
-    <div className="w-full " id="hero">
-      <div className="w-full laptop:max-w-[947px] px-4 tablet:px-6 laptop:px-0 desktop:px-0 mx-auto py-[40px] tablet:py-[80px] laptop:py-[100px]">
-        <div className="relative mb-6 tablet:flex tablet:justify-center tablet:items-center tablet:h-11">
-          <BackButton />
-          <h1 className="font-bold text-[#1C1C1C] mx-auto text-center text-24 tablet:text-32 mt-5 tablet:mt-0">
-            Random Word Generator
-          </h1>
-        </div>
+    <Layout title="Random Words Generator">
+      <div className="w-full laptop:max-w-[947px] px-4 tablet:px-6 laptop:px-0 desktop:px-0 mx-auto">
+       
         <p className="flex justify-center items-center text-[#1C1C1C] text-20 tablet:text-24 font-normal whitespace-nowrap text-center">
           Generate
           <div className="flex justify-between items-center px-3 py-2 mx-2 outline-none h-9 w-[72px] bg-transparent border-[#1C1C1C] border shadow-darkbox text-center">
@@ -182,9 +176,7 @@ const PageFile: FC = () => {
           </p>
         </div>
       </div>
-      <GoogleTagManager gtmId="GTM-K8ST54XF" />
-      <GoogleAnalytics gaId="G-P8TXFVSRPZ" />
-    </div>
+      </Layout>
   );
 };
 

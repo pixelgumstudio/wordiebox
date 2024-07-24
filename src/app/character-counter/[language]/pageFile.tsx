@@ -1,12 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client"
-import BackButton from '@/components/back-button'
 import LanguagesList from '@/components/LanguageList';
-import useMetadata from '@/functions/metadata';
-import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
 import { usePathname } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
-import Character_Counter from '/public/character-counter.png';
+import Layout from '@/components/layout';
 
 
 
@@ -42,32 +39,10 @@ function PageFile() {
     setParagraphCount(paragraphs.length);
   };
 
-  const metadata = {
-    title: `Free online ${pageName} Character counter - Wordiebox.com`,
-    description: `${pageName} Character Counter tool is a free online tool that calculates the number of characters in your writing.`,
-    openGraph: {
-      title: `Free online ${pageName} Character counter tool |  Wordiebox`,
-      description: `${pageName} Character Counter tool is a free online tool that calculates the number of characters in your writing.`,
-      url: `https://wordiebox.com/character-counter/${pageName}`,
-      image: 'https://wordiebox.com/icon.png',
-    },
-    twitter: {
-      title: `Free online ${pageName} Character counter tool |  Wordiebox`,
-      description: `${pageName} Character Counter tool is a free online tool that calculates the number of characters in your writing.`,
-      image: 'https://wordiebox.com/icon.png',
-    },
-  };
-
-  useMetadata(metadata);
 
     return (
-      <div className='w-full bg-[#FBF4EE]' id='hero'>
-      <div className='w-full px-4 tablet:px-6 laptop:px-0 mx-auto py-[50px] tablet:py-[80px] laptop:py-[100px]'>
+           <Layout title={`Free online ${(pageName)} Character Counter`}>
       <div className='w-full laptop:max-w-[947px] mx-auto'>
-        <div className="relative mb-6 tablet:flex tablet:justify-center tablet:items-center tablet:h-11">
-          <BackButton />
-          <h1 className='font-bold text-[#1C1C1C] mx-auto text-center text-24 tablet:text-32 mt-5 tablet:mt-0 capitalize'>Free online {(pageName)} Character Counter</h1>
-         </div>
         <div className='flex flex-col tablet:flex-row gap-3 justify-between items-center'>
         <textarea name="message" rows={10} cols={50} placeholder={`Start typing your ${pageName} or paste text`} value={text} onChange={count} className={`px-5 py-5  mt-2 outline-none h-fit w-full bg-white !text-[#1C1C1C] border-[#1C1C1C] border shadow-darkbox`}  />
        <div className='flex tablet:flex-col gap-2 text-center'>
@@ -85,10 +60,7 @@ function PageFile() {
           <p className="text-14 tablet:text-16 text-left">Additionally, Character Counter supports non-English languages like Japanese, Korean, and Chinese, where character count plays an important role. Whether you're crafting a tweet, composing a resume, or submitting an essay in any language, Character Counter ensures that you can monitor and adjust your text to meet specific character requirements accurately and efficiently.</p>
         </div>
       </div>
-    </div>
-      <GoogleTagManager gtmId="GTM-K8ST54XF" />
-      <GoogleAnalytics gaId="G-P8TXFVSRPZ" />
-    </div>
+      </Layout>
       )
 }
 

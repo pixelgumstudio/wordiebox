@@ -7,6 +7,7 @@ import Emails from "../../components/emails";
 import axios from "@/lib/axios";
 import { LoadingOverlay } from "@/components/loader";
 import { GoogleAnalytics, GoogleTagManager } from "@next/third-parties/google";
+import Layout from "@/components/layout";
 
 
 
@@ -51,15 +52,10 @@ const PageFile = () => {
 
   return (
     // <ErrorBoundary>
-    <div className="w-full bg-[#FBF4EE]" id="hero">
-      <div className="relative w-full min-h-[400px] laptop:max-w-[947px] px-4 tablet:px-6 laptop:px-8 desktop:px-0 mx-auto py-[50px] tablet:py-[80px] laptop:py-[100px]">
+    <Layout title={`Word Of The Day`}>
+      <div className="relative w-full min-h-[400px] laptop:max-w-[947px] px-4 tablet:px-6 laptop:px-8 desktop:px-0 mx-auto">
       {loading ? <LoadingOverlay/> :
-       <>      <div className="relative mb-6 tablet:flex tablet:justify-center tablet:items-center tablet:h-11">
-          <BackButton />
-          <h1 className='font-bold text-[#1C1C1C] mx-auto text-center text-24 tablet:text-32 mt-5 tablet:mt-0'>
-            Word Of The Day
-          </h1>
-        </div>
+       <>     
         <p className="text-[#1C1C1C] text-24 font-normal text-center">
           {currentDate.format("Do MMMM YYYY")}
         </p>
@@ -74,9 +70,7 @@ const PageFile = () => {
       </>
 }
       </div>
-      <GoogleTagManager gtmId="GTM-K8ST54XF" />
-      <GoogleAnalytics gaId="G-P8TXFVSRPZ" />
-    </div>
+      </Layout>
     // </ErrorBoundary>
   );
 };
