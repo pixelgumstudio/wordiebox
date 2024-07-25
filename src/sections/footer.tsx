@@ -5,7 +5,7 @@ import Image from'next/image'
 
 const Footer = () => {
   return (
-    <div className='w-full bg-white' id='footer'>
+    <div className='w-full bg-[#FBF4EE]' id='footer'>
       <div className='w-full laptop:max-w-[1152px] px-4 tablet:px-6 laptop:px-8 xl:px-0  mx-auto py-[40px] tablet:py-[80px] laptop:py-[100px]'>
         <div className='flex flex-col gap-[153px;] laptop:flex-row laptop:items-start laptop:w-fit'>
           <Link href="/" className="flex items-center relative w-[149px] h-[37px]">

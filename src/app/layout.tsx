@@ -43,7 +43,7 @@ export default function RootLayout({
   // useScrollToTop();
   return (
     <html lang="en">
-      <body className={`w-full flex flex-col justify-between min-h-[100vh] h-full mx-auto mt-[60px] bg-[#FBF4EE] ${Bricolage.className}`}>
+      <body className={`w-full flex flex-col justify-between min-h-[100vh] h-full mx-auto mt-[60px] bg-[#ffffff] ${Bricolage.className}`}>
         {/* <ScrollToTop /> */}
         <Navbar />
         {children}

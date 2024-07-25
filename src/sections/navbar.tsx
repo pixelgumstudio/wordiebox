@@ -6,7 +6,7 @@ import Logo from '/public/Logo.svg'
 const Navbar = () => {
 
     return (
-        <div className=" w-full bg-[#F8F7F1] border-b border-b-[#8B8B8B] px-4 tablet:px-6 laptop:px-8 xl:px-0 fixed top-0 z-20">
+        <div className=" w-full bg-[#FFFFFF] border-b border-b-[#8B8B8B] px-4 tablet:px-6 laptop:px-8 xl:px-0 fixed top-0 z-20">
             <nav className="sticky top-0 z-10  block items-center  h-[40px] my-[10px]">
                 <div
                     className="flex items-center justify-center  w-full laptop:max-w-[1152px] mx-auto">

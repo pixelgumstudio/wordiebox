@@ -103,7 +103,7 @@ const [pageName, setPageName] =  useState<string | null>('')
     }
   ];
   return (
-    <div className='w-full bg-[#FBF4EE] '>
+    <div className='w-full'>
        <div id='cards' className='w-full laptop:max-w-[1152px] mx-auto px-4 tablet:px-6 laptop:px-8 desktop:px-0 text-center  pb-[40px] tablet:pb-[80px] laptop:pb-[100px]'>
       <div className='flex flex-wrap gap-5 tablet:gap-8 items-center justify-center laptop:justify-start laptop:items-stretch text-center'>
      {links.map((link)=>

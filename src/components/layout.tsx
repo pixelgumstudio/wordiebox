@@ -11,7 +11,7 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children, title }) => {
 
     return (
-      <div className='w-full bg-[#FBF4EE]' id='hero'>
+      <div className='w-full bg-[#FFFFFF]' id='hero'>
       <div className='w-full px-4 tablet:px-6 laptop:px-0 mx-auto py-[50px] tablet:py-[80px] laptop:py-[100px]'>
       <div className="relative text-center mb-8 flex flex-col gap-6 tablet:justify-center tablet:items-center">
         <p className='text-[#757575] font-medium'>Tools/<span className='text-[#1C1C1C]'>{title}</span></p>
