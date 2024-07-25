@@ -122,6 +122,7 @@ const PageFile = () => {
               tOgGlE
             </p>
           </div>
+          
           <CopyButton textToCopy={transformedText} size="full" />
         </div>
       </div>

@@ -7,6 +7,7 @@ import ErrorBoundary from "@/functions/ErrorBoundary";
 import axios from "@/lib/axios";
 import Popup from "@/components/popup";
 import Layout from "@/components/layout";
+import CopyButton from "@/components/copy-content";
 
 const PageFile: FC = () => {
   const [number, setNumber] = useState<number>(1);
@@ -85,8 +86,7 @@ const PageFile: FC = () => {
     // <ErrorBoundary>
     <Layout title="Random Words Generator">
       <div className="w-full laptop:max-w-[947px] px-4 tablet:px-6 laptop:px-0 desktop:px-0 mx-auto">
-       
-        <p className="flex justify-center items-center text-[#1C1C1C] text-20 tablet:text-24 font-normal whitespace-nowrap text-center">
+        <div className="flex justify-center items-center text-[#1C1C1C] text-20 tablet:text-24 font-normal whitespace-nowrap text-center">
           Generate
           <div className="flex justify-between items-center px-3 py-2 mx-2 outline-none h-9 w-[72px] bg-transparent border-[#1C1C1C] border shadow-darkbox text-center">
             <select
@@ -117,7 +117,7 @@ const PageFile: FC = () => {
             </div>
           </div>
           random words
-        </p>
+        </div>
 
         <p
           className="p-2 w-full max-w-[360px] cursor-pointer text-center font-medium mx-auto mt-10 h-fit bg-[#FFCC00] border-[#1C1C1C] border shadow-darkbox"
@@ -140,20 +140,9 @@ const PageFile: FC = () => {
         </div>
         {showButton && (
           <div className="w-full text-center mt-6 tablet:mt-8">
-            <button
-              className="text-white border-[#fffff] bg-[#00A33F] border shadow-darkbox p-3"
-              onClick={copyToClipboard}
-            >
-              Copy Words
-            </button>
+            <CopyButton textToCopy={words} text="Copy State" />
           </div>
         )}
-        <Popup
-          visible={copySuccess}
-          status="message"
-          email={copyText}
-          updateView={undefined}
-        />
 
         <div className="mt-[100px] flex flex-col gap-[10px] text-black border border-[#1C1C1C] bg-[#FFFFFF] shadow-darkbox p-4 tablet:p-6 w-full mx-auto my-6">
           <p className="text-16 tablet:text-20 text-left font-semibold">
@@ -176,7 +165,7 @@ const PageFile: FC = () => {
           </p>
         </div>
       </div>
-      </Layout>
+    </Layout>
   );
 };
 

@@ -44,7 +44,7 @@ function PageFile() {
               >
                 Output
               </p>
-              <CopyButton  textToCopy={strikethroughText} text="Copy Cursive Code" />
+              <CopyButton textToCopy={strikethroughText} text="Copy Strikethrough Text" />
             </div>
             <textarea
               disabled

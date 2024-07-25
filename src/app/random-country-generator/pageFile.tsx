@@ -8,6 +8,7 @@ import Layout from "@/components/layout";
 import Dropdown from "@/components/dropdown";
 import { createSlug } from "@/components/slug";
 import { continents } from "@/lib/countries";
+import CopyButton from "@/components/copy-content";
 
 const PageFile: FC = () => {
   const [country, setCountry] = useState<string>("");
@@ -43,7 +44,11 @@ const PageFile: FC = () => {
             {country}
           </p>
         )}
-
+        {country.length > 0 &&
+          <div className="w-full text-center mt-6 tablet:mt-8">
+          <CopyButton textToCopy={country} text='Copy Country'/>
+          </div>
+}
         <div className="mt-[100px] flex flex-col gap-[10px] text-black border border-[#1C1C1C] bg-[#FFFFFF] shadow-darkbox p-4 tablet:p-6 w-full mx-auto my-6">
           <p className="text-16 tablet:text-20 text-left font-semibold">
             Using the random country generator

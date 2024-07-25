@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 interface CopyButtonProps {
-  textToCopy: string;
+  textToCopy: string | string[];
   size?: string;
   text?: string;
   style?: string;
@@ -16,11 +16,12 @@ const CopyButton: React.FC<CopyButtonProps> = ({
   const [copySuccess, setCopySuccess] = useState<boolean>(false);
 
   const handleCopy = () => {
+    const word = Array.isArray(textToCopy) ? textToCopy.join(", ") : textToCopy;
     navigator.clipboard
-      .writeText(textToCopy)
+      .writeText(word)
       .then(() => {
         setCopySuccess(true);
-        if (textToCopy) {
+        if (word) {
           const timer = setTimeout(() => {
             setCopySuccess(false);
           }, 500); // Clear the message after 3 seconds
@@ -35,6 +36,7 @@ const CopyButton: React.FC<CopyButtonProps> = ({
   return (
     <>
       <button
+      disabled={textToCopy.length > 0 ? false : true }
         onClick={handleCopy}
         className={`${
           size === "full" ? "w-full" : "w-fit"
