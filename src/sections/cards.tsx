@@ -25,11 +25,32 @@ const [pageName, setPageName] =  useState<string | null>('')
       link: "/word-of-the-day",
     },
     {
-      color: "#DFC3FF",
-      image: "/word-generator.png",
-      title: 'Random Word Generator',
-      description: "In need of a creative spark? check out random word generator!",
-      link: "random-word-generator",
+      color: "#C2FFD9",
+      image: "/capitalize-my-title.png",
+      title: 'Capitalize My Title',
+      description: "Convert your text to capital letters automatically. Our tool can convert your text to Title Case, sentence case, UPPERCASE and lowercase",
+      link: "capitalization-tool",
+    },
+    {
+      color: "#C2FFD9",
+      image: "/random-country-generator.png",
+      title: 'Random Country Generator',
+      description: "Random Country will generate a new random country from the continent you have selected.",
+      link: "random-country-generator",
+    },
+    {
+      color: "#C2FFD9",
+      image: "/morse-code.png",
+      title: 'Morse Code Translator',
+      description: "The morse code translator can translate text from ordinary text into morse code text. ",
+      link: "morse-code-translator",
+    },
+    {
+      color: "#C2FFD9",
+      image: "/random-state-generator.png",
+      title: 'Random State Generator',
+      description: "Have trouble tracking your word count? check this out.",
+      link: "random-state-generator",
     },
     {
       color: "#FFC4DF",
@@ -40,27 +61,6 @@ const [pageName, setPageName] =  useState<string | null>('')
     },
     {
       color: "#C2FFD9",
-      image: "/word-counter.png",
-      title: 'Word Counter',
-      description: "Have trouble tracking your word count? check out word counter.",
-      link: `word-counter/${pageName ? createSlug(pageName) : pageName}`,
-    },
-    {
-      color: "#C2FFD9",
-      image: "/morse-code.png",
-      title: 'Morse Code Translator',
-      description: "The morse code translator can translate text from ordinary text into morse code text. ",
-      link: "morse-code-translator",
-    },
-    // {
-    //   color: "#C2FFD9",
-    //   image: "/pokemon.png",
-    //   title: 'Pokemon Name Generator',
-    //   description: 'Creating random Pokemon names is easy with our tool. Just select the options you want above and then click &quot;',
-    //   link: "pokemon-name-generator",
-    // },
-    {
-      color: "#C2FFD9",
       image: "/cursive-text.png",
       title: 'Cursive Text Generator',
       description: 'The cursive text translator converts normal text to cursive text.',
@@ -68,10 +68,17 @@ const [pageName, setPageName] =  useState<string | null>('')
     },
     {
       color: "#C2FFD9",
-      image: "/capitalize-my-title.png",
-      title: 'Capitalize My Title',
-      description: "Convert your text to capital letters automatically. Our tool can convert your text to Title Case, sentence case, UPPERCASE and lowercase",
-      link: "capitalization-tool",
+      image: "/word-counter.png",
+      title: 'Word Counter',
+      description: "Have trouble tracking your word count? check out word counter.",
+      link: `word-counter/${pageName ? createSlug(pageName) : pageName}`,
+    },
+    {
+      color: "#DFC3FF",
+      image: "/word-generator.png",
+      title: 'Random Word Generator',
+      description: "In need of a creative spark? check out random word generator!",
+      link: "random-word-generator",
     },
     {
       color: "#C2FFD9",
@@ -82,25 +89,20 @@ const [pageName, setPageName] =  useState<string | null>('')
     },
     {
       color: "#C2FFD9",
-      image: "/random-state-generator.png",
-      title: 'Random State Generator',
-      description: "Have trouble tracking your word count? check this out.",
-      link: "random-state-generator",
-    },
-    {
-      color: "#C2FFD9",
       image: "/password-generator.png",
       title: 'Password Generator',
       description: "Create a secure password using our password generator tool.",
       link: "password-generator",
     },
-    {
-      color: "#C2FFD9",
-      image: "/random-country-generator.png",
-      title: 'Random Country Generator',
-      description: "Random Country will generate a new random country from the continent you have selected.",
-      link: "random-country-generator",
-    }
+   
+    // {
+    //   color: "#C2FFD9",
+    //   image: "/pokemon.png",
+    //   title: 'Pokemon Name Generator',
+    //   description: 'Creating random Pokemon names is easy with our tool. Just select the options you want above and then click &quot;',
+    //   link: "pokemon-name-generator",
+    // },
+
   ];
   return (
     <div className='w-full'>

@@ -91,7 +91,7 @@ const Tap = () => {
           <p className='w-full max-w-[300px] font-normal leading-[22px] text-[24px] text-[#2E2E27] tablet:text-[20px] tablet:leading-[28px] tablet:tracking-[-0.8px] laptop:text-[24px] laptop:leading-8 '>This button has been tapped <span className='text-[#C19700] font-semibold'>{count} times today!</span></p>
         </div>
         <div className='py-2 '>
-          <p className='text-16 text-[#484848] laptop:text-20 font-normal text-left'>We use this button to track how many users visit this page and use our apps. Feel free to explore it. If you like our apps and want us to create more, Please <Link target='_blank' href='https://olayanjuidris.gumroad.com/l/wordieboxsupport' className="font-semibold cursor-pointer border-b border-b-[#64645F]" >Support us.</Link> Have a Word app idea? <span onClick={showForm} className="font-semibold cursor-pointer border-b border-b-[#64645F]">Suggest it to us.</span>  </p>
+          <p className='text-16 text-[#484848] laptop:text-20 font-normal text-left'>We use this button to track how many users visit this page and use our apps. Feel free to explore it. If you like our apps and want us to create more, <br/>Please <Link target='_blank' href='https://olayanjuidris.gumroad.com/l/wordieboxsupport' className="font-semibold cursor-pointer border-b border-b-[#64645F]" >Support us.</Link> <br/>Have a Word app idea? <span onClick={showForm} className="font-semibold w-fit cursor-pointer max-[395px]:block border-b border-b-[#64645F]">Suggest it to us.</span>  </p>
           </div>
 
           <FormPopup visible={showform} close={closeForm}/>
