@@ -83,12 +83,12 @@ const Tap = () => {
 
     return (
       <div className='w-full max-w-[669px] laptop:w-[60%] mx-auto p-8 border border-[#EDEDED] text-16 font-medium focus:outline-none laptop:flex laptop:flex-col laptop:justify-center'>
-        <div className={`flex gap-5 items-center text-left mx-auto w-fit mb-[10px] relative`}>
+        <div className={`flex gap-5 laptop:items-center text-left ml-0 w-fit mb-[10px] relative`}>
         <p
       onClick={handleClick}
-      className={`flex-none w-[50px] h-[50px] laptop:w-[120px] laptop:h-[120px] border-[3px]  rounded-[100%] bg-[#FFCC00] shadow-tap-shadow border-white transform transition-transform linear ${isScaled ? 'scale-[1.2] duration-300' : 'scale-100 duration-300'}`}
+      className={`flex-none w-[80px] h-[80px] laptop:w-[80px] laptop:h-[80px] border-[3px]  rounded-[100%] bg-[#FFCC00] shadow-tap-shadow border-white transform transition-transform linear ${isScaled ? 'scale-[1.2] duration-300' : 'scale-100 duration-300'}`}
     ></p>
-          <p className='w-full max-w-[300px] font-normal leading-[22px] text-[24px] text-[#2E2E27] mb-2 tablet:text-[20px] tablet:leading-[28px] tablet:tracking-[-0.8px] laptop:text-[24px] laptop:leading-8 '>This button has been tapped <span className='text-[#C19700] font-semibold'>{count} times today!</span></p>
+          <p className='w-full max-w-[300px] font-normal leading-[22px] text-[24px] text-[#2E2E27] tablet:text-[20px] tablet:leading-[28px] tablet:tracking-[-0.8px] laptop:text-[24px] laptop:leading-8 '>This button has been tapped <span className='text-[#C19700] font-semibold'>{count} times today!</span></p>
         </div>
         <div className='py-2 '>
           <p className='text-16 text-[#484848] laptop:text-20 font-normal text-left'>We use this button to track how many users visit this page and use our apps. Feel free to explore it. If you like our apps and want us to create more, Please <Link target='_blank' href='https://olayanjuidris.gumroad.com/l/wordieboxsupport' className="font-semibold cursor-pointer border-b border-b-[#64645F]" >Support us.</Link> Have a Word app idea? <span onClick={showForm} className="font-semibold cursor-pointer border-b border-b-[#64645F]">Suggest it to us.</span>  </p>
