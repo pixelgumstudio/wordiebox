@@ -52,3 +52,32 @@ input[type="number"] {
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+
+/* This styles the default checkbox */
+input[type="checkbox"] {
+  appearance: none; /* Removes default checkbox styling */
+  width: 20px;
+  height: 20px;
+  border-radius: 4px; /* Makes it circular */
+  border: 1px solid #BFBFBF; /* Border to ensure the checkbox is visible */
+  position: relative; /* Allows pseudo-elements to position relative to the checkbox */
+  cursor: pointer; /* Changes cursor to pointer when hovering */
+}
+
+/* This styles the checked state */
+input[type="checkbox"]:checked {
+  background-color: #E03C00; 
+  border: 1px solid #E03C00; /* Background color when checked */
+}
+
+/* Optional: adding a checkmark when checked */
+input[type="checkbox"]:checked::after {
+  content: '✔'; /* Checkmark character */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the checkmark */
+    font-size: 14px; /* Adjust the size of the checkmark */
+    color: white; /* Color of the checkmark */
+}
+

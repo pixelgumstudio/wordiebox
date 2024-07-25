@@ -61,33 +61,38 @@ const PasswordGenerator = () => {
       </div>
        
         <div className="grid grid-cols-2 gap-4 mb-10 w-full max-w-[384px] mx-auto">
-          <label className='w-full flex border bg-white hover:bg-white shadow-darkbox p-3 text-16 font-medium focus:outline-none'>
+          <label className='checkbox-container w-full flex border bg-white hover:bg-white shadow-darkbox p-3 text-16 font-medium focus:outline-none'>
             <input
               type="checkbox"
+              className='checkmark'
               checked={includeUppercase}
               onChange={(e) => setIncludeUppercase(e.target.checked)}
             />
             <span className="ml-2">Uppercase</span>
           </label>
-          <label className='w-full flex border bg-white hover:bg-white shadow-darkbox p-3 text-16 font-medium focus:outline-none'>
+          <label className='checkbox-container w-full flex border bg-white hover:bg-white shadow-darkbox p-3 text-16 font-medium focus:outline-none'>
             <input
               type="checkbox"
+              className='checkmark'
+
               checked={includeLowercase}
               onChange={(e) => setIncludeLowercase(e.target.checked)}
             />
             <span className="ml-2">Lowercase</span>
           </label>
-          <label className='w-full flex border bg-white hover:bg-white shadow-darkbox p-3 text-16 font-medium focus:outline-none'>
+          <label className='checkbox-container w-full flex border bg-white hover:bg-white shadow-darkbox p-3 text-16 font-medium focus:outline-none'>
             <input
               type="checkbox"
+              className='checkmark'
               checked={includeNumbers}
               onChange={(e) => setIncludeNumbers(e.target.checked)}
             />
             <span className="ml-2">Numbers</span>
           </label>
-          <label className='w-full flex border bg-white hover:bg-white shadow-darkbox p-3 text-16 font-medium focus:outline-none'>
+          <label className='checkbox-container w-full flex border bg-white hover:bg-white shadow-darkbox p-3 text-16 font-medium focus:outline-none'>
             <input
               type="checkbox"
+              className='checkmark'
               checked={includeSymbols}
               onChange={(e) => setIncludeSymbols(e.target.checked)}
             />

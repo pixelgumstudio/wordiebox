@@ -17,6 +17,11 @@ const config: Config = {
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'overlay': 'var(--Overlay-color, linear-gradient(180deg, rgba(1, 26, 39, 0.28) 4.69%, rgba(1, 26, 39, 0.25) 56.25%, rgba(1, 26, 39, 0.37) 100%))'
       },
+      colors: {
+        red: {
+          500: '#E03C00', // Use your preferred shade of orange
+        },
+      },
       spacing: {
         '25': '100px',
         '15': '60px',

@@ -30,6 +30,7 @@ const languagesData = {
   Z: ['Zulu'],
 };
 
+const pages = ['/capitalization-tool', '/morse-code-translator', '/random-state-generator', '/random-country-generator', '/password-generator', '/pokemon-name-generator','/cursive-text-generator' , '/strikethrough-text-generator']
 async function generateSitemap() {
   const smStream = new SitemapStream({ hostname: 'https://www.wordiebox.com' });
   const pipeline = smStream.pipe(createGzip());
@@ -39,7 +40,7 @@ async function generateSitemap() {
   smStream.write({ url: '/word-of-the-day', changefreq: 'daily', priority: 1.0 });
   smStream.write({ url: '/random-word-generator', changefreq: 'weekly', priority: 0.7 });
   // Add more static pages as needed
-
+pages.map(page =>   smStream.write({ url: page, changefreq: 'weekly', priority: 0.7 }))
   // Add word-counter pages for all languages
   for (const letter in languagesData) {
     languagesData[letter].forEach((language) => {
