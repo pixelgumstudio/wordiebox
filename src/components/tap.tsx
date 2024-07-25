@@ -82,7 +82,7 @@ const Tap = () => {
   }
 
     return (
-      <div className='w-full max-w-[669px] laptop:w-[60%] mx-auto py-[7px] px-[5px] text-16 font-medium focus:outline-none mb-6 laptop:flex laptop:flex-col laptop:justify-center'>
+      <div className='w-full max-w-[669px] laptop:w-[60%] mx-auto py-[7px] px-[5px] text-16 font-medium focus:outline-none laptop:flex laptop:flex-col laptop:justify-center'>
         <div className={`flex gap-5 items-center text-left mx-auto w-fit mb-[10px] relative`}>
         <p
       onClick={handleClick}
