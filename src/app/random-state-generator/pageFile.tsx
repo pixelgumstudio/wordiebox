@@ -40,6 +40,8 @@ const PageFile: FC = () => {
           Math.random() * selectedCountryStates.length
         );
         setRandomState(selectedCountryStates[randomIndex]);
+      } else if (country === "Select a Country") {
+        setRandomState("Please select a country");
       } else {
         setRandomState("No states found for this country.");
       }
@@ -65,11 +67,11 @@ const PageFile: FC = () => {
             {randomState}
           </p>
         )}
-         {randomState.length > 0 &&
-        <div className="w-full text-center mt-6 tablet:mt-8">
-          <CopyButton textToCopy={randomState}  text='Copy State'/>
+        {randomState.length > 0 && (
+          <div className="w-full text-center mt-6 tablet:mt-8">
+            <CopyButton textToCopy={randomState} text="Copy State" />
           </div>
-}
+        )}
         <div className="mt-[100px] flex flex-col gap-[10px] text-black border border-[#1C1C1C] bg-[#FFFFFF] shadow-darkbox p-4 tablet:p-6 w-full mx-auto my-6">
           <p className="text-16 tablet:text-20 text-left font-semibold">
             Using the random state generator
@@ -85,8 +87,9 @@ const PageFile: FC = () => {
           <p className="text-14 tablet:text-16 text-left">
             Our random state picker uses a random number generator to make sure
             each state from our database has an equal chance to be picked. It is
-            equal to <span className="underline">rolling a fair dice</span> with several dozen sides or spinning a
-            wheel where each state is represented by an equally-sized sector.
+            equal to <span className="underline">rolling a fair dice</span> with
+            several dozen sides or spinning a wheel where each state is
+            represented by an equally-sized sector.
           </p>
           <p className="text-14 tablet:text-16 text-left">
             States in the following federal countries, typically federal

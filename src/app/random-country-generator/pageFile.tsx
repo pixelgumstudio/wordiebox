@@ -1,40 +1,75 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import React, { FC, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 
 import ErrorBoundary from "@/functions/ErrorBoundary";
-import axios from "@/lib/axios";
+import axios from "axios";
 import Layout from "@/components/layout";
 import Dropdown from "@/components/dropdown";
 import { createSlug } from "@/components/slug";
 import { continents } from "@/lib/countries";
 import CopyButton from "@/components/copy-content";
 
+interface ContinentsCountries {
+  continent: string;
+  countries: string[];
+}
+
 const PageFile: FC = () => {
+  const [continents, setContinents] = useState<ContinentsCountries[]>([]);
   const [country, setCountry] = useState<string>("");
 
-  const selectedContinent = async (selected: string) => {
-    const count = selected.toLowerCase();
-    const country = createSlug(count);
 
-    try {
-      fetch(`https://wordie-box-backend.onrender.com/api/v1/country/${country === "australia-oceania" ? "oceania" : country}`)
-        .then((res) => res.json())
-        .then((data) => setCountry(data.name));
-    } catch (error) {
-      console.error("Error fetching words:", error);
-      throw new Error("Failed to generate words");
+  useEffect(() => {
+    const fetchContinents = async () => {
+      try {
+        const response = await axios.get<ContinentsCountries[]>("/api/continents");
+        setContinents(response.data);
+        console.log(response.data.map(c => c.continent))
+      } catch (error) {
+        console.error("Failed to fetch continents:", error);
+      }
+    };
+
+    fetchContinents();
+  }, []);
+
+const continentsOption = [ 'Africa', 'Asia', 'Europe', 'North America', 'South America', 'Australia/Oceanic' ]
+
+  const selected = (value: string) => {
+    const continent =  value === "Select a Continent" ? "select" : value === "North America" ? "N. America" : value === "South America" ? "S. America" : value === "Australia/Oceanic" ? "Australia" : value
+
+    if (continent) {
+      const selectedContinentCountries =
+      continents.find((c) => c.continent === continent)?.countries || [];
+      if (selectedContinentCountries.length > 0) {
+        const randomIndex = Math.floor(
+          Math.random() * selectedContinentCountries.length
+        );
+        setCountry(selectedContinentCountries[randomIndex]);
+      } else if (continent === "select") {
+        setCountry("Please select a continent");
+              }
+              else {
+        setCountry("No country found for this continent.");
+
+                  }
+    } else {
+      setCountry("");
     }
   };
+
 
   return (
     // <ErrorBoundary>
     <Layout title="Random Country Generator">
       <div className="w-full laptop:max-w-[947px] px-4 tablet:px-6 laptop:px-0 desktop:px-0 mx-auto">
         <Dropdown
-          text="Generate a Random Country"
-          options={continents}
-          location={selectedContinent}
+          text="Generate a Random Continent"
+          options={continentsOption}
+          location={selected}
+          title="Select a Continent"
+          first="Select a Continent"
         />
 
         {country !== undefined && country !== "" && (
