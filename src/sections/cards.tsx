@@ -95,13 +95,13 @@ const [pageName, setPageName] =  useState<string | null>('')
       link: "password-generator",
     },
    
-    // {
-    //   color: "#C2FFD9",
-    //   image: "/pokemon.png",
-    //   title: 'Pokemon Name Generator',
-    //   description: 'Creating random Pokemon names is easy with our tool. Just select the options you want above and then click &quot;',
-    //   link: "pokemon-name-generator",
-    // },
+    {
+      color: "#C2FFD9",
+      image: "/pokemon.png",
+      title: 'Pokemon Name Generator',
+      description: 'Creating random Pokemon names is easy with our tool. Just select the options you want above and then click &quot;',
+      link: "pokemon-name-generator",
+    },
 
   ];
   return (

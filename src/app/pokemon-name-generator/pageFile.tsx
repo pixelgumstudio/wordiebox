@@ -1,38 +1,58 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Layout from "@/components/layout";
 import Dropdown from "@/components/dropdown";
+import axios from "axios";
+import CopyButton from "@/components/copy-content";
+
+interface Pokemon {
+  name: string;
+  type: string;
+  gender: string;
+  // Add other fields as necessary
+}
 
 const GeneratorForm: React.FC = () => {
   const [type, setType] = useState<string>("any");
+  const [types, setTypes] = useState<string[]>([]);
   const [number, setNumber] = useState<string>("1");
-  const [gender, setGender] = useState<string>("any");
-  const [pokemon, setPokemon] = useState<string[]>([]);
-  
+  const [gender, setGender] = useState<string>("No gender");
+  const [pokemons, setPokemons] = useState<Pokemon[]>([]);
+  // const [genders, setGenders] = useState<string[]>([]);
+  const [showButton, setShowButton] = useState<boolean>(false);
+
   const numbers = Array.from({ length: 10 }, (_, i) => (i + 1).toString());
-  const types = ["Any", "Normal", "Water", "Fire", "Grass", "Electric", "Ice", "Dragon", "Rock", "Steel"];
-  const genders = ["Any", "Male", "Female", "Binary" ];
 
-  const handleTypeChange = (type: string) => setType(type.toLowerCase());
+  const handleTypeChange = (type: string) => setType(type);
   const handleNumberChange = (number: string) => setNumber(number);
-  const handleGenderChange = (gender: string) => setGender(gender.toLowerCase());
+  const handleGenderChange = (gender: string) => setGender(gender);
 
-  // const generatePokemon = async () => {
-  //   try {
-  //     const response = await fetch('/api/pokemon', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify({ gender, type, number: parseInt(number) }),
-  //     });
-  //     const data = await response.json();
-  //     setPokemon(data);
-  //   } catch (error) {
-  //     console.error("Error fetching Pokémon:", error);
-  //   }
-  // };
+  useEffect(() => {
+    const fetchTypesAndGenders = async () => {
+      try {
+        const typesResponse = await axios.get<{ types: string[] }>('/api/pokemon?fetchTypes=true');
+        const gendersResponse = await axios.get<{ genders: string[] }>('/api/pokemon?fetchGenders=true');
+        setTypes(typesResponse.data.types);
+        setGenders(gendersResponse.data.genders);
+      } catch (error) {
+        console.error("Failed to fetch types and genders:", error);
+      }
+    };
+
+    fetchTypesAndGenders();
+  }, []);
+
+  const genders = ['No gender', "Male", "Female"]
+  const generatePokemon = async () => {
+    try {
+      const response = await axios.get<Pokemon[]>(`/api/pokemon?type=${type}&gender=${gender}&number=${number}`);
+      setPokemons(response.data);
+      setShowButton(true)
+    } catch (error) {
+      console.error("Failed to fetch Pokémon:", error);
+    }
+  };
 
   return (
     <Layout title="Pokemon Name Generator">
@@ -41,8 +61,8 @@ const GeneratorForm: React.FC = () => {
           <div className="flex mt-2 text-14 font-semibold h-fit w-fit bg-white !text-[#1C1C1C] border-[#1C1C1C] border shadow-darkbox">
             {genders.map(sex => (
               <p key={sex}
-                className={`${gender === sex.toLowerCase() && "bg-[#EDEDED]"} cursor-pointer px-2 py-2 hover:bg-[#EDEDED]`}
-                onClick={() => setGender(sex.toLowerCase())}
+                className={`${gender === sex && "bg-[#EDEDED]"} cursor-pointer px-2 py-2 hover:bg-[#EDEDED]`}
+                onClick={() => setGender(sex)}
               >
                 {sex}
               </p>
@@ -51,7 +71,7 @@ const GeneratorForm: React.FC = () => {
           <Dropdown
             title="Select Type"
             options={types}
-            selected={handleTypeChange} 
+            selected={handleTypeChange}
             button={false}
             first="Select Type"
             position="ml-0"
@@ -64,21 +84,27 @@ const GeneratorForm: React.FC = () => {
             first="No of results"
             position="ml-0"
           />
-          {/* <button onClick={generatePokemon}
+          <button onClick={() => generatePokemon()}
             className="w-full max-w-[400px] mt-4 text-[#1C1C1C] border-[#1C1C1C] bg-[#FC0] border shadow-darkbox p-4 text-16 font-medium hover:bg-[#fc9]"
           >
             Generate
-          </button> */}
+          </button>
+        
           <div className="flex flex-wrap justify-start w-fit mx-auto gap-5">
-            {pokemon.length > 0 && pokemon.map((name, index) => (
+            {pokemons.length > 0 && pokemons.map((pokemon, index) => (
               <p
                 key={index}
                 className="text-center w-fit inline-block text-black border-[#1C1C1C] bg-[#EDEDED] border shadow-transparent p-3 tablet:p-4 text-20 tablet:text-24 capitalize font-semibold hover:bg-[#e2c9ff]"
               >
-                {name}
+                {pokemon.name}
               </p>
             ))}
           </div>
+          {showButton && (
+          <div className="w-full text-center mt-6 tablet:mt-8">
+            <CopyButton textToCopy={pokemons.map(pokemon => pokemon.name)} text="Copy Pokémon" />
+          </div>
+        )}
         </div>
       </div>
       <div className="w-full laptop:max-w-[947px] mx-auto mt-20 laptop:mt-25">

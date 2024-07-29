@@ -2,7 +2,6 @@ import { NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
 import { parse } from 'csv-parse';
-import { continents } from '../../../lib/countries';
 
 interface ContinentsCountries {
   continent: string;
