@@ -34,7 +34,7 @@ const GeneratorForm: React.FC = () => {
         const typesResponse = await axios.get<{ types: string[] }>('/api/pokemon?fetchTypes=true');
         const gendersResponse = await axios.get<{ genders: string[] }>('/api/pokemon?fetchGenders=true');
         setTypes(typesResponse.data.types);
-        setGenders(gendersResponse.data.genders);
+        // setGenders(gendersResponse.data.genders);
       } catch (error) {
         console.error("Failed to fetch types and genders:", error);
       }
