@@ -46,7 +46,7 @@ const GeneratorForm: React.FC = () => {
   const genders = ['No gender', "Male", "Female"]
   const generatePokemon = async () => {
     try {
-      const response = await axios.get<Pokemon[]>(`/api/pokemon?type=${type}&gender=${gender}&number=${number}`);
+      const response = await axios.get<Pokemon[]>(`/api/pokemon?type=${type}&gender=No%20gender&number=${number}`);
       setPokemons(response.data);
       setShowButton(true)
     } catch (error) {
