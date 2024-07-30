@@ -91,14 +91,20 @@ const GeneratorForm: React.FC = () => {
           </button>
         
           <div className="flex flex-wrap justify-start w-fit mx-auto gap-5">
-            {pokemons.length > 0 && pokemons.map((pokemon, index) => (
+            {pokemons.length > 0 ? pokemons.map((pokemon, index) => (
               <p
                 key={index}
                 className="text-center w-fit inline-block text-black border-[#1C1C1C] bg-[#EDEDED] border shadow-transparent p-3 tablet:p-4 text-20 tablet:text-24 capitalize font-semibold hover:bg-[#e2c9ff]"
               >
                 {pokemon.name}
               </p>
-            ))}
+            )) :
+            <p
+                className="text-center w-fit inline-block text-black border-[#1C1C1C] bg-[#EDEDED] border shadow-transparent p-3 tablet:p-4 text-20 tablet:text-24 capitalize font-semibold hover:bg-[#e2c9ff]"
+              >
+                Pokemon not available
+              </p>
+            }
           </div>
           {showButton && (
           <div className="w-full text-center mt-6 tablet:mt-8">

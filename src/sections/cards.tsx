@@ -99,7 +99,7 @@ const [pageName, setPageName] =  useState<string | null>('')
       color: "#C2FFD9",
       image: "/pokemon.png",
       title: 'Pokemon Name Generator',
-      description: 'Creating random Pokemon names is easy with our tool. Just select the options you want above and then click &quot;',
+      description: 'Generate a pokemon name from our pokemon name generator',
       link: "pokemon-name-generator",
     },
 
