@@ -41,7 +41,7 @@ export async function GET() {
         resolve(result);
       });
     });
-
+console.log('test')
     const result = await parseCSV();
     return NextResponse.json(result);
   } catch (err) {
