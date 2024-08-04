@@ -26,13 +26,13 @@ const GeneratorForm: React.FC = () => {
 
   const handleTypeChange = (type: string) => setType(type);
   const handleNumberChange = (number: string) => setNumber(number);
-  const handleGenderChange = (gender: string) => setGender(gender);
+  // const handleGenderChange = (gender: string) => setGender(gender);
 
   useEffect(() => {
     const fetchTypesAndGenders = async () => {
       try {
         const typesResponse = await axios.get<{ types: string[] }>('/api/pokemon?fetchTypes=true');
-        const gendersResponse = await axios.get<{ genders: string[] }>('/api/pokemon?fetchGenders=true');
+        // const gendersResponse = await axios.get<{ genders: string[] }>('/api/pokemon?fetchGenders=true');
         setTypes(typesResponse.data.types);
         // setGenders(gendersResponse.data.genders);
       } catch (error) {
@@ -91,19 +91,14 @@ const GeneratorForm: React.FC = () => {
           </button>
         
           <div className="flex flex-wrap justify-start w-fit mx-auto gap-5">
-            {pokemons.length > 0 ? pokemons.map((pokemon, index) => (
+            {pokemons.length > 0 && pokemons.map((pokemon, index) => (
               <p
                 key={index}
                 className="text-center w-fit inline-block text-black border-[#1C1C1C] bg-[#EDEDED] border shadow-transparent p-3 tablet:p-4 text-20 tablet:text-24 capitalize font-semibold hover:bg-[#e2c9ff]"
               >
                 {pokemon.name}
               </p>
-            )) :
-            <p
-                className="text-center w-fit inline-block text-black border-[#1C1C1C] bg-[#EDEDED] border shadow-transparent p-3 tablet:p-4 text-20 tablet:text-24 capitalize font-semibold hover:bg-[#e2c9ff]"
-              >
-                Pokemon not available
-              </p>
+            ))
             }
           </div>
           {showButton && (

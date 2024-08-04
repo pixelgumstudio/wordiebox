@@ -15,25 +15,11 @@ const PageFile: FC = () => {
   const [words, setWords] = useState<string[]>([]);
   const [copySuccess, setCopySuccess] = useState<boolean>(false);
   const [showButton, setShowButton] = useState<boolean>(false);
-  const [copyText, setCopyText] = useState<string>("");
 
   const incrementNumber = () => {
     if (number < 10) {
       setNumber((prevNumber) => prevNumber + 1);
     }
-  };
-
-  const copyToClipboard = () => {
-    const word = words.join(", ");
-    navigator.clipboard.writeText(word).then(
-      () => {
-        setCopyText(word);
-        setCopySuccess(true);
-      },
-      (err) => {
-        setCopySuccess(false);
-      }
-    );
   };
 
   const decrementNumber = () => {
@@ -46,7 +32,6 @@ const PageFile: FC = () => {
     if (copySuccess) {
       const timer = setTimeout(() => {
         setCopySuccess(false);
-        setCopyText("");
       }, 2000); // Clear the message after 3 seconds
 
       // Clean up the timer when the component unmounts or when copySuccess changes
