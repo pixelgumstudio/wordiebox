@@ -30,7 +30,7 @@ const languagesData = {
   Z: ['Zulu'],
 };
 
-const pages = ['/capitalization-tool', '/morse-code-translator', '/random-state-generator', '/random-country-generator', '/password-generator', '/pokemon-name-generator','/cursive-text-generator' , '/strikethrough-text-generator']
+const pages = ['/capitalization-tool', '/morse-code-translator', '/random-state-generator', '/random-country-generator', '/password-generator', '/pokemon-name-generator','/generate-pokemon-name','/cursive-text-generator' , '/strikethrough-text-generator']
 async function generateSitemap() {
   const smStream = new SitemapStream({ hostname: 'https://www.wordiebox.com' });
   const pipeline = smStream.pipe(createGzip());

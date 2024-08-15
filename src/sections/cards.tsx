@@ -100,7 +100,7 @@ const [pageName, setPageName] =  useState<string | null>('')
       image: "/pokemon.png",
       title: 'Pokemon Name Generator',
       description: 'Generate a pokemon name from our pokemon name generator',
-      link: "pokemon-name-generator",
+      link: "generate-pokemon-name",
     },
 
   ];
