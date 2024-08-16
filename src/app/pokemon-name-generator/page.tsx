@@ -25,16 +25,16 @@ export const metadata: Metadata = {
       site: "https://wordiebox.com/pokemon-name-generator",
       title: "Pokemon Name Generator | Pokemon Nickname Generator |  Wordiebox",
       description:
-        "Create random Pokemon name and Pokemon nickname from our Pokemon name generator and Pokemon nickname generator ",
+        "Create random Pokemon name and Pokemon nickname from our Pokemon name generator and Pokemon nickname generator",
         images: [{
           url: 'https://wordiebox.com/seo-card.png',
         }],
     },
   };
 
-  const MorseCode = () => {
+  const PokemonGenerator = () => {
 
     return <PageFile />
     };
     
-    export default MorseCode;
+    export default PokemonGenerator;

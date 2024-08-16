@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import PageFile from './[language]/pageFile';
+import PageFile from './pageFile';
 
 export async function generateMetadata({ params }: { params: { language: string } }): Promise<Metadata> {
   const { language } = params;

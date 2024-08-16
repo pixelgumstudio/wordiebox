@@ -38,7 +38,6 @@ async function generateSitemap() {
   // Manually add other pages
   smStream.write({ url: '/', changefreq: 'daily', priority: 1.0 });
   smStream.write({ url: '/word-of-the-day', changefreq: 'daily', priority: 1.0 });
-  smStream.write({ url: '/random-word-generator', changefreq: 'weekly', priority: 0.7 });
   // Add more static pages as needed
 pages.map(page =>   smStream.write({ url: page, changefreq: 'weekly', priority: 0.7 }))
   // Add word-counter pages for all languages
@@ -48,6 +47,9 @@ pages.map(page =>   smStream.write({ url: page, changefreq: 'weekly', priority: 
     });
     languagesData[letter].forEach((language) => {
       smStream.write({ url: `/character-counter/${language}`, changefreq: 'weekly', priority: 0.8 });
+    });
+    languagesData[letter].forEach((language) => {
+      smStream.write({ url: `/random-word-generator/${language}`, changefreq: 'weekly', priority: 0.8 });
     });
   }
 

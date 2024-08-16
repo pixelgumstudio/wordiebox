@@ -6,7 +6,9 @@ import PageFile from './[language]/pageFile';
 export async function generateMetadata({ params }: { params: { language: string } }): Promise<Metadata> {
   const { language } = params;
 
-  const lang = language !== undefined ? language : "english";
+  const capitalizedLang = (language || "").replace(/-/g, " "); 
+  const lang = capitalizedLang.charAt(0).toUpperCase() + capitalizedLang.slice(1);
+  
   return {
   title: `free online ${lang} character counter - Wordiebox.com`,
   description: `${lang} Character Counter tool is a free online tool that calculates the number of characters in your writing.`,

@@ -13,7 +13,7 @@ interface Pokemon {
   // Add other fields as necessary
 }
 
-const GeneratorForm: React.FC = () => {
+const GeneratorPokemon: React.FC = () => {
   const [type, setType] = useState<string>("any");
   const [types, setTypes] = useState<string[]>([]);
   const [number, setNumber] = useState<string>("1");
@@ -140,4 +140,4 @@ const GeneratorForm: React.FC = () => {
   );
 };
 
-export default GeneratorForm;
+export default GeneratorPokemon;

@@ -61,7 +61,7 @@ function PageFile() {
    </div>
     </div>
     </div>
-    <LanguagesList pageType='word'/>
+    <LanguagesList pageType='word-counter' pageName='word counter in other languages'/>
     <div className='w-full laptop:max-w-[947px] mx-auto'>
      <div className=" flex flex-col gap-[10px] text-black border border-[#1C1C1C] bg-[#FFFFFF] shadow-darkbox p-4 tablet:p-6 w-full mx-auto my-6">
       <p className="text-16 tablet:text-20 text-left font-semibold">What is a word counter?</p>

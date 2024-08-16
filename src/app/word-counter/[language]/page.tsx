@@ -4,7 +4,9 @@ import PageFile from './pageFile';
 export async function generateMetadata({ params }: { params: { language: string } }): Promise<Metadata> {
   const { language } = params;
 
-  const lang = language.replace(/-/g, " ");
+  const capitalizedLang = (language || "").replace(/-/g, " "); 
+  const lang = capitalizedLang.charAt(0).toUpperCase() + capitalizedLang.slice(1);
+
   return {
     title: `Free online ${lang} word counter - Wordiebox.com`,
     description: `${lang} Word Counter tool is a free online tool that calculates the number of words in your writing.`,

@@ -1,75 +1,81 @@
+/* eslint-disable react/no-unescaped-entities */
 "use client";
-import Image from "next/image";
 import React, { ChangeEvent, FC, useEffect, useState } from "react";
+import BackButton from '@/components/back-button';
 import UpArrow from "/public/arrow-up.png";
 import DownArrow from "/public/down.png";
-import ErrorBoundary from "@/functions/ErrorBoundary";
-import axios from "@/lib/axios";
-import Popup from "@/components/popup";
-import Layout from "@/components/layout";
-import CopyButton from "@/components/copy-content";
+import CopyButton from '@/components/copy-content';
+import LanguagesList from '@/components/LanguageList';
+import Layout from '@/components/layout';
+import axios from "axios";
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
+import Word_Counter from '/word-counter.png';
+import getEnglishWords from "@/lib/englisgWords";
+
+interface Word {
+  Word: string;
+  Meaning?: string;
+  Language?: string;
+}
+
 
 const PageFile: FC = () => {
   const [number, setNumber] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
-  const [words, setWords] = useState<string[]>([]);
+  const [words, setWords] = useState<Word[]>([]);
   const [copySuccess, setCopySuccess] = useState<boolean>(false);
   const [showButton, setShowButton] = useState<boolean>(false);
+  const pathname = usePathname();
+  
+  const pageName = pathname.split('/')[2]?.replace(/-/g, " ") || "english";
 
-  const incrementNumber = () => {
-    if (number < 10) {
-      setNumber((prevNumber) => prevNumber + 1);
-    }
-  };
+  useEffect(() => {
+    localStorage.setItem('language', pageName);
+  }, [pageName]);
 
-  const decrementNumber = () => {
-    if (number > 1) {
-      setNumber((prevNumber) => prevNumber - 1);
-    }
-  };
+  const incrementNumber = () => setNumber(prevNumber => Math.min(prevNumber + 1, 10));
+  const decrementNumber = () => setNumber(prevNumber => Math.max(prevNumber - 1, 1));
 
   useEffect(() => {
     if (copySuccess) {
-      const timer = setTimeout(() => {
-        setCopySuccess(false);
-      }, 2000); // Clear the message after 3 seconds
-
-      // Clean up the timer when the component unmounts or when copySuccess changes
+      const timer = setTimeout(() => setCopySuccess(false), 2000);
       return () => clearTimeout(timer);
     }
   }, [copySuccess]);
 
   const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    const value = parseInt(e.target.value, 10);
-    setNumber(value);
+    setNumber(parseInt(e.target.value, 10));
   };
 
-  const generate = async () => {
+  const generateWords = async () => {
+    setLoading(true);
     try {
-      setLoading(true);
-      const response = await axios.post(
-        `/words/random-word`,
-        { numWords: number },
-        {
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Credentials": true,
-          },
-        }
-      );
+      let wordsData;
+
+      if (pageName === "english") {
+        const fetchedWords: any = await getEnglishWords(number);
+
+        // Check if the result is an array of strings and map to Word objects
+          wordsData = fetchedWords?.words.map((word: string) => ({
+            Word: word
+          })) as Word[];
+      } else {
+        const response = await axios.get<Word[]>(`/api/words?country=${pageName}&number=${number}`);
+        wordsData = response.data;
+      }
+
+      setWords(wordsData);
       setShowButton(true);
-      setWords(response.data.words);
-      setLoading(false);
     } catch (error) {
-      setLoading(false);
       console.error("Error fetching words:", error);
-      throw new Error("Failed to generate words");
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
-    // <ErrorBoundary>
-    <Layout title="Random Words Generator">
+    <Layout title={`Random ${pageName} Words Generator`}>
       <div className="w-full laptop:max-w-[947px] px-4 tablet:px-6 laptop:px-0 desktop:px-0 mx-auto">
         <div className="flex justify-center items-center text-[#1C1C1C] text-20 tablet:text-24 font-normal whitespace-nowrap text-center">
           Generate
@@ -86,18 +92,23 @@ const PageFile: FC = () => {
                 </option>
               ))}
             </select>
-            <div className="right-2 flex flex-col gap-1 items-center mx-auto w-[100px] z-20">
+            <div className="flex flex-col gap-1 items-center mx-auto w-[20px] z-20">
               <button
                 onClick={incrementNumber}
                 className="rounded-lg transition"
               >
-                <Image src={UpArrow} width={12} height={12} alt="" />
+                <Image src={UpArrow} width={12} height={12} alt="Up Arrow" />
               </button>
               <button
                 onClick={decrementNumber}
                 className="rounded-lg transition"
               >
-                <Image src={DownArrow} width={12} height={12} alt="" />
+                <Image
+                  src={DownArrow}
+                  width={12}
+                  height={12}
+                  alt="Down Arrow"
+                />
               </button>
             </div>
           </div>
@@ -106,28 +117,41 @@ const PageFile: FC = () => {
 
         <p
           className="p-2 w-full max-w-[360px] cursor-pointer text-center font-medium mx-auto mt-10 h-fit bg-[#FFCC00] border-[#1C1C1C] border shadow-darkbox"
-          onClick={generate}
+          onClick={generateWords}
         >
-          Generate words{loading && "..."}
+          Generate words {loading && "..."}
         </p>
 
         <div className="flex flex-wrap justify-center w-fit mx-auto gap-5 mt-12">
-          {words.length > 0 &&
+          {Array.isArray(words) &&
+            words.length > 0 &&
             words.map((word, index) => (
-              <p
+              <div
                 key={index}
-                className="text-center w-fit inline-block text-black border-[#1C1C1C] bg-[#DFC3FF] border shadow-transparent p-3 tablet:p-4 text-20 tablet:text-24 capitalize font-semibold hover:bg-[#e2c9ff]"
+                className="text-center w-fit inline-block text-black border-[#1C1C1C] bg-[#DFC3FF] border shadow-transparent p-3 tablet:p-4 text-14 capitalize font-normal hover:bg-[#e2c9ff]"
               >
-                {/* <p key={index} className="text-center w-full max-w-[33.333333%] tablet:max-w-[20%] laptop:max-w-[16.666667%] inline-block text-black border-[#1C1C1C] bg-[#DFC3FF] border shadow-darkbox p-3 tablet:p-4 text-20 tablet:text-24 capitalize font-semibold hover:bg-[#e2c9ff]"> */}
-                {word}
-              </p>
+                <h1 className="font-semibold text-20">{word.Word}</h1>
+                {word.Meaning && <p>Meaning: {word.Meaning}</p>}
+              </div>
             ))}
         </div>
+
         {showButton && (
           <div className="w-full text-center mt-6 tablet:mt-8">
-            <CopyButton textToCopy={words} text="Copy State" />
+            <CopyButton
+              textToCopy={words
+                .map((word) =>
+                  word.Meaning ? `${word.Word} - ${word.Meaning}` : word.Word
+                ) // Add meaning if it exists, otherwise just the word
+                .join(", ")} // Join them with comma and space
+              text="Copy To Clipboard"
+            />
           </div>
         )}
+        <LanguagesList
+          pageType="random-word-generator"
+          pageName="words in other languages"
+        />
 
         <div className="mt-[100px] flex flex-col gap-[10px] text-black border border-[#1C1C1C] bg-[#FFFFFF] shadow-darkbox p-4 tablet:p-6 w-full mx-auto my-6">
           <p className="text-16 tablet:text-20 text-left font-semibold">
@@ -138,11 +162,7 @@ const PageFile: FC = () => {
             has many uses across different areas. For writers, it is a great way
             to find new ideas and break through creative blocks with unexpected
             words. In the area of education, it can be used to improve
-            vocabulary lessons and language learning activities. For instance, a
-            writer working on a novel can use the tool to generate names for
-            characters or places. In an educational setting, teachers can use
-            this tool to create interactive and engaging exercises, helping
-            students to expand their vocabulary in a fun way.
+            vocabulary lessons and language learning activities.
           </p>
           <p className="text-14 tablet:text-16 text-left">
             To generate a word, simply type in the number of words you’d like to
@@ -155,3 +175,5 @@ const PageFile: FC = () => {
 };
 
 export default PageFile;
+
+

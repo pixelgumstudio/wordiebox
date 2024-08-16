@@ -9,6 +9,7 @@ interface LanguagesData {
 
 interface LanguagesListProps {
   pageType: string;
+  pageName: string;
 }
 
 const languagesData: LanguagesData = {
@@ -38,11 +39,11 @@ const languagesData: LanguagesData = {
   Z: ['Zulu']
 };
 
-const LanguagesList: React.FC<LanguagesListProps> = ({ pageType }) => {
+const LanguagesList: React.FC<LanguagesListProps> = ({ pageType, pageName }) => {
   return (
     <div className="my-10 tablet:my-[50px] py-10 tablet:py-[50px] bg-white ">
       <div className='w-full laptop:max-w-[947px] mx-auto'>
-      <h2 className="text-24 tablet:text-32 text-[#1c1c1c] font-bold text-left mb-8 capitalize">{pageType} counter in other languages</h2>
+      <h2 className="text-24 tablet:text-32 text-[#1c1c1c] font-bold text-left mb-8 capitalize">{pageName}</h2>
       <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 desktop:grid-cols-6 gap-4 gap-y-10">
         {Object.keys(languagesData).map((letter) => (
           <div key={letter} className="relative">
@@ -50,7 +51,7 @@ const LanguagesList: React.FC<LanguagesListProps> = ({ pageType }) => {
             <ul className="list-none pl-0">
               {languagesData[letter].map((language, index) => (
                 <li key={index} className="py-1 text-[#484848] text-16">
-                  <Link href={`/${pageType}-counter/${createSlug(language)}`}>
+                  <Link href={`/${pageType}/${createSlug(language)}`}>
                     {language}
                   </Link>
                 </li>
