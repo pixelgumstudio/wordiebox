@@ -51,6 +51,9 @@ pages.map(page =>   smStream.write({ url: page, changefreq: 'weekly', priority: 
     languagesData[letter].forEach((language) => {
       smStream.write({ url: `/random-word-generator/${language}`, changefreq: 'weekly', priority: 0.8 });
     });
+    languagesData[letter].forEach((language) => {
+      smStream.write({ url: `/random-name-generator/${language}`, changefreq: 'weekly', priority: 0.8 });
+    });
   }
 
   smStream.end();

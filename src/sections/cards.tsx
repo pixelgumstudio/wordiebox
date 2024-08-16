@@ -1,10 +1,5 @@
 "use client"
 import React, { useEffect, useState } from 'react'
-
-import Word_Counter from "/word-counter.png"
-import Character_Counter from "/character-counter.png"
-import Word_Day from "/word-day.png"
-import Random_Word from "/random-word.png"
 import Card from '../components/card'
 import Tap from '../components/tap'
 import { createSlug } from '@/components/slug'
@@ -102,6 +97,13 @@ const [pageName, setPageName] =  useState<string | null>('')
       description: 'Generate a pokemon name from our pokemon name generator',
       link: "generate-pokemon-name",
     },
+    {
+      color: "#C2FFD9",
+      image: "/name-generator.png",
+      title: 'Random Name Generator',
+      description: 'Generate a random name and their meaning in any language that you selected',
+      link: "random-name-generator",
+    }
 
   ];
   return (
