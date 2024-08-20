@@ -31,7 +31,7 @@ const PageFile: FC = () => {
   const pageName = pathname.split("/")[2]?.replace(/-/g, " ") || "english";
   localStorage.setItem('language', pageName);
 
-  
+
   useEffect(() => {
     localStorage.setItem("language", pageName);
   }, [pageName]);
@@ -59,7 +59,8 @@ const PageFile: FC = () => {
     try {
       let wordsData
         const response = await axios.get<Word[]>(
-          `/api/names?country=${pageName === "english" ? "icelandic" : pageName}&number=${number}`
+          `/api/names?country=${pageName}&number=${number}`
+          // `/api/names?country=${pageName === "english" ? "icelandic" : pageName}&number=${number}`
         );
         wordsData = response.data;
       setWords(wordsData);
