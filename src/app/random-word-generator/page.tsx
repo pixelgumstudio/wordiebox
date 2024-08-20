@@ -5,10 +5,10 @@ export async function generateMetadata({ params }: { params: { language: string 
   const { language } = params;
 
   const capitalizedLang = (language || "").replace(/-/g, " "); 
-  const lang = capitalizedLang.charAt(0).toUpperCase() + capitalizedLang.slice(1);
-  
+  const languages = capitalizedLang.charAt(0).toUpperCase() + capitalizedLang.slice(1);
+  const lang = languages === ''? 'English' : languages
   return {
-    title: `Random Word Generator - Wordiebox.com`,
+    title: `Random ${lang} Word Generator  |  Random ${lang} words - Wordiebox.com`,
     description: `The free online random word generator tool allows you to create any number of random words you need for your project. Choose the number of random words you want to generate and generate the words`,
     icons: {
       icon: 'https://wordiebox.com/icon.png',  // This sets the favicon for this specific page

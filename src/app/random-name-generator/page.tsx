@@ -5,10 +5,11 @@ export async function generateMetadata({ params }: { params: { language: string 
   const { language } = params;
 
   const capitalizedLang = (language || "").replace(/-/g, " "); 
-  const lang = capitalizedLang.charAt(0).toUpperCase() + capitalizedLang.slice(1);
-  
+  const languages = capitalizedLang.charAt(0).toUpperCase() + capitalizedLang.slice(1);
+  const lang = languages === ''? 'English' : languages
+
   return {
-    title: `Name Generator - Wordiebox.com`,
+    title: `${lang} Name Generator - Wordiebox.com`,
     description: `The free online ${lang} name generator tool allows you to generate a name and its meaning in the ${lang}`,
     icons: {
       icon: 'https://wordiebox.com/icon.png',  // This sets the favicon for this specific page

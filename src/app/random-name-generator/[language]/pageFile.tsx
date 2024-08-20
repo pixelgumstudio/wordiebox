@@ -29,10 +29,14 @@ const PageFile: FC = () => {
   const pathname = usePathname();
 
   const pageName = pathname.split("/")[2]?.replace(/-/g, " ") || "english";
+  localStorage.setItem('language', pageName);
 
+  
   useEffect(() => {
     localStorage.setItem("language", pageName);
   }, [pageName]);
+
+  
 
   const incrementNumber = () =>
     setNumber((prevNumber) => Math.min(prevNumber + 1, 10));
