@@ -7,6 +7,7 @@ export async function generateMetadata({ params }: { params: { language: string 
   const capitalizedLang = (language || "").replace(/-/g, " "); 
   const languages = capitalizedLang.charAt(0).toUpperCase() + capitalizedLang.slice(1);
   const lang = languages === ''? 'English' : languages
+  
   return {
     title: `Random ${lang} Word Generator  |  Random ${lang} words - Wordiebox.com`,
     description: `The free online random word generator tool allows you to create any number of random words you need for your project. Choose the number of random words you want to generate and generate the words`,
