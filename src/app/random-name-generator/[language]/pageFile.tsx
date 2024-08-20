@@ -29,7 +29,7 @@ const PageFile: FC = () => {
   const pathname = usePathname();
 
   const pageName = pathname.split("/")[2]?.replace(/-/g, " ") || "english";
-  localStorage.setItem('language', pageName);
+  // localStorage.setItem('language', pageName);
 
 
   useEffect(() => {
