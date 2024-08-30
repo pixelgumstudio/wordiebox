@@ -125,7 +125,7 @@ const PageFile: FC = () => {
             words.map((word, index) => (
               <div
                 key={index}
-                className="text-center w-fit inline-block text-black border-[#1C1C1C] bg-[#DFC3FF] border shadow-transparent p-3 tablet:p-4 text-14 capitalize font-normal hover:bg-[#e2c9ff]"
+                className="text-center w-fit max-w-[360px] inline-block text-black border-[#1C1C1C] bg-[#DFC3FF] border shadow-transparent p-3 tablet:p-4 text-14 capitalize font-normal hover:bg-[#e2c9ff]"
               >
                 <h1 className="font-semibold text-20">{word.Word}</h1>
                 {word.Meaning && <p>Meaning: {word.Meaning}</p>}
