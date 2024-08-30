@@ -53,13 +53,10 @@ const PageFile: FC = () => {
     try {
       let wordsData;
 
+      
       if (pageName === "english") {
-        const fetchedWords: any = await getEnglishWords(number);
-
-        // Check if the result is an array of strings and map to Word objects
-          wordsData = fetchedWords?.words.map((word: string) => ({
-            Word: word
-          })) as Word[];
+        const response = await axios.get<Word[]>(`/api/english?number=${number}`);
+        wordsData = response.data;
       } else {
         const response = await axios.get<Word[]>(`/api/words?country=${pageName}&number=${number}`);
         wordsData = response.data;
