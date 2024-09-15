@@ -74,7 +74,7 @@ const Tap = () => {
       </div>
 
       <div className="py-2">
-        <p className="text-16 text-[#484848] laptop:text-20">
+        <p className="text-16 text-left text-[#484848] laptop:text-20">
           We use this button to track how many users visit this page and use our
           apps. Feel free to explore it. If you like our apps and want us to
           create more, please{" "}
