@@ -20,7 +20,7 @@ interface Word {
   Language?: string;
 }
 
-const PageFile: FC = () => {
+const PageFile: FC = () => { 
   const [number, setNumber] = useState<number>(1);
   const [loading, setLoading] = useState<boolean>(false);
   const [words, setWords] = useState<Word[]>([]);

@@ -103,6 +103,55 @@ const [pageName, setPageName] =  useState<string | null>('')
       title: 'Random Name Generator',
       description: 'Generate a random name and their meaning in any language that you selected',
       link: "random-name-generator",
+    },
+    {
+      color: "#C2FFD9",
+      image: "/letter-generator.png",
+      title: 'Random Letter Generator',
+      description: 'Need help getting a random letter from the English alphabet or any other alphabet of your choice.',
+      link: "letter-generator",
+    },
+    {
+      color: "#C2FFD9",
+      image: "/color-generator.png",
+      title: 'Random Color Generator',
+      description: 'Need help generating colors that can serve a number of purposes? From web development to artistic quests!',
+      link: "color-generator",
+    },
+    {
+      color: "#C2FFD9",
+      image: "/date-generator.png",
+      title: 'Random Date Generator',
+      description: 'Need help generating random calendar dates using true randomness, which can be used in computer programs.',
+      link: "date-generator",
+    },
+    {
+      color: "#C2FFD9",
+      image: "/choice-generator.png",
+      title: 'Random Choice Generator',
+      description: 'Need help creating a random choice from your text options. It will generate random choices from your personal list.',
+      link: "choice-generator",
+    },
+    {
+      color: "#C2FFD9",
+      image: "/list-randomizer.png",
+      title: 'List Randomizer',
+      description: 'This allows you to randomize lists of strings using true randomness, which is used in computer programs.',
+      link: "randomize-list",
+    },
+    {
+      color: "#C2FFD9",
+      image: "/string-generator.png",
+      title: 'Random String Generator',
+      description: 'Need help getting a random string from the English alphabet or any other alphabet of your choice.',
+      link: "string-generator",
+    },
+    {
+      color: "#C2FFD9",
+      image: "/georgian-names.png",
+      title: 'Male and Female Names',
+      description: 'Need help generating a list of names in which the usage is Georgian.',
+      link: "gender-names-generator",
     }
 
   ];

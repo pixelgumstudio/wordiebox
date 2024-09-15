@@ -67,6 +67,7 @@ const config: Config = {
 
     screens: {
       'tablet': '576px',
+      'ipad': '765px',
       'laptop': '1024px',
       'desktop': '1280px',
     },

@@ -79,7 +79,7 @@ const continentsOption = [ 'Africa', 'Asia', 'Europe', 'North America', 'South A
             {country}
           </p>
         )}
-        {country.length > 0 &&
+        {country !== ""  && country !== "Please select a continent" && country !== "No country found for this continent." &&
           <div className="w-full text-center mt-6 tablet:mt-8">
           <CopyButton textToCopy={country} text='Copy Country'/>
           </div>

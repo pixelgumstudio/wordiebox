@@ -44,7 +44,7 @@ const LanguagesList: React.FC<LanguagesListProps> = ({ pageType, pageName }) => 
     <div className="my-10 tablet:my-[50px] py-10 tablet:py-[50px] bg-white ">
       <div className='w-full laptop:max-w-[947px] mx-auto'>
       <h2 className="text-24 tablet:text-32 text-[#1c1c1c] font-bold text-left mb-8 capitalize">{pageName}</h2>
-      <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 desktop:grid-cols-6 gap-4 gap-y-10">
+      <div className="grid grid-cols-2 tablet:grid-cols-3 laptop:grid-cols-4 desktop:grid-cols-6 gap-4 gap-y-10">
         {Object.keys(languagesData).map((letter) => (
           <div key={letter} className="relative">
             <h3 className="text-24 font-semibold mb-4 text-[#1c1c1c]">{letter}</h3>
