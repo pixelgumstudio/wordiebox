@@ -86,7 +86,7 @@ const Generator = () => {
             </p>
           ))}
       </div>
-      {colors && (
+      {colors.length >= 1 && (
         <div className="mt-10 grid gap-4 mb-10 w-full max-w-[384px] mx-auto">
           <CopyButton
             text="Copy Colors"
