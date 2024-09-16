@@ -66,7 +66,7 @@ const Tap = () => {
             isScaled ? "scale-110" : "scale-100"
           }`}
         ></p>
-        <p className="w-full max-w-[300px] text-[24px] text-[#2E2E27]">
+        <p className="w-full max-w-[300px] text-24 text-[#484848]">
           This button has been tapped{" "}
           <span className="text-[#C19700] font-semibold">{count} times</span>{" "}
           today!
