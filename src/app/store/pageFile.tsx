@@ -32,7 +32,7 @@ const PageFile = () => {
             </p>
             <div className="flex flex-col ipad:flex-row ipad:flex-wrap laptop:flex-nowrap ipad:gap-4">
               {card(
-                "Integrating Wordiebox  apps",
+                "Wordiebox apps Source code",
                 Integrating,
                 "Get access to our source code to build amazing Writing, Editing and Learning tools as we build.",
                 "/wordieboxsourcecode?layout=profile"

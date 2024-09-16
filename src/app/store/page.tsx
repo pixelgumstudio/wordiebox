@@ -4,26 +4,26 @@ import PageFile from "./pageFile";
 
 export const metadata: Metadata = {
   
-  title: 'Wordiebox - Word of the Day: Wordiebox | Merriam-Webster',
-  description: 'Build your vocabulary: get a new word every day from Merriam-Webster dictionary. Learn the meaning, history, and fun facts.',
+  title: 'Wordiebox Store | Word counter | Wordiebox Source code',
+  description: 'The wordiebox store contains a directory of resources that customers can purchase. It includes wordiebox integration, word library, name library and many more! ',
   icons: {
     icon: 'https://wordiebox.com/icon.png',  // This sets the favicon for this specific page
   },
   openGraph: {
     type: "website",
     siteName: "Wordiebox",
-    title: 'Wordiebox - Word of the Day: Wordiebox | Merriam-Webster',
-    description: 'Build your vocabulary: get a new word every day from Merriam-Webster dictionary. Learn the meaning, history, and fun facts.',
-    url: 'https://wordiebox.com/word-of-the-day',
+    title: 'Wordiebox Store | Word counter | Wordiebox Source code',
+    description: 'The wordiebox store contains a directory of resources that customers can purchase. It includes wordiebox integration, word library, name library and many more! ',
+    url: 'https://wordiebox.com/store',
     images: [{
       url: 'https://wordiebox.com/seo-card.png',
     }],
   },
   twitter: {
     card: "summary_large_image",
-    site: 'https://wordiebox.com/word-of-the-day',
-    title: 'Wordiebox - Word of the Day: Wordiebox | Merriam-Webster',
-    description: 'Build your vocabulary: get a new word every day from Merriam-Webster dictionary. Learn the meaning, history, and fun facts.',
+    site: 'https://wordiebox.com/store',
+    title: 'Wordiebox Store | Word counter | Wordiebox Source code',
+    description: 'The wordiebox store contains a directory of resources that customers can purchase. It includes wordiebox integration, word library, name library and many more! ',
     images: [{
       url: 'https://wordiebox.com/seo-card.png',
     }],

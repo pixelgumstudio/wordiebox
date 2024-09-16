@@ -154,7 +154,7 @@ const PageFile: FC = () => {
                .map((date) =>
                  date
                ) 
-               .join(", ")} 
+               .join("; ")} 
              text={`Copy ${number > 1 ? "Dates" : "Date"}`}
            />
          </div>
