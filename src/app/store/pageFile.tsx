@@ -46,7 +46,7 @@ const PageFile = () => {
                   {card(
                 "12k+ Name library",
                 Names,
-                "Download our 16k+ word library available in Excel and JSON file.",
+                "Download our 12k+ name library available in Excel and JSON file.",
                 "/namegeneratorlibrary?layout=profile"
               )}
             </div>
