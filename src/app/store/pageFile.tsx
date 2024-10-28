@@ -13,9 +13,9 @@ const PageFile = () => {
   ) => {
     return (
       <div className="w-full max-w-[323px] laptop:max-w-full">
-        <Image src={image} alt={heading}/>
+        <Link href={`https://olayanjuidris.gumroad.com/l${link}`} target="_blank"><Image src={image} alt={heading}/></Link>
         <Link href={`https://olayanjuidris.gumroad.com/l${link}`} target="_blank">
-        <h2 className="text-20 tablet:text-24 text-left font-semibold mt-6 mb-2">{heading}</h2>
+        <h2 className="text-20 tablet:text-24 text-left font-semibold mt-6 mb-2 hover:underline">{heading}</h2>
         <p className="text-16 text-left">{paragraph}</p></Link>
       </div>
     );

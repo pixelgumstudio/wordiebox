@@ -6,7 +6,7 @@ const Hero = () => {
           <div className="flex flex-col gap-[50px] tablet:gap-20 laptop:flex-row laptop:items-center laptop:gap-6 desktop:gap-11">
   
               <div className="flex flex-col gap-4 tablet:gap-6 w-[90%] mx-auto max-w-[860px] text-center">
-                <h1 className="text-[#1C1C1C] font-bold text-32 tablet:text-48">Writing and learning Tools To Help Improve Your Word Library</h1>
+                <h1 className="text-[#1C1C1C] dark:text-white font-bold text-32 tablet:text-48">Writing and learning Tools To Help Improve Your Word Library</h1>
               </div>
   </div>
       </div>
