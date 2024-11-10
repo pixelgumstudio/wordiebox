@@ -47,7 +47,7 @@ const PageFile = () => {
             founders find inspiration, create pitch decks, and purchase
             templates. Also, we publish the <a className="underline" href="https://indieniche.substack.com/">Indieniche Newsletter,</a> a weekly
             publication that features founder stories, tools, and growth hacks
-            to support the entrepreneurial community.
+            to support the entrepreneurial community. There is the <a className="underline" href="https://pixelfounder.substack.com/">Pixelfounder Newsletter,</a> a design focused publication that helps designers and creatives by sharing insights to help sharpen their design skills. And lastly, <a className="underline" href="https://landingvault.com/">Landingvault</a> a directory of the best landing pages to fuel your inspiration for your next design project. 
           </p>
           <p className="text-20 tablet:text-32 text-left font-semibold">
             For sponsorships

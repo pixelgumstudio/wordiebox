@@ -39,11 +39,12 @@ const Footer = () => {
             <Link  href='/morse-code-translator' className='text-sm font-normal text-[#484848] laptop:text-[16px] leading-[22px]'>Morse Code Generator</Link>
             <Link  href='/strikethrough-text-generator' className='text-sm font-normal text-[#484848] laptop:text-[16px] leading-[22px]'>Strikethrough Text</Link>
             <Link  href='/randomize-list' className='text-sm font-normal text-[#484848] laptop:text-[16px] leading-[22px]'>List Randomizer</Link>
+            <Link  href='/randomize-list' className='text-sm font-normal text-[#484848] laptop:text-[16px] leading-[22px]'>Useful Links</Link>
 
           </div>
           <div className='flex flex-col gap-3 desktop:gap-4'>
             <h2 className='text-[16px] font-semibold leading-[22px] text-[#484848] mb-2'>CONTACT INFORMATION</h2>
-            <a href="mailto:pixelgum.design@gmail.com" className='text-sm font-normal text-[#484848] laptop:text-[16px] leading-[22px] underline'>Pixelgum.design@gmail.com</a>
+            <a href="mailto:pixelgumstudio@gmail.com" className='text-sm font-normal text-[#484848] laptop:text-[16px] leading-[22px] underline'>Pixelgumstudio@gmail.com</a>
           </div>
         </div>
       </div>
