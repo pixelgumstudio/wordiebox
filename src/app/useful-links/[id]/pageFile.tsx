@@ -7,16 +7,16 @@ import BackButton from "@/components/back-button";
 import Image from "next/image";
 import Link from "next/link";
 
-const PageFile = () => {
+const PageFile = ({pageName}) => {
   const pathname = usePathname();
-  const [pageName, setPageName] = useState<string>("");
+  // const [pageName, setPageName] = useState<string>("");
 
-  useEffect(() => {
-    const currentPage = pathname.split("/")[2];
-    if (currentPage) {
-      setPageName(currentPage);
-    }
-  }, [pathname]);
+  // useEffect(() => {
+  //   const currentPage = pathname.split("/")[2];
+  //   if (currentPage) {
+  //     setPageName(currentPage);
+  //   }
+  // }, [pathname]);
 
   // Find the current page's data
   const currentWebsite = websiteLinks.find(
