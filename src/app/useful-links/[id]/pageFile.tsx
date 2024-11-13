@@ -7,7 +7,7 @@ import BackButton from "@/components/back-button";
 import Image from "next/image";
 import Link from "next/link";
 
-const PageFile = ({pageName}) => {
+const PageFile = ({pageName}:{pageName: string}) => {
   const pathname = usePathname();
   // const [pageName, setPageName] = useState<string>("");
 
@@ -42,13 +42,11 @@ const PageFile = ({pageName}) => {
                   className="w-full h-auto max-h-[574px]"
                 />
               </div>
-              <div className="laptop:col-span-3 flex flex-col gap-3 w-full max-w-[555px]">
+              <div className="laptop:col-span-3 flex flex-col gap-3 w-full lapto:max-w-[555px]">
                 <p className="font-semibold w-full max-w-[255px] text-16 tablet:text-24 text-[#1C1C1C] mb-1">
                   {currentWebsite.title}
                 </p>
-                <p className="text-16 tablet:text-24 text-[#636363] font-normal">
-                  {currentWebsite.description}
-                </p>
+                <div className="text-16 tablet:text-24 text-[#636363] font-normal" dangerouslySetInnerHTML={{ __html: currentWebsite.description }}></div>
                 <a
                   href={currentWebsite.url}
                   target="_blank"
