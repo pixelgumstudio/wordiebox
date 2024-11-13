@@ -1,8 +1,6 @@
 "use client";
 
 import LinkCard from "@/components/linksCard";
-import Popup from "@/components/popup";
-import FormPopup from "@/components/popup-form";
 import { websiteLinks } from "@/lib/links";
 import { useState } from "react";
 
