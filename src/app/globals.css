@@ -42,25 +42,25 @@ input[type="number"] {
   display: none;
 }
 .hide-scrollbar {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  
+  scrollbar-width: none;  
 }
 
 /* This styles the default checkbox */
 input[type="checkbox"] {
-  appearance: none; /* Removes default checkbox styling */
+  appearance: none; 
   width: 20px;
   height: 20px;
-  border-radius: 4px; /* Makes it circular */
-  border: 1px solid #BFBFBF; /* Border to ensure the checkbox is visible */
-  position: relative; /* Allows pseudo-elements to position relative to the checkbox */
-  cursor: pointer; /* Changes cursor to pointer when hovering */
+  border-radius: 4px; 
+  border: 1px solid #BFBFBF; 
+  position: relative; 
+  cursor: pointer; 
 }
 
 /* This styles the checked state */
 input[type="checkbox"]:checked {
   background-color: #E03C00; 
-  border: 1px solid #E03C00; /* Background color when checked */
+  border: 1px solid #E03C00; 
 }
 
 /* Optional: adding a checkmark when checked */
@@ -69,8 +69,21 @@ input[type="checkbox"]:checked::after {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Center the checkmark */
-    font-size: 14px; /* Adjust the size of the checkmark */
-    color: white; /* Color of the checkmark */
+    transform: translate(-50%, -50%);
+    font-size: 14px; 
+    color: white; 
 }
 
+
+/* .content__children */
+.content__children p{
+  font-size: 14px;
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 576px){
+  .content__children p{
+    font-size: 15px;
+  }
+}

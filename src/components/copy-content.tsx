@@ -1,3 +1,4 @@
+"use client"
 import { useEffect, useState } from "react";
 
 interface CopyButtonProps {
@@ -5,6 +6,7 @@ interface CopyButtonProps {
   size?: string;
   text?: string;
   style?: string;
+  show?: boolean;
 }
 
 const CopyButton: React.FC<CopyButtonProps> = ({
@@ -12,6 +14,7 @@ const CopyButton: React.FC<CopyButtonProps> = ({
   size = "fit",
   text = "Copy Text",
   style = "bg-white text-black",
+  show = false
 }) => {
   const [copySuccess, setCopySuccess] = useState<boolean>(false);
 
@@ -34,7 +37,9 @@ const CopyButton: React.FC<CopyButtonProps> = ({
       });
   };
   return (
+    show &&
     <>
+    <div className="mt-10 mb-10 w-full max-w-[384px] mx-auto">
       <button
       disabled={textToCopy.length > 0 ? false : true }
         onClick={handleCopy}
@@ -44,6 +49,7 @@ const CopyButton: React.FC<CopyButtonProps> = ({
       >
         {text}
       </button>
+      </div>
       {copySuccess && (
         <div className="w-[100vw] h-[100vh] flex items-start justify-center bg-overlay fixed top-0 left-0 px-6 z-20">
         <div className="p-6 bg-[#F8F7F1] mt-20 border text-center border-[#1C1C1C] w-fit max-w-[500px]">

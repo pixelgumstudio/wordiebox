@@ -10,6 +10,7 @@ interface DropdownProps {
   title?: string;
   first?: string;
   position?: string;
+  width?: string;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
@@ -21,6 +22,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   title,
   first = "",
   position = "",
+  width = ""
 
 }) => {
   const [selectedOption, setSelectedOption] = useState<string>(first == "" ? options[0] : first);
@@ -82,7 +84,7 @@ const Dropdown: React.FC<DropdownProps> = ({
       )}
       {isOpen && (
         <div  ref={modalRef} className="absolute z-40 top-14 right-0 border-[#1C1C1C] border shadow-darkbox w-fit max-w-full h-fit max-h-[450px] overflow-y-auto hide-scrollbar origin-top-right bg-white divide-y divide-gray-100 ring-1 ring-black ring-opacity-5 focus:outline-none">
-          <div className="py-1">
+          <div className={`py-1 w-${width}`}>
             <button
               onClick={() => {
                 setSelectedOption(first);
