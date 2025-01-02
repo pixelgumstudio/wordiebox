@@ -30,7 +30,38 @@ const languagesData = {
   Z: ['Zulu'],
 };
 
-const pages = ['/capitalization-tool', '/morse-code-translator', '/random-state-generator', '/random-country-generator', '/password-generator', '/pokemon-name-generator','/generate-pokemon-name','/cursive-text-generator' , '/strikethrough-text-generator']
+const pages = [
+  "/capitalization-tool",
+  "/morse-code-translator",
+  "/random-state-generator",
+  "/random-country-generator",
+  "/password-generator",
+  "/pokemon-name-generator",
+  "/generate-pokemon-name",
+  "/cursive-text-generator",
+  "/strikethrough-text-generator",
+  "/motivational-quotes",
+  "/vocabulary-words",
+  "/writing-prompts",
+  "/random-phrase-generator",
+  "/strange-words",
+  "/would-you-rather-questions",
+  "/charades",
+  "/never-have-i-ever-questions",
+  "/decision-maker",
+  "/hangman-words",
+  "/random-questions",
+  "/pictionary-generator",
+  "/truth-or-dare-questions",
+  "/yes-or-no-oracle",
+  "/fake-word-generator",
+  "/weird-words",
+  "/random-paragraph-generator",
+  "/random-sentence-generator",
+  "/random-adjective-generator",
+  "/random-noun-generator"
+];
+
 async function generateSitemap() {
   const smStream = new SitemapStream({ hostname: 'https://www.wordiebox.com' });
   const pipeline = smStream.pipe(createGzip());

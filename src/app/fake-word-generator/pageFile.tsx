@@ -4,21 +4,34 @@ import CopyButton from "@/components/copy-content";
 import GenerateButton from "@/components/generateButton";
 import Layout from "@/components/layout";
 import NumberSelector from "@/components/numberSelector";
+import axios from "axios";
 import { useState } from "react";
 
 
-const PageFile = () => {
-  const [response, setResponse] = useState<String[]>([]);
-  // const [length, setLength] = useState(1);
+interface Words {
+  Word: string;
+}
 
-  const length = (length:number) => {
-    console.log(length)
-    return length
+const PageFile = () => {
+  const [response, setResponse] = useState<Words[]>([]);
+  const [length, setLength] = useState(1);
+
+  const lengths = (length:number) => {
+    setLength(length)
   };
-  const generatedQuestions = () => {
-    setResponse([
-      "wizard","wizard"]);
-      console.log(length)
+
+  const generateWords = async () => {
+    try {
+      let wordsData;
+
+        const response = await axios.get<Words[]>(`/api/fake?number=${length}`);
+        wordsData = response.data;
+   
+      setResponse(wordsData);
+    } catch (error) {
+      console.error("Error fetching words:", error);
+    } finally {
+    }
   };
 
   const contentSections = [
@@ -74,11 +87,11 @@ const PageFile = () => {
       <div className="w-full laptop:max-w-[947px] mx-auto">
         <div className="w-full max-w-[558px] mx-auto flex flex-col gap-8 justify-between">
          
-         <NumberSelector selected={length}/>
+         <NumberSelector selected={lengths} text="Fake Word"/>
 
           <GenerateButton
             text="Generate Fake Words"
-            task={generatedQuestions}
+            task={generateWords}
           >
             {response.length > 0 &&
               response.map((resp, index) => (
@@ -86,18 +99,18 @@ const PageFile = () => {
                   key={index}
                   className={`text-center flex flex-col w-fit text-black border-[#1C1C1C] bg-[#FFD2C2] border shadow-darkbox p-3 tablet:p-4 text-15  capitalize font-medium hover:bg-[#e2c9ff]`}
                 >
-                  <span className="font-semibold">{resp}</span>
+                  <span className="font-semibold">{resp.Word}</span>
                 </p>
               ))}
           </GenerateButton>
 
           <CopyButton
             show={response.length > 0}
-            text="Copy Letter"
+            text="Copy Fake Word"
             size="full"
             style="bg-white text-[#1c1c1c]"
             textToCopy={response.map(
-              (resp) => `${resp}`
+              (resp) => `${resp.Word}`
             )}
           />
         </div>

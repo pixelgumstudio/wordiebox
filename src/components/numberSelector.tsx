@@ -7,7 +7,7 @@ interface NumberSelector {
   }
 
 
-const NumberSelector: React.FC<NumberSelector> = ({selected, text="Number of Words"}) => {
+const NumberSelector: React.FC<NumberSelector> = ({selected, text="Words"}) => {
 
         const [length, setLength] = useState(1);
       
@@ -21,7 +21,7 @@ const NumberSelector: React.FC<NumberSelector> = ({selected, text="Number of Wor
       
         return (
                          <div className="flex w-fit gap-2 items-center mx-auto mb-6">
-                  <h4 className="text-24 text-grey-900">{text}</h4>
+                  <h4 className="text-24 text-grey-900">Number of {text}</h4>
                   <div className="relative inline-block w-[72px] shadow-darkbox">
                     <select
                       value={length}

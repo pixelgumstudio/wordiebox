@@ -170,13 +170,13 @@ const [pageName, setPageName] =  useState<string | null>('')
       description: 'This page explores some of the craziest words in English, including strange words, crazy words, and weird English words, ',
       link: "weird-words",
     },
-//     {
-//       color: "#C2FFD9",
-//       image: "/purple.png",
-//       title: 'Fake word generator',
-//       description: 'A random word generator page allows you to create fictional words and names.',
-//       link: "fake-word-generator",
-//     },
+    {
+      color: "#C2FFD9",
+      image: "/purple.png",
+      title: 'Fake word generator',
+      description: 'A random word generator page allows you to create fictional words and names.',
+      link: "fake-word-generator",
+    },
     {
       color: "#C2FFD9",
       image: "/green.png",
