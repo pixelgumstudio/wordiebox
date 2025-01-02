@@ -95,7 +95,7 @@ const PageFile = () => {
 
           <CopyButton
             show={response.length > 0}
-            text="Copy Letter"
+            text={response.length == 1 ? "Copy Word" : "Copy Words"}
             size="full"
             style="bg-white text-[#1c1c1c]"
             textToCopy={response.map(

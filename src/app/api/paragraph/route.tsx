@@ -11,7 +11,7 @@ export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const number = parseInt(searchParams.get('number') || '10', 10);
 
-  const filePath = path.join(process.cwd(), 'public/docs', 'hangman.csv');
+  const filePath = path.join(process.cwd(), 'public/docs', 'paragraph.csv');
 
   try {
     const data = fs.readFileSync(filePath, 'utf8');
@@ -21,7 +21,7 @@ export async function GET(request: Request) {
           return reject(err);
         }
         const words: Word[] = records.map((row) => ({
-          Word: row['hangman'],
+          Word: row['paragraph'],
         }));
         console.log(words)
         resolve(words);
@@ -30,7 +30,6 @@ export async function GET(request: Request) {
 
     let words = await parseCSV();
 
-    // Randomly shuffle the words and select the required number
     words = words.sort(() => 0.5 - Math.random()).slice(0, number);
 
     return NextResponse.json(words);

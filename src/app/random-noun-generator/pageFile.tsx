@@ -43,21 +43,59 @@ const PageFile = () => {
       </div>
     },
     {
-      title: "How to use a random weird words",
+      title: "Classification of Nouns",
       children: <ul className="list-inside list-disc">
             <li className="text-14 tablet:text-16 text-left">
-            Select the numbers of words you want to generate
+            <span className="font-semibold">Proper Nouns</span> are unique nouns and usually capitalized. Examples: Germany, January, Nebraska, White House.
             </li>
             <li className="text-14 tablet:text-16 text-left">
-            Enter text first and last letter into input box
+            <span className="font-semibold">Common Nouns</span> refer to general, unspecific categories of entities. Examples: country, month, university.
             </li>
             <li className="text-14 tablet:text-16 text-left">
-            Choose from the word length options
+            <span className="font-semibold">Countable Nouns</span> are all nouns which can be pluralized. Examples: bike, dog, car, university.
             </li>
             <li className="text-14 tablet:text-16 text-left">
-            Copy your generated word(s) and use
+            <span className="font-semibold">Uncountable Nouns</span> (also known as Mass Nouns) are nouns which don't have plurals. Examples: weather, happiness, milk, air.
+            </li>
+            <li className="text-14 tablet:text-16 text-left">
+            <span className="font-semibold">Collective Nouns</span> are nouns that refer to a group of something. Examples: gaggle, bevy, team, faculty.
+            </li>
+            <li className="text-14 tablet:text-16 text-left">
+            <span className="font-semibold">Concrete Nouns</span> refer to real things that can be touched, smelled, seen or tasted. Examples: animal, flower, computer, car.
+            </li>
+            <li className="text-14 tablet:text-16 text-left">
+            <span className="font-semibold">Abstract Nouns</span> refer to theoretical concepts. Examples: freedom, love, brightness.
+            </li>
+            <li className="text-14 tablet:text-16 text-left">
+            <span className="font-semibold">Pronouns</span> are types of nouns that can be used instead of nouns. Examples: he, she, them.
             </li>
           </ul>
+    },
+    {
+      content: "There are a great many ways you may want to use the random noun generator. Here are a few examples:",
+      children: <ul className="list-inside list-disc">
+            <li className="text-14 tablet:text-16 text-left">
+            to help form new concepts, ideas, and products
+            </li>
+            <li className="text-14 tablet:text-16 text-left">
+            to stimulate creativity through nouns you may have never considered
+            </li>
+            <li className="text-14 tablet:text-16 text-left">
+            to brainstorm marketing slogans and product names
+            </li>
+            <li className="text-14 tablet:text-16 text-left">
+            to form unique domain names or product names
+            </li>
+            <li className="text-14 tablet:text-16 text-left">
+            to spur you to think in unexpected ways
+            </li>
+          </ul>
+    },
+    {
+      content: "This is not an exhaustive list, but the above list does give a few ideas on how some people might use random nouns to help them solve issues. The best way to see the possibilities is to actually create a number of random lists with this tool and consider how the generated words might be able to help you with your current projects.",
+    },
+    {
+      content: "We hope that you find this tool useful. If you have any ideas on how we may improve it, please feel free to contact us with your input as we always strive to provide the best generators possible.",
     },
   ];
 
@@ -108,7 +146,7 @@ const PageFile = () => {
 
           <CopyButton
             show={response.length > 0}
-            text="Copy Letter"
+            text="Copy Noun"
             size="full"
             style="bg-white text-[#1c1c1c]"
             textToCopy={response.map(

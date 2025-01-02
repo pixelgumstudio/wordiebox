@@ -39,30 +39,37 @@ const PageFile = () => {
 
   const contentSections = [
     {
-      title: "Random Noun Generator:",
-      content: `There may be times when you'll want to generate a random list of a particular part of speech rather than all words in general. For example, you may want to create a random list of just nouns. That's exactly what the random noun generator does.`,
+      title: "Random Adjective Generator:",
+      content: `This random adjective calculator has hundreds of commonly used adjectives which will randomly appear with a click of a mouse depending on the number you would like to generate. Whether you're stuck trying to come up with new ways to describe something or you're just looking for creative adjectives to spice up your writing, the random adjective calculator should be a great help.`,
+    },
+    {
+      title: "Adjectives for Writers:",
       children:<div>
-        <p>A noun is a word that functions as the name of some specific thing, people or place. Nouns are one of the main parts of speech and sentence. They most often occur as the main word in the subject of a clause or the object of a verb.</p>
-        <p>Even if there is no exact agreed upon number of nouns in the English language, a rough calculation suggests there are at least hundreds of thousands of them, and likely more than one million. If we estimate there are approximately 2 million words in the English language, and a look at any dictionary shows approximately 75% of them are nouns, then we can estimate there should be around 1,500,000 nouns in the English language. This goes to show how important nouns are in English and why you may want to create a random list of just them in particular.</p>
-        <p>It's important to note that not all nouns are the same. They can be classified into a number of different categories. Here are some of the type of nouns that exist:</p>
+        <p>While there are a number of reasons you may want to create random adjectives, one of the most common is writers looking for new ways to better describe their writing. The great thing about this adjective tool is that it can help spark creative juices just by generating new adjectives. Simply seeing a random adjective can spark the imagination to come up with the perfect vocabulary for your writing. If nothing else, this tool will give you options you likely had never considered which in itself can be a great help.</p>
+        <p>This free calculator is also an excellent way to improve your creative writing. A fun and easy way to challenge yourself is to generate a random adjective and then use it in a paragraph. Writers can expand on this and generate 5 to 10 adjectives and write a page or short story using all of them. Since what will be generated is unknown, it forces the writer to use creativity to use the adjectives to make a great paragraph or short story.</p>
+        </div>
+    },
+    {
+      title: "Types of Adjectives",
+     content: `Did you know that there are actually three types of adjectives in the English language? Can you guess what they are? The following are the three different types of adjectives that are included in the calculator:`
+    },
+    {
+      title: "Descriptive Adjectives",
+     content: `Descriptive adjectives are the ones that most people think of when they hear the word "adjective." These are used to describe a specific characteristic of a noun. These are the words that help explain the noun's color, size, and shape among other things. In the sentence, "I walked past a sleek, yellow car on my way home," the words "sleek" and "yellow" are descriptive adjectives.`
+    },
+    {
+      title: "Quantitative' Adjectives",
+      children:<div>
+      <p>Another type of adjective is the quantitative adjective. When a qualitative adjective is used, it helps to describe an approximate amount (or sometimes the exact amount) of a particular noun. In the sentence, "There were a few cars and many bicycles in front of the store" the words "few" and "many" are quantitative adjectives describing the number of cars and bicycles. Additional examples of quantitative adjectives would be a little, no, and all.</p>
+      <p>TNumerical adjectives are a type of quantitative adjective. Instead of a general amount, numerical adjectives give a specific number quantity. Some examples of this would be one, five, ten, second, and twentieth. In the sentence, "There were three cars and thirty bicycles in front of the store" the words "three" and "thirty" are numerical quantitative adjectives.</p>
       </div>
     },
     {
-      title: "How to use a random weird words",
-      children: <ul className="list-inside list-disc">
-            <li className="text-14 tablet:text-16 text-left">
-            Select the numbers of words you want to generate
-            </li>
-            <li className="text-14 tablet:text-16 text-left">
-            Enter text first and last letter into input box
-            </li>
-            <li className="text-14 tablet:text-16 text-left">
-            Choose from the word length options
-            </li>
-            <li className="text-14 tablet:text-16 text-left">
-            Copy your generated word(s) and use
-            </li>
-          </ul>
+      title: "Demonstrative Adjectives",
+      children:<div>
+      <p>The third type of adjective is the demonstrative adjective. These are used when "which one?" needs to be answered by specifying a certain noun. In the sentence, "I love the color of this car, but not the color of that one" the words "this" and "that" are demonstrative adjectives describing which car is being referred to. Additional demonstrative adjectives are those and these.</p>
+      <p>It's our hope you've found this free tool to be useful. We are always looking for ways to increase the quality of all of our calculators, so if you have a suggestion on how we could improve it, please take the time to contact us. We would love to get your input so we can continue to provide the best possible word generators</p>
+      </div>
     },
   ];
 
@@ -113,7 +120,7 @@ const PageFile = () => {
 
           <CopyButton
             show={response.length > 0}
-            text="Copy Letter"
+            text="Copy Adjectives"
             size="full"
             style="bg-white text-[#1c1c1c]"
             textToCopy={response.map(

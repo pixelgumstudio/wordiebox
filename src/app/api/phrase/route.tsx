@@ -5,13 +5,14 @@ import { parse } from 'csv-parse';
 
 interface Word {
   Word: any;
+  Meaning: any;
 }
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const number = parseInt(searchParams.get('number') || '10', 10);
 
-  const filePath = path.join(process.cwd(), 'public/docs', 'hangman.csv');
+  const filePath = path.join(process.cwd(), 'public/docs', 'phrases.csv');
 
   try {
     const data = fs.readFileSync(filePath, 'utf8');
@@ -21,7 +22,8 @@ export async function GET(request: Request) {
           return reject(err);
         }
         const words: Word[] = records.map((row) => ({
-          Word: row['hangman'],
+          Word: row['Phrase'],
+          Meaning: row['Meaning'],
         }));
         console.log(words)
         resolve(words);

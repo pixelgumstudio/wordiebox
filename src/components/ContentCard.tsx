@@ -19,18 +19,18 @@ const ContentCard: React.FC<ContentCardProps> = ({ sections }) => {
       <div className="flex flex-col gap-[10px] text-black border border-[#1C1C1C] bg-[#FFFFFF] shadow-darkbox p-4 tablet:p-6 w-full mx-auto my-6">
         {sections.map((section, index) => (
           <div key={index} className="flex flex-col">
-             <p className="text-16 tablet:text-20 text-left font-semibold">
+             {section.header && <p className="text-16 tablet:text-20 text-left font-semibold">
               {section.header}
-            </p>
-            <p className="text-16 tablet:text-20 text-left font-semibold">
+            </p>}
+            {section.title && <p className="text-16 tablet:text-20 text-left font-semibold mb-2">
               {section.title}
-            </p>
-            <p className="text-14 tablet:text-16 text-left mb-4">
+            </p>}
+            {section.content && <p className="text-14 tablet:text-16 text-left mb-2">
               {section.content}
-            </p>
-            <div className="content__children">
+            </p>}
+            {section.children && <div className="content__children">
               {section.children}
-            </div>
+            </div>}
           </div>
         ))}
       </div>

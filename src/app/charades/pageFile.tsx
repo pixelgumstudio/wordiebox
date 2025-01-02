@@ -34,30 +34,31 @@ const PageFile = () => {
 
   const contentSections = [
     {
-      title: "Random Noun Generator:",
-      content: `There may be times when you'll want to generate a random list of a particular part of speech rather than all words in general. For example, you may want to create a random list of just nouns. That's exactly what the random noun generator does.`,
+      title: "Charades",
       children:<div>
-        <p>A noun is a word that functions as the name of some specific thing, people or place. Nouns are one of the main parts of speech and sentence. They most often occur as the main word in the subject of a clause or the object of a verb.</p>
-        <p>Even if there is no exact agreed upon number of nouns in the English language, a rough calculation suggests there are at least hundreds of thousands of them, and likely more than one million. If we estimate there are approximately 2 million words in the English language, and a look at any dictionary shows approximately 75% of them are nouns, then we can estimate there should be around 1,500,000 nouns in the English language. This goes to show how important nouns are in English and why you may want to create a random list of just them in particular.</p>
-        <p>It's important to note that not all nouns are the same. They can be classified into a number of different categories. Here are some of the type of nouns that exist:</p>
+        <p>One of the biggest problems when playing the game of charades is coming up with quality charades words to use in the game. The random charade words generator completely takes this issue away and makes playing charades with family or friends super easy whenever the desire to play happens.</p>
+        <p>There are two simple steps to get you going. The first step is to choose the difficulty of the charade words you want to use. These range from easy to extremely hard. By being able to choose the difficulty of the words allows you to adjust the game words to the people you are playing with. This can make the game a lot more fun and a challenge compared to just random words with no difficulty level assigned to them. The last step is choosing the number of charade words you want to be generated each time. Again, this can depend on who you are playing the game with and how difficult you want to make the game. Once you have chosen the difficulty level and the number of words to show each time, all you have to do is click on the generate button and you have a random charades word to begin playing.</p>
       </div>
     },
     {
-      title: "How to use a random weird words",
-      children: <ul className="list-inside list-disc">
-            <li className="text-14 tablet:text-16 text-left">
-            Select the numbers of words you want to generate
-            </li>
-            <li className="text-14 tablet:text-16 text-left">
-            Enter text first and last letter into input box
-            </li>
-            <li className="text-14 tablet:text-16 text-left">
-            Choose from the word length options
-            </li>
-            <li className="text-14 tablet:text-16 text-left">
-            Copy your generated word(s) and use
-            </li>
-          </ul>
+      title: "How Do You Play Charades?",
+      content: `Charades is a gesture and acting game. One person gets a word or phrase and then has to try to act and use gestures without making any sounds to indicate what that word or phrase is to their teammates. If the teammates are able to decipher the word through the gestures and acting, the team wins a point. What makes the game of charades so much fun is that even though the rules and concept of the game are simple when it comes to attempting to convey the word through gestures to your teammates can often be far more difficult than you imagined. This dichotomy of it appearing simple but actually being quite difficult will bring about a lot of entertainment, fun, and laughter to the game.`,
+    },
+    {
+      title: "How many people can play charades at one time?",
+      content: `There really isn't a maximum number of people that can play charades at one time. While it's possible to play charades with as few as two people, there needs to be a minimum of three if you want a truly competitive game of charades.`,
+    },
+    {
+      title: "How do you make teams in charades?",
+      content: `There are two common ways to split people up when playing charades. The first is when each person is their own team. In this case, one person will do the charade and all the others will try and guess the correct answer. The first person to guess correctly wins a point. Another option is to break into teams with each team having two or more players. In this case, the team gets a point when the person on their team is able to get one of the other teammates to guess the charade being done before a time limit expires. There are also a number of ways to combine these two for those who want to get creative while playing the game.`,
+    },
+    {
+      title: "What rules are there in charades?",
+      content: `The rules for playing charades are pretty easy and straightforward. A player for each team is chosen to try to gesture and act out a random word or phrase from the random charades word generator. The person doing this isn't allowed to make any noises or say any words out loud. If a player from the team guesses the word, the team gets a point. If the team fails to guess the word in the allotted time limit, there's no point awarded. Each team does this and the team with the most points after the designated number of rounds is declared the winning team.`,
+    },
+    {
+      title: "How long do players have to guess in charades?",
+      content: `The general default time period to guess a charade word is 3 minutes. This isn't set in stone. You can adjust the time period to less or more depending on the group you're playing with and how difficult you want to make the game. As long as all teams abide by the same time period, any designated time limit is acceptable when playing charades.`,
     },
   ];
 
@@ -108,7 +109,7 @@ const PageFile = () => {
 
           <CopyButton
             show={response.length > 0}
-            text="Copy Letter"
+            text="Copy Charades"
             size="full"
             style="bg-white text-[#1c1c1c]"
             textToCopy={response.map(

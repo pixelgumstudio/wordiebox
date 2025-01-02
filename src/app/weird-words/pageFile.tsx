@@ -4,20 +4,29 @@ import CopyButton from "@/components/copy-content";
 import GenerateButton from "@/components/generateButton";
 import Layout from "@/components/layout";
 import { useState } from "react";
+import axios from "axios";
 
-interface HangmanObject {
-  name: string;
-  character: number;
+
+interface Words {
+  Word: string;
+  Meaning: string;
 }
 const PageFile = () => {
-  const [response, setResponse] = useState<HangmanObject[]>([]);
+  const [response, setResponse] = useState<Words[]>([]);
   const [length, setLength] = useState(1);
 
-  const generatedQuestions = () => {
-    setResponse([
-      { name: "wizard", character: 10 },
-      { name: "wizard", character: 10 },
-    ]);
+  const generatedQuestions = async () => {
+    try {
+      let wordsData;
+
+        const response = await axios.get<Words[]>(`/api/weird?number=${length}`);
+        wordsData = response.data;
+   console.log(wordsData)
+      setResponse(wordsData);
+    } catch (error) {
+      console.error("Error fetching words:", error);
+    } finally {
+    }
   }; 
   const options = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -86,21 +95,21 @@ const PageFile = () => {
               response.map((resp, index) => (
                 <p
                   key={index}
-                  className={`text-center flex flex-col w-fit text-black border-[#1C1C1C] bg-[#FFD2C2] border shadow-darkbox p-3 tablet:p-4 text-15  capitalize font-medium hover:bg-[#e2c9ff]`}
+                  className={` flex flex-col w-fit text-black border-[#1C1C1C] bg-[#FFD2C2] border shadow-darkbox p-3 tablet:p-4 text-15  capitalize font-medium hover:bg-[#e2c9ff]`}
                 >
-                  <span className="font-semibold">{resp.name}</span>
-                  <span>Character: {resp.character}</span>
+                  <span className="font-semibold">Word: {resp.Word}</span>
+                  <span className="font-semibold">Meaning: {resp.Meaning}</span>
                 </p>
               ))}
           </GenerateButton>
 
           <CopyButton
             show={response.length > 0}
-            text="Copy Letter"
+            text="Copy Weird Word"
             size="full"
             style="bg-white text-[#1c1c1c]"
             textToCopy={response.map(
-              (resp) => `${resp.name} ${resp.character}`
+               (resp) => `${resp.Word} ${resp.Meaning}`
             )}
           />
         </div>
