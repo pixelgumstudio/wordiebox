@@ -181,8 +181,16 @@ const [pageName, setPageName] =  useState<string | null>('')
       color: "#C2FFD9",
       image: "/green.png",
       title: 'Random Noun Generator',
-      description: 'This page allows you to generate up to 1000+ random nouns including proper, common, countable, uncountable, collective nouns',
+      description: 'This page allows you to generate up to 1000+ random noun including proper, common, countable, uncountable, collective noun',
       link: "random-noun-generator",
+    },
+    
+    {
+      color: "#C2FFD9",
+      image: "/reds.png",
+      title: 'Random Verb Generator',
+      description: 'This page allows you to generate up to 1000+ random verb including proper, common, countable, uncountable, collective verb',
+      link: "random-verb-generator",
     },
     {
       color: "#C2FFD9",
@@ -191,13 +199,13 @@ const [pageName, setPageName] =  useState<string | null>('')
       description: 'The Charades word generator lets you play Charades anytime, anywhere',
       link: "charades",
     },
-//     {
-//       color: "#C2FFD9",
-//       image: "/reds.png",
-//       title: 'Random Verb Generator',
-//       description: 'It sifts through over 1,000 verbs to pick out the number of random verbs you need for your particular project.',
-//       link: "random-verb-generator",
-//     },
+    {
+      color: "#C2FFD9",
+      image: "/reds.png",
+      title: 'Random Verb Generator',
+      description: 'It sifts through over 1,000 verbs to pick out the number of random verbs you need for your particular project.',
+      link: "random-verb-generator",
+    },
     {
       color: "#C2FFD9",
       image: "/yellows.png",
@@ -212,13 +220,13 @@ const [pageName, setPageName] =  useState<string | null>('')
 //       description: 'Explore hundreds of creative writing prompts and story prompts to spark your imagination. kickstart your writing journey today!',
 //       link: "writing-prompts",
 //     },
-// {
-//       color: "#C2FFD9",
-//       image: "/green.png",
-//       title: 'Pictionary Generator',
-//       description: 'The Pictionary word generator lets you play Pictionary anywhere with a fun mix of Pictionary words. ',
-//       link: "pictionary-generator",
-//     },
+{
+      color: "#C2FFD9",
+      image: "/green.png",
+      title: 'Synonyms Generator',
+      description: 'The Synonyms generator lets you generate word and synonyms of the word. ',
+      link: "random-synonym-generator",
+    },
     {
       color: "#C2FFD9",
       image: "/grey.png",
@@ -226,13 +234,13 @@ const [pageName, setPageName] =  useState<string | null>('')
       description: 'The Random Phrase Generator gives you over 1000 random phrases and idioms, along with their definitions.',
       link: "random-phrase-generator",
     },
-//     {
-//       color: "#C2FFD9",
-//       image: "/reds.png",
-//       title: 'Random Sentence Generator',
-//       description: 'It offers over 1,000 unique random sentences, created just for this free writing tool and not found anywhere else.',
-//       link: "random-sentence-generator",
-//     },
+    {
+      color: "#C2FFD9",
+      image: "/reds.png",
+      title: 'Random Sentence Generator',
+      description: 'It offers over 1,000 unique random sentences, created just for this free writing tool and not found anywhere else.',
+      link: "random-sentence-generator",
+    },
 //     {
 //       color: "#C2FFD9",
 //       image: "/yellows.png",
@@ -268,13 +276,13 @@ const [pageName, setPageName] =  useState<string | null>('')
 //       description: 'Let the Easy Decision Maker be your go-to choice maker, helping you make random decisions with ease.',
 //       link: "decision-maker",
 //     },
-//     {
-//       color: "#C2FFD9",
-//       image: "/yellows.png",
-//       title: 'Motivational Quotes',
-//       description: 'A free online tool that will generate random motivational quotes including uplifting quotes, inspirational quotes, and interesting quotes',
-//       link: "motivational-quotes",
-//     },
+    {
+      color: "#C2FFD9",
+      image: "/yellows.png",
+      title: 'Motivational Quotes',
+      description: 'A free online tool that will generate random motivational quotes including uplifting quotes, inspirational quotes, and interesting quotes',
+      link: "motivational-quotes",
+    },
     {
       color: "#C2FFD9",
       image: "/purple.png",
