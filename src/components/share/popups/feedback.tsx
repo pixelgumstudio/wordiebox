@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import Close from "/public/cancel.svg";
+import Right_Arrow from "/public/arrowRight.svg";
 import axios from "axios";
 
 interface FormPopupProps {
@@ -18,7 +18,7 @@ export default function FeedBack({ visible, close }: FormPopupProps) {
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 
   const handleClose = () => {
-    close({ status: false});
+    close({ status: false, congrats: false});
     setEmail("")
     setMessage("")
   };
@@ -41,7 +41,7 @@ export default function FeedBack({ visible, close }: FormPopupProps) {
         "/api/feedback",payload,
         { headers: { "Content-Type": "application/json" } }
       );
-      handleClose()
+      close({ status: false, congrats: true});
       setLoading(false)
       setEmail("")
       setMessage("")
@@ -62,12 +62,12 @@ export default function FeedBack({ visible, close }: FormPopupProps) {
       <div className="w-full h-full flex items-center justify-center bg-overlay fixed top-0 left-0 z-20">
         <div className="relative p-6 pt-20 bg-[#F8F7F1] border text-center w-full max-w-[485px]">
           <Image
-            src={Close}
+            src={Right_Arrow}
             onClick={handleBack}
             alt="close"
-            width={32}
-            height={32}
-            className="absolute left-4 top-8 cursor-pointer"
+            width={40}
+            height={40}
+            className="absolute left-4 top-8 cursor-pointer rotate-180"
           />
           <h1 className="font-bold text-[#1C1C1C] text-24 tablet:text-32">Give us feedback</h1>
           <div className="text-left mt-10">
@@ -100,13 +100,13 @@ export default function FeedBack({ visible, close }: FormPopupProps) {
             className="py-3 px-4 mt-5 text-16 w-full bg-[#FFCC00] border-[#1C1C1C] border shadow-darkbox"
             onClick={handleSend}
           >
-            Give us feedback {loading && "..."}
+            Give us feedback{loading && "..."}
           </button>
           <button
             className="py-3 px-4 mt-5 text-16 w-full bg-white text-[#1c1c1c] border-[#1C1C1C] border shadow-darkbox"
             onClick={handleClose}
           >
-            Cancel {loading && "..."}
+            Cancel
           </button>
         </div>
       </div>
