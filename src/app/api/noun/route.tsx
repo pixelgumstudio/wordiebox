@@ -23,7 +23,7 @@ export async function GET(request: Request) {
         const words: Word[] = records.map((row) => ({
           Word: row['Noun'],
         }));
-        console.log(words)
+        // console.log(words)
         resolve(words);
       });
     });
