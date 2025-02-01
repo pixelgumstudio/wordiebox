@@ -9,7 +9,7 @@ export async function generateMetadata({ params }: { params: { language: string 
   
   return {
     title: `Random ${lang} Word Generator  |  Random ${lang} word - Wordiebox.com`,
-    description: `The free online random word generator tool allows you to create any number of random words you need for your project. Choose the number of random words you want to generate and generate the words`,
+    description: `The free online ${lang} random word generator tool allows you to create any number of random words you need for your project. Choose the number of random words you want to generate and generate the ${lang} words`,
     icons: {
       icon: 'https://wordiebox.com/icon.png',  // This sets the favicon for this specific page
     },
@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: { language: string 
       type: "website",
       siteName: "Wordiebox",
       title: `Random ${lang} Word Generator  |  Random ${lang} word - Wordiebox.com`,
-      description: `The free online ${lang} random word generator tool allows you to create any number of random words you need for your project. `,
+      description: `The free online ${lang} random word generator tool allows you to create any number of random words you need for your project. Choose the number of random words you want to generate and generate the ${lang} words`,
       url: `https://wordiebox.com/random-word-generator/${lang}`,
       images: [{
         url: 'https://wordiebox.com/seo-card.png',
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: { language: string 
       card: "summary_large_image",
       site: `https://wordiebox.com/random-word-generator/${lang}`,
       title: `Random ${lang} Word Generator  |  Random ${lang} word - Wordiebox.com`,
-      description: `The free online ${lang} random word generator tool allows you to create any number of random words you need for your project. `,
+      description: `The free online ${lang} random word generator tool allows you to create any number of random words you need for your project. Choose the number of random words you want to generate and generate the ${lang} words`,
       images: [{
         url: 'https://wordiebox.com/seo-card.png',
       }],

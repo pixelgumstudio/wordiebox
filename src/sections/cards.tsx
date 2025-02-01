@@ -150,7 +150,7 @@ const [pageName, setPageName] =  useState<string | null>('')
       color: "#C2FFD9",
       image: "/georgian-names.png",
       title: 'Male and Female Names',
-      description: 'Need help generating a list of names in which the usage is Georgian.',
+      description: 'Need help generating a list of male and female names in any language',
       link: "gender-names-generator",
     },
 
