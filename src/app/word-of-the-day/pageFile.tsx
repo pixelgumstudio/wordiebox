@@ -26,30 +26,41 @@ const PageFile = () => {
     meaning: '',
   })
 
-  const getWord = async () => {
+  // const getWord = async () => {
+  //   setLoading(true);
+  //   try {
+  //     const response = await axios.post(`words/word-of-the-day`, {
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //         "Access-Control-Allow-Credentials": true,
+  //       },
+  //     });
+  //     setWord(response.data); 
+  //     setLoading(false);
+  //     console.log(response.data); 
+  //   } catch (error) {
+  //     setLoading(false);
+  //     console.error("Error fetching Word:", error);
+  //     throw new Error("Failed to generate word");
+  //   }
+  // };
+
+  // useEffect(()=>{
+  //   getWord()
+  // },[])
+
+  useEffect(() => {
     setLoading(true);
-    try {
-      const response = await axios.post(`words/word-of-the-day`, {
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Credentials": true,
-        },
-      });
-      setWord(response.data); 
+    fetch("/api/dictionary")
+      .then(async (res) => {
+      const data = await res.json();
+      setWord(data)
+      console.log(data)
       setLoading(false);
-      console.log(response.data); 
-    } catch (error) {
-      setLoading(false);
-      console.error("Error fetching Word:", error);
-      throw new Error("Failed to generate word");
-    }
-  };
-
-  useEffect(()=>{
-    getWord()
-  },[])
-
-
+    })
+      .catch((err) => console.error(err));
+  }, []);
+  
   return (
     // <ErrorBoundary>
     <Layout title={`Word Of The Day`}>
