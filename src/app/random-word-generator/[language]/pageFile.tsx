@@ -12,6 +12,7 @@ import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import Word_Counter from '/word-counter.png';
 import getEnglishWords from "@/lib/englisgWords";
+import GenerateButton from "@/components/generateButton";
 
 interface Word {
   Word: string;
@@ -112,12 +113,13 @@ const PageFile: FC = () => {
           random words
         </div>
 
-        <p
-          className="p-2 w-full max-w-[360px] cursor-pointer text-center font-medium mx-auto mt-10 h-fit bg-[#FFCC00] border-[#1C1C1C] border shadow-darkbox"
-          onClick={generateWords}
-        >
-          Generate {number > 1 ? "Words" : "Word"} {loading && "..."}
-        </p>
+      
+        <div className="w-full max-w-[360px] mx-auto mt-10">
+ <GenerateButton
+            text={`Generate ${number > 1 ? "Words" : "Word"}`}
+            task={generateWords}
+          />
+        </div>
 
         <div className="flex flex-wrap justify-center w-fit mx-auto gap-5 mt-12">
           {Array.isArray(words) &&

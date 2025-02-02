@@ -30,7 +30,7 @@ const ShareButton: React.FC<CopyButtonProps> = ({ textToCopy, size = 'fit', text
   }
     return (
       <>
-      <button onClick={handleShare} className={`${size === "full" ? 'w-full' : 'w-fit'} border-[#1C1C1C] ${style} border shadow-darkbox py-3 px-2 text-16 font-medium hover:bg-white`}>
+      <button onClick={handleShare} className={`${size === "full" ? 'w-full' : 'w-fit'} h-fit border-[#1C1C1C] ${style} border shadow-darkbox py-3 px-2 text-16 font-medium hover:bg-white`}>
        {text}
        </button>
       <EmailPopup visible={email} submitted={submittedEmail} close={closeEmail} password={textToCopy} />

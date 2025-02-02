@@ -103,7 +103,7 @@ const GeneratorPokemon: React.FC = () => {
           </div>
           {showButton && (
           <div className="w-full text-center mt-6 tablet:mt-8">
-            <CopyButton textToCopy={pokemons.map(pokemon => pokemon.name)} text="Copy Pokémon" />
+            <CopyButton show={showButton} textToCopy={pokemons.map(pokemon => pokemon.name)} text="Copy Pokémon" />
           </div>
         )}
         </div>

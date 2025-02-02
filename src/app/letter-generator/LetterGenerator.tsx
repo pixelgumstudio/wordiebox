@@ -1,4 +1,5 @@
 import CopyButton from '@/components/copy-content';
+import GenerateButton from '@/components/generateButton';
 import { useState } from 'react';
 
 const LetterGenerator = () => {
@@ -73,18 +74,22 @@ const LetterGenerator = () => {
             <span className="ml-2">Unique letters in sequence</span>
           </label>
         </div>
-        <button onClick={generatePassword} className={`w-full text-black border-[#1C1C1C] bg-[#FC0] border shadow-darkbox py-3 px-2 text-16 font-medium hover:bg-[#edba00]`}>
-        Generate Random Letter
-       </button>
-        {letters && (
+        <GenerateButton
+            text="Generate Random Letter"
+            task={generatePassword}
+          >
+           {letters && (
           <div className="w-fit text-black mx-auto mt-6 border-[#1C1C1C] bg-[#FFD2C2] border shadow-darkbox py-3 px-2 text-16 font-medium">
             <span className="">{letters}</span>
           </div>
         )}
+          </GenerateButton>
+     
+       
 {
   letters !== "" &&
 <div className="mt-10 mb-10 w-full max-w-[384px] mx-auto">
-  <CopyButton text='Copy Letter' size='full' style="bg-white text-[#1c1c1c]" textToCopy={letters} />
+  <CopyButton text='Copy Letter' show={letters !== ""} size='full' style="bg-white text-[#1c1c1c]" textToCopy={letters} />
 </div>
 }
       </div>

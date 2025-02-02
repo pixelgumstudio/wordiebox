@@ -5,6 +5,7 @@ import Navbar from "../sections/navbar";
 import Footer from "../sections/footer";
 import Head from "next/head";
 import {GoogleAnalytics, GoogleTagManager} from "@next/third-parties/google"
+import Advert from "@/components/advert";
 // import useScrollToTop from "@/components/ScrollToTop";
 const Bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 
@@ -46,6 +47,8 @@ export default function RootLayout({
       <body className={`w-full flex flex-col justify-between min-h-[100vh] h-full mx-auto mt-[60px] bg-[#ffffff] dark:!bg-black dark:!text-white ${Bricolage.className}`}>
         {/* <ScrollToTop /> */}
         <Navbar />
+        {/* <Advert product="landingvault" label="Go to landingvault" url="https://www.google.com" />
+        <Advert product="indie niche" label="Go to Indie niche" url="https://www.google.com" /> */}
         {children}
         <Footer />
         <GoogleTagManager gtmId="GTM-K8ST54XF" />

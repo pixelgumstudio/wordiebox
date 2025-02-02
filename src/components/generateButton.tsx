@@ -8,12 +8,14 @@ interface Generate {
   response?: string | string[];
   task: () => void;
   children?: any;
+  style?: string;
 }
 
 const GenerateButton: React.FC<Generate> = ({
   text,
   response,
   task,
+  style="",
   children,
 }) => {
   const setWithExpiry = (key: string, value: string, expiryInHours: number) => {
@@ -97,7 +99,7 @@ const GenerateButton: React.FC<Generate> = ({
     <>
       <button
         onClick={handlePopup}
-        className={`w-fit mx-auto text-black border-[#1C1C1C] bg-[#FC0] border shadow-darkbox py-3 px-15 text-16 font-medium hover:bg-[#edba00]`}
+        className={` ${style} w-full mx-auto text-black border-[#1C1C1C] bg-[#FC0] border shadow-darkbox py-3 px-15 text-16 font-medium hover:bg-[#edba00]`}
       >
         {text}
       </button>

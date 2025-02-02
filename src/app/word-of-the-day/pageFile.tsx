@@ -55,12 +55,11 @@ const PageFile = () => {
       .then(async (res) => {
       const data = await res.json();
       setWord(data)
-      console.log(data)
       setLoading(false);
     })
       .catch((err) => console.error(err));
   }, []);
-  
+
   return (
     // <ErrorBoundary>
     <Layout title={`Word Of The Day`}>

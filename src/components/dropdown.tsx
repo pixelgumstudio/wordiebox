@@ -1,5 +1,6 @@
 // components/Dropdown.tsx
 import { useEffect, useRef, useState } from "react";
+import GenerateButton from "./generateButton";
 
 interface DropdownProps {
   options: any[];
@@ -71,17 +72,18 @@ const Dropdown: React.FC<DropdownProps> = ({
         </button>
       </div>
       {button && (
-        <button
-          onClick={() => {
-            if (location) {
-              location(selectedOption);
-            }
-          }}
-          className="w-full mt-8 text-[#1C1C1C] border-[#1C1C1C] bg-[#FC0] border shadow-darkbox p-4 text-16 font-medium hover:bg-[#edba00]"
-        >
-          {text}
-        </button>
+       <GenerateButton
+       text={text}
+       style="mt-8 mx-auto"
+       task={() => {
+         if (location) {
+           location(selectedOption);
+         }
+       }}
+     />
       )}
+
+      
       {isOpen && (
         <div  ref={modalRef} className="absolute z-40 top-14 right-0 border-[#1C1C1C] border shadow-darkbox w-fit max-w-full h-fit max-h-[450px] overflow-y-auto hide-scrollbar origin-top-right bg-white divide-y divide-gray-100 ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className={`py-1 w-${width}`}>

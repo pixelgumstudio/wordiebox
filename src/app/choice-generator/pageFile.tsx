@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import CopyButton from "@/components/copy-content";
+import GenerateButton from "@/components/generateButton";
 import Layout from "@/components/layout";
 import React, { useState } from "react";
 
@@ -40,17 +41,16 @@ function PageFile() {
               className={`px-5 py-5  mt-2 outline-none text-16  h-fit w-full bg-white !text-[#1C1C1C] border-[#1C1C1C] border shadow-darkbox`}
             />
           </div>
-          <button
-        onClick={generateString}
-        className={`w-full text-black border-[#1C1C1C] bg-[#FC0] border shadow-darkbox py-3 px-2 text-16 font-medium hover:bg-[#edba00]`}
-      >
-        Generate Random Choice
-      </button>
-      {choice && (
+          <GenerateButton
+            text="Random Choice Generator"
+            task={generateString}
+          >
+           {choice && (
         <div className="w-fit text-black mx-auto mt-6 border-[#1C1C1C] bg-[#FFD2C2] border shadow-darkbox py-3 px-2 text-16 font-medium">
           <span className="">{choice}</span>
         </div>
       )}
+          </GenerateButton>
       {choice !== "" && (
         <div className="mt-10 gap-4 mb-10 w-full max-w-[384px] mx-auto">
           <CopyButton

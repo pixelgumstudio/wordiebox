@@ -1,4 +1,5 @@
 import CopyButton from '@/components/copy-content';
+import GenerateButton from '@/components/generateButton';
 import { allColors } from '@/lib/colors';
 import { useEffect, useState } from 'react';
 
@@ -39,7 +40,7 @@ const Generator = () => {
   };
 
   return (
-    <div className="w-full max-w-fit mx-auto">
+    <div className="w-full max-w-fit text-center mx-auto">
       <div className="flex w-fit gap-2 items-center mx-auto mb-6">
         <h4 className="text-24 text-grey-900">Number of Colors</h4>
         <div className="relative inline-block w-[72px] shadow-darkbox">
@@ -65,14 +66,11 @@ const Generator = () => {
           </div>
         </div>
       </div>
-      <button
-        onClick={generateColors}
-        className={`w-full text-black border-[#1C1C1C] bg-[#FC0] border shadow-darkbox py-3 px-2 text-16 font-medium hover:bg-[#edba00]`}
-        
-      >
-        Generate Random Colors
-      </button>
-      <div className="flex flex-wrap justify-center w-fit mt-3 mx-auto gap-5">
+      <GenerateButton
+            text="Generate Random Colors"
+            task={generateColors}
+          >
+            <div className="flex flex-wrap justify-center w-fit mt-3 mx-auto gap-5">
         {colors.length > 0 &&
           colors.map((color, index) => (
             <p
@@ -86,6 +84,9 @@ const Generator = () => {
             </p>
           ))}
       </div>
+          </GenerateButton>
+    
+    
       {colors.length >= 1 && (
         <div className="mt-10 grid gap-4 mb-10 w-full max-w-[384px] mx-auto">
           <CopyButton

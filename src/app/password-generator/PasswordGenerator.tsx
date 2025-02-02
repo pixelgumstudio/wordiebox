@@ -2,6 +2,7 @@ import CopyButton from '@/components/copy-content';
 import ShareButton from '@/components/share/share-copy';
 import { useState } from 'react';
 import Popup from '../../components/share/popups/congrats';
+import GenerateButton from '@/components/generateButton';
 
 const PasswordGenerator = () => {
   const [length, setLength] = useState(8);
@@ -99,18 +100,21 @@ const PasswordGenerator = () => {
             <span className="ml-2">Symbols</span>
           </label>
         </div>
-        <button onClick={generatePassword} className={`w-full text-black border-[#1C1C1C] bg-[#FC0] border shadow-darkbox py-3 px-2 text-16 font-medium hover:bg-white`}>
-        Generate Password
-       </button>
-        {password && (
+        <GenerateButton
+            text="Generate Password"
+            task={generatePassword}
+          >
+              {password && (
           <div className="w-fit text-black mx-auto mt-6 border-[#1C1C1C] bg-[#FFD2C2] border shadow-darkbox py-3 px-2 text-16 font-medium">
             <span className="">{password}</span>
           </div>
         )}
+          </GenerateButton>
+      
 {
   password !== "" &&
-<div className="mt-10 grid grid-cols-2 gap-4 mb-10 w-full max-w-[384px] mx-auto">
-  <CopyButton text='Copy Password' size='full' style="bg-[#00A33F] text-white" textToCopy={password} />
+<div className="mt-10 grid grid-cols-2 gap-4 mb-10 w-full max-w-[384px] mx-auto items-baseline">
+  <CopyButton show={password !== ""} text='Copy Password' size='full' style="bg-[#00A33F] text-white" textToCopy={password} />
   <ShareButton text='Share Password' size='full' textToCopy={password} />
 </div>
 }

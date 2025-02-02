@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 "use client";
 import CopyButton from "@/components/copy-content";
+import GenerateButton from "@/components/generateButton";
 import Layout from "@/components/layout";
 import React, { useState } from "react";
 
@@ -43,13 +44,12 @@ function PageFile() {
               className={`px-5 py-5  mt-2 outline-none text-16  h-fit w-full bg-white !text-[#1C1C1C] border-[#1C1C1C] border shadow-darkbox`}
             />
           </div>
-          <button
-        onClick={generateString}
-        className={`w-full text-black border-[#1C1C1C] bg-[#FC0] border shadow-darkbox py-3 px-2 text-16 font-medium hover:bg-[#edba00]`}
-      >
-        Randomize list
-      </button>
-<div className="flex flex-wrap justify-start w-fit mx-auto gap-5">
+
+          <GenerateButton
+            text="Randomize list"
+            task={generateString}
+          >
+         <div className="flex flex-wrap justify-start w-fit mx-auto gap-5">
             {shuffle.length > 0 && shuffle.map((shuffle, index) => (
               <p
                 key={index}
@@ -60,9 +60,12 @@ function PageFile() {
             ))
             }
           </div>
+          </GenerateButton>
+     
       {showButton && (
         <div className="mt-10 gap-4 mb-10 w-full max-w-[384px] mx-auto">
           <CopyButton
+          show={showButton}
             text="Copy List"
             size="full"
             style="bg-white text-[#1C1C1C]"

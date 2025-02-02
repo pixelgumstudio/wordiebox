@@ -39,7 +39,7 @@ const CopyButton: React.FC<CopyButtonProps> = ({
   return (
     show &&
     <>
-    <div className="mt-10 mb-10 w-full max-w-[384px] mx-auto">
+    <div className="w-full max-w-[384px] mx-auto">
       <button
       disabled={textToCopy.length > 0 ? false : true }
         onClick={handleCopy}
