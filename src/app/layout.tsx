@@ -6,6 +6,7 @@ import Footer from "../sections/footer";
 import Head from "next/head";
 import {GoogleAnalytics, GoogleTagManager} from "@next/third-parties/google"
 import Advert from "@/components/advert";
+import { CSPostHogProvider } from "@/lib/providers";
 // import useScrollToTop from "@/components/ScrollToTop";
 const Bricolage = Bricolage_Grotesque({ subsets: ["latin"] });
 
@@ -44,6 +45,7 @@ export default function RootLayout({
   // useScrollToTop();
   return (
     <html lang="en">
+      <CSPostHogProvider>
       <body className={`w-full flex flex-col justify-between min-h-[100vh] h-full mx-auto mt-[60px] bg-[#ffffff] dark:!bg-black dark:!text-white ${Bricolage.className}`}>
         {/* <ScrollToTop /> */}
         <Navbar />
@@ -54,6 +56,7 @@ export default function RootLayout({
         <GoogleTagManager gtmId="GTM-K8ST54XF" />
         <GoogleAnalytics gaId="G-P8TXFVSRPZ" />
       </body>
+      </CSPostHogProvider>
     </html>
   );
 }
