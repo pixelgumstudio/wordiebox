@@ -3,7 +3,7 @@ import PageFile from "./pageFile";
 
 
 export const metadata: Metadata = {
-    title: "Strikethrough Text Generator",
+    title: "Dash Removal",
     description:
       "Enter text below and get a strikethrough text as response.",
       icons: {
