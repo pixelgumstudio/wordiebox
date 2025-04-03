@@ -15,14 +15,14 @@ export const metadata: Metadata = {
       title: "Strikethrough Text |  Wordiebox",
       description:
         "Enter text below to strikethrough it or format it with other fun formats including bold text, cursive, and more!",
-      url: "https://wordiebox.com/strikethrough-text-generator",
+      url: "https://wordiebox.com/dash-removal",
       images: [{
         url: 'https://wordiebox.com/seo-card.png',
       }],
     },
     twitter: {
       card: "summary_large_image",
-      site: "https://wordiebox.com/strikethrough-text-generator",
+      site: "https://wordiebox.com/dash-removal",
       title: "Strikethrough Text |  Wordiebox",
       description:
         "Enter text below to strikethrough it or format it with other fun formats including bold text, cursive, and more!",
