@@ -303,6 +303,13 @@ const [pageName, setPageName] =  useState<string | null>('')
       title: 'Never have i ever questions',
       description: "Whether it's a sleepover, a group dinner, or just free time between classes, we've put together a ton of Never Have I Ever questions",
       link: "never-have-i-ever-questions",
+    },
+    {
+      color: "#C2FFD9",
+      image: "/grey.png",
+      title: 'Dash Removal',
+      description: "Whether it's a sleepover, a group dinner, or just free time between classes, we've put together a ton of Never Have I Ever questions",
+      link: "dash-removal",
     }
 
 

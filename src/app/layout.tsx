@@ -3,7 +3,7 @@ import { Bricolage_Grotesque, Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "../sections/navbar";
 import Footer from "../sections/footer";
-import Head from "next/head";
+
 import {GoogleAnalytics, GoogleTagManager} from "@next/third-parties/google"
 import Advert from "@/components/advert";
 import { CSPostHogProvider } from "@/lib/providers";
