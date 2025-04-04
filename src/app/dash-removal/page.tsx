@@ -3,18 +3,18 @@ import PageFile from "./pageFile";
 
 
 export const metadata: Metadata = {
-    title: "Dash Removal",
+    title: "Remove EM dashes",
     description:
-      "Enter text below and get a strikethrough text as response.",
+      "Simplify your AI-generated text with this handy app that quickly removes em dashes, creating cleaner, more streamlined content. Ideal for writers, editors, or anyone aiming to refine their text with ease.",
       icons: {
         icon: 'https://wordiebox.com/icon.png',  // This sets the favicon for this specific page
       },
        openGraph: {
         type: "website",
         siteName: "Wordiebox",
-      title: "Strikethrough Text |  Wordiebox",
+      title: "Remove EM dashes |  Wordiebox",
       description:
-        "Enter text below to strikethrough it or format it with other fun formats including bold text, cursive, and more!",
+        "Simplify your AI-generated text with this handy app that quickly removes em dashes, creating cleaner, more streamlined content. Ideal for writers, editors, or anyone aiming to refine their text with ease.!",
       url: "https://wordiebox.com/dash-removal",
       images: [{
         url: 'https://wordiebox.com/seo-card.png',
@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     twitter: {
       card: "summary_large_image",
       site: "https://wordiebox.com/dash-removal",
-      title: "Strikethrough Text |  Wordiebox",
+      title: "Remove EM dashes |  Wordiebox",
       description:
-        "Enter text below to strikethrough it or format it with other fun formats including bold text, cursive, and more!",
+        "Simplify your AI-generated text with this handy app that quickly removes em dashes, creating cleaner, more streamlined content. Ideal for writers, editors, or anyone aiming to refine their text with ease.",
         images: [{
           url: 'https://wordiebox.com/seo-card.png',
         }],
