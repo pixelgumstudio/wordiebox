@@ -15,7 +15,7 @@ interface ContentCardProps {
 
 const ContentCard: React.FC<ContentCardProps> = ({ sections }) => {
   return (
-    <div className="w-full laptop:max-w-[947px] mx-auto mt-20 laptop:mt-25">
+    <div className="w-full laptop:max-w-[947px] mx-auto mt-20 laptop:mt-25 dark:text-[#1C1C1C]">
       <div className="flex flex-col gap-[10px] text-black border border-[#1C1C1C] bg-[#FFFFFF] shadow-darkbox p-4 tablet:p-6 w-full mx-auto my-6">
         {sections.map((section, index) => (
           <div key={index} className="flex flex-col">

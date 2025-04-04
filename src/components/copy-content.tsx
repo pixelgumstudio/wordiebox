@@ -52,7 +52,7 @@ const CopyButton: React.FC<CopyButtonProps> = ({
       </div>
       {copySuccess && (
         <div className="w-[100vw] h-[100vh] flex items-start justify-center bg-overlay fixed top-0 left-0 px-6 z-20">
-        <div className="p-6 bg-[#F8F7F1] mt-20 border text-center border-[#1C1C1C] w-fit max-w-[500px]">
+        <div className="p-6 bg-[#F8F7F1] mt-20 border text-center border-[#1C1C1C] dark:text-[#1C1C1C] w-fit max-w-[500px]">
           <p className="text-20 capitalize text-center font-semibold">Copied to clipboard</p>
           {/* <p className="text-20 capitalize text-left">{textToCopy}</p> */}
         </div>
