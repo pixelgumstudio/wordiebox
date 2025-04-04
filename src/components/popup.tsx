@@ -54,7 +54,7 @@ export default function Popup({ visible, status, email, updateView }: PopupProps
     content && (
       <div className="w-full h-full flex items-center justify-center bg-overlay fixed top-0 left-0 z-20">
         <div className="p-6 bg-[#F8F7F1] border text-center w-full max-w-[398px]">
-          <h2 className={`text-48 font-bold ${status === "success" || status === "thanks" ? "text-[#00A33F]" : "text-[#F64300]"}`}>
+          <h2 className={`text-48 font-bold dark:text-[#1C1C1C] ${status === "success" || status === "thanks" ? "text-[#00A33F]" : "text-[#F64300]"}`}>
             {content.title}
           </h2>
           <p className="text-20">{content.body}</p>

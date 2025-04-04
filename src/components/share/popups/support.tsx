@@ -18,7 +18,7 @@ export default function Support({ visible, updateView }: PopupProps) {
   return (
    visible &&
       <div className="w-full h-full flex items-center justify-center bg-overlay fixed top-0 left-0 z-20">
-        <div className="relative p-6 pt-20 bg-[#F8F7F1] border text-center w-full max-w-[485px]">
+        <div className="relative p-6 pt-20 bg-[#F8F7F1] border dark:text-[#1C1C1C] text-center w-full max-w-[485px]">
         <Image
             src={Close}
             onClick={handleClose}
@@ -27,7 +27,7 @@ export default function Support({ visible, updateView }: PopupProps) {
             height={32}
             className="absolute right-4 top-8 cursor-pointer"
           />
-          <h2 className={`text-32 font-bold`}>
+          <h2 className={`text-32 font-bold `}>
           Enjoying our app? Share your feedback or Support us with a small token! ❤️
           </h2>
         <div className="flex flex-col gap-6 mt-10 ">

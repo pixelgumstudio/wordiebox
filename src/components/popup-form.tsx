@@ -44,7 +44,7 @@ export default function FormPopup({ visible, close }: FormPopupProps) {
   return (
     visible && (
       <div className="w-full h-full flex items-center justify-center bg-overlay fixed top-0 left-0 z-20">
-        <div className="relative p-6 bg-[#F8F7F1] border text-center w-full max-w-[398px]">
+        <div className="relative p-6 bg-[#F8F7F1] border dark:text-[#1C1C1C] text-center w-full max-w-[398px]">
           <Image
             src={Close}
             onClick={handleClose}
