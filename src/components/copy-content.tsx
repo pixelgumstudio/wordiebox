@@ -1,5 +1,5 @@
 "use client"
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 interface CopyButtonProps {
   textToCopy: string | string[];
@@ -39,7 +39,7 @@ const CopyButton: React.FC<CopyButtonProps> = ({
   return (
     show &&
     <>
-    <div className="w-full max-w-[384px] mx-auto">
+    <div className="mx-auto">
       <button
       disabled={textToCopy.length > 0 ? false : true }
         onClick={handleCopy}
