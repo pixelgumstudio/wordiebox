@@ -45,7 +45,7 @@ const CopyButton: React.FC<CopyButtonProps> = ({
         onClick={handleCopy}
         className={`${
           size === "full" ? "w-full" : "w-fit"
-        } border-[#1C1C1C] ${style} dark:text-[#1C1C1C] border shadow-darkbox py-3 px-2 text-16 font-medium`}
+        } border-[#1C1C1C] dark:border-[#FFFFFF] ${style} border shadow-darkbox py-3 px-2 text-16 font-medium`}
       >
         {text}
       </button>
