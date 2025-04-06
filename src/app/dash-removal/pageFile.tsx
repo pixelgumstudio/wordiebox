@@ -54,7 +54,7 @@ function PageFile() {
          {/* <Cards /> */}
 
       <div className="w-full laptop:max-w-[947px] mx-auto mt-20 laptop:mt-25">
-        <div className="flex flex-col gap-[10px] text-black border border-[#1C1C1C] bg-[#FFFFFF] shadow-darkbox p-4 tablet:p-6 w-full mx-auto my-6">
+        <div className="flex flex-col gap-[10px] text-black border border-[#1C1C1C] bg-[#FFFFFF] dark:bg-[#1c1c1c] dark:text-[#ffffff] dark:border-[#ffffff] shadow-darkbox p-4 tablet:p-6 w-full mx-auto my-6">
           <p className="text-16 tablet:text-20 text-left font-semibold">
             How to Use Remove Em dashes
           </p>

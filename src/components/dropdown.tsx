@@ -48,7 +48,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   
   return (
     <div className={`relative w-full max-w-[400px] ${position === "" ? "mx-auto" : position}`}>
-      {title && <p className="text-16 font-semibold text-black mb-2">{title}</p>}
+      {title && <p className="text-16 font-semibold text-black dark:text-[#FFFFFF] mb-2">{title}</p>}
       <div>
         <button
           type="button" 

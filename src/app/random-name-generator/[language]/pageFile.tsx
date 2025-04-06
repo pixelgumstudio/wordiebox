@@ -153,7 +153,7 @@ const PageFile: FC = () => {
           </div>
         )}
 
-        <div className="mt-[100px] flex flex-col gap-[10px] text-black border border-[#1C1C1C] bg-[#FFFFFF] shadow-darkbox p-4 tablet:p-6 w-full mx-auto my-6">
+        <div className="mt-[100px] flex flex-col gap-[10px] text-black border border-[#1C1C1C] bg-[#FFFFFF] dark:bg-[#1C1C1C] dark:text-[#FFFFFF] shadow-darkbox p-4 tablet:p-6 w-full mx-auto my-6">
           <p className="text-16 tablet:text-20 text-left font-semibold">
             What is a name generator?
           </p>

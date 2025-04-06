@@ -41,16 +41,16 @@ const languagesData: LanguagesData = {
 
 const LanguagesList: React.FC<LanguagesListProps> = ({ pageType, pageName }) => {
   return (
-    <div className="my-10 tablet:my-[50px] py-10 tablet:py-[50px] bg-white ">
+    <div className="my-10 tablet:my-[50px] py-10 tablet:py-[50px] bg-white dark:bg-[#1C1C1C] ">
       <div className='w-full laptop:max-w-[947px] mx-auto'>
-      <h2 className="text-24 tablet:text-32 text-[#1c1c1c] font-bold text-left mb-8 capitalize">{pageName}</h2>
+      <h2 className="text-24 tablet:text-32 text-[#1c1c1c] dark:text-[#FFFFFF] font-bold text-left mb-8 capitalize">{pageName}</h2>
       <div className="grid grid-cols-2 tablet:grid-cols-3 laptop:grid-cols-4 desktop:grid-cols-6 gap-4 gap-y-10">
         {Object.keys(languagesData).map((letter) => (
           <div key={letter} className="relative">
-            <h3 className="text-24 font-semibold mb-4 text-[#1c1c1c]">{letter}</h3>
+            <h3 className="text-24 font-semibold mb-4 text-[#1c1c1c] dark:text-[#FFFFFF]">{letter}</h3>
             <ul className="list-none pl-0">
               {languagesData[letter].map((language, index) => (
-                <li key={index} className="py-1 text-[#484848] text-16">
+                <li key={index} className="py-1 text-[#484848] dark:text-[#FFFFFF] text-16">
                   <Link href={`/${pageType}/${createSlug(language)}`}>
                     {language}
                   </Link>

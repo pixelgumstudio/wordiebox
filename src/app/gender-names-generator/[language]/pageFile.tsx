@@ -75,9 +75,9 @@ const generateNames = async (value: string) => {
     <Layout title={`${pageName} Names`}>
       <div className="w-full laptop:max-w-[947px] px-4 tablet:px-6 laptop:px-0 desktop:px-0 mx-auto">
         {/* Number to Generate */}
-<div className="flex justify-center w-full max-w-[400px]  mx-auto items-center text-[#1C1C1C] text-20 tablet:text-24 font-normal whitespace-nowrap text-center mb-6">
+<div className="flex justify-center w-full max-w-[400px]  mx-auto items-center text-[#1C1C1C] dark:text-[#FFFFFF] text-20 tablet:text-24 font-normal whitespace-nowrap text-center mb-6">
           Generate
-          <div className="flex justify-between items-center px-3 py-2 mx-2 outline-none h-9 w-[72px] bg-transparent border-[#1C1C1C] border shadow-darkbox text-center">
+          <div className="flex justify-between items-center px-3 py-2 mx-2 outline-none h-9 w-[72px] bg-transparent border-[#1C1C1C] dark:border-[#FFFFFF] border shadow-darkbox text-center">
             <select
               name="number"
               value={number}
@@ -152,7 +152,7 @@ const generateNames = async (value: string) => {
            />
          </div>
 }
-        <div className="mt-[100px] flex flex-col gap-[10px] text-black border border-[#1C1C1C] bg-[#FFFFFF] shadow-darkbox p-4 tablet:p-6 w-full mx-auto my-6">
+        <div className="mt-[100px] flex flex-col gap-[10px] text-black border border-[#1C1C1C] dark:border-[#FFFFFF] bg-[#FFFFFF] dark:bg-[#1C1C1C] dark:text-[#FFFFFF] shadow-darkbox p-4 tablet:p-6 w-full mx-auto my-6">
           <p className="text-16 tablet:text-20 text-left font-semibold">
           What Is a Name Generator? </p>
           <p className="text-14 tablet:text-16 text-left">

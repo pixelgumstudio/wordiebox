@@ -299,14 +299,14 @@ const [pageName, setPageName] =  useState<string | null>('')
     },
     {
       color: "#C2FFD9",
-      image: "/grey.png",
+      image: "/yellows.png",
       title: 'Never have i ever questions',
       description: "Whether it's a sleepover, a group dinner, or just free time between classes, we've put together a ton of Never Have I Ever questions",
       link: "never-have-i-ever-questions",
     },
     {
       color: "#C2FFD9",
-      image: "/grey.png",
+      image: "/green.png",
       title: 'Remove Em dashes',
       description: "Simplify your AI-generated text with this handy app that quickly removes em dashes, creating cleaner, more streamlined content. Ideal for writers, editors, or anyone aiming to refine their text with ease.",
       link: "dash-removal",

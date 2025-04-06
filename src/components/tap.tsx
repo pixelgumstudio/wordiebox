@@ -66,7 +66,7 @@ const Tap = () => {
             isScaled ? "scale-110" : "scale-100"
           }`}
         ></p>
-        <p className="w-full max-w-[300px] text-24 text-[#484848]">
+        <p className="w-full max-w-[300px] text-24 text-[#484848] dark:text-[#FFFFFF]">
           This button has been tapped{" "}
           <span className="text-[#C19700] font-semibold">{count} times</span>{" "}
           today!
@@ -74,7 +74,7 @@ const Tap = () => {
       </div>
 
       <div className="py-2">
-        <p className="text-16 font-normal text-left text-[#484848] laptop:text-20">
+        <p className="text-16 font-normal text-left text-[#484848] dark:text-[#FFFFFF] laptop:text-20">
           We use this button to track how many users visit this page and use our
           apps. Feel free to explore it. If you like our apps and want us to
           create more, please{" "}
