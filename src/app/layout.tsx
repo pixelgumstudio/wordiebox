@@ -55,12 +55,12 @@ export default function RootLayout({
         <Footer />
         <GoogleTagManager gtmId="GTM-K8ST54XF" />
         <GoogleAnalytics gaId="G-P8TXFVSRPZ" />
-        {/* <script 
+        <script 
           data-grow-initializer=""
           dangerouslySetInnerHTML={{
             __html: `!(function(){window.growMe||((window.growMe=function(e){window.growMe.push(e)}),(window.growMe=[]));var e=document.createElement("script");(e.type="text/javascript"),(e.src="https://faves.grow.me/main.js"),(e.defer=!0),e.setAttribute("data-grow-faves-site-id","U2l0ZTo2MDZlMjhjNC1mZTgxLTQ4ZDMtODdjOS1kOThhZDJkNWY4Njg=");var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();`
           }}
-        /> */}
+        />
         <script type="text/javascript" async data-noptimize="1" data-cfasync="false" src="//scripts.scriptwrapper.com/tags/606e28c4-fe81-48d3-87c9-d98ad2d5f868.js"></script>
       </body>
       </CSPostHogProvider>
