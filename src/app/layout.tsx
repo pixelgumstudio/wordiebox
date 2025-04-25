@@ -55,6 +55,8 @@ export default function RootLayout({
         <Footer />
         <GoogleTagManager gtmId="GTM-K8ST54XF" />
         <GoogleAnalytics gaId="G-P8TXFVSRPZ" />
+        <GoogleAnalytics gaId="G-QC3EN5VG2P" />
+        
         <script 
           data-grow-initializer=""
           dangerouslySetInnerHTML={{
