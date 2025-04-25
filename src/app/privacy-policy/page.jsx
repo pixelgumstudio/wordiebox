@@ -8,8 +8,8 @@ export default function PrivacyPolicy() {
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2">Privacy Policy</h2>
         <p>
-          This privacy policy (the "Policy") relates to the <a href="http://wordiebox.com/" className="text-blue-600 underline">http://wordiebox.com/</a>
-          website operated by Pixelgumstudio (“we,” “us,” or “our”) for the Wordiebox product. This Policy outlines how we collect,
+          This privacy policy (the &quot;Policy&quot;) relates to the <a href="http://wordiebox.com/" className="text-blue-600 underline">http://wordiebox.com/</a>
+          website operated by Pixelgumstudio (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) for the Wordiebox product. This Policy outlines how we collect,
           use, disclose, and protect the personal information of our users and visitors.
         </p>
       </section>
@@ -67,7 +67,7 @@ export default function PrivacyPolicy() {
       </section>
 
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-2">Children’s Privacy</h2>
+        <h2 className="text-2xl font-semibold mb-2">Children&apos;s Privacy</h2>
         <p>
           Our website is not intended for children under the age of 13. We do not knowingly collect personal information from children
           under the age of 13. If you believe we have collected personal information about a child under 13, please contact us immediately.
