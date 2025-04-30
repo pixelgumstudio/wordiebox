@@ -45,6 +45,9 @@ export default function RootLayout({
   // useScrollToTop();
   return (
     <html lang="en">
+      <head>
+        <link href="https://adstxt.journeymv.com/sites/606e28c4-fe81-48d3-87c9-d98ad2d5f868/ads.txt" />
+      </head>
       <CSPostHogProvider>
       <body className={`w-full flex flex-col justify-between min-h-[100vh] h-full mx-auto mt-[60px] bg-[#ffffff] dark:!bg-black dark:!text-white ${Bricolage.className}`}>
         {/* <ScrollToTop /> */}
