@@ -12,7 +12,7 @@ function PageFile() {
   const [cleaned, setCleaned] = useState<boolean>(false);
 
   const removeEmDash = (text: string): string => {
-    return text.replace(/—/g, " ");
+  return text.replace(/[—–-]/g, " ");
   };
 
   const convert = () => {

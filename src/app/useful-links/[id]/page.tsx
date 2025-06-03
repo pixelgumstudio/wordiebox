@@ -16,10 +16,10 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   // If no page is found, fallback to a default title
   const pageTitle = page ? page.title : "";
   const pageIcon = page ? page.image : "https://wordiebox.com/seo-card.png";
-
+const description = page ? page.about : 'Wordiebox offers a wide range of learning tools designed to improve your learning experience. It includes a random word generator, word counter, character counter and so much more!';
   return {
     title: `Wordiebox | ${pageTitle}`,
-    description: 'Wordiebox offers a wide range of learning tools designed to improve your learning experience. It includes a random word generator, word counter, character counter and so much more!',
+    description: description,
     icons: {
       icon: 'https://wordiebox.com/icon.png',  // This sets the favicon for this specific page
     },
@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
       type: "website",
       siteName: "Wordiebox",
       title: `Wordiebox | ${pageTitle}`,
-      description: 'Wordiebox offers a wide range of learning tools designed to improve your learning experience. It includes a random word generator, word counter, character counter and so much more!',
+      description: description,
       url: `https://wordiebox.com/useful-links/${createSlug(title)}`,
       images: [{
         url: `${pageIcon}`,
@@ -37,7 +37,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
       card: "summary_large_image",
       site: `https://wordiebox.com/useful-links/${createSlug(title)}`,
       title: `Wordiebox | ${pageTitle}`,
-      description: 'Wordiebox offers a wide range of learning tools designed to improve your learning experience. It includes a random word generator, word counter, character counter and so much more!',
+      description: description,
       images: [{
         url: `${pageIcon}`,
       }],
